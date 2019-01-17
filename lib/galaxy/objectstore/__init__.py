@@ -474,7 +474,7 @@ class DiskObjectStore(ObjectStore):
                     force_symlink(os.readlink(file_name), self.get_filename(obj, **kwargs))
                 else:
                     path = self.get_filename(obj, **kwargs)
-                    shutil.copy(file_name, path)
+                    shutil.move(file_name, path)
                     umask_fix_perms(path, self.config.umask, 0o666)
             except IOError as ex:
                 log.critical('Error copying %s to %s: %s' % (file_name, self._get_filename(obj, **kwargs), ex))
