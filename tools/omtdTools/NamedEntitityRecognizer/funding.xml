@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool id="7838fb54-c3c1-4552-94c5-3f1e5299ee0b" name="MadIS Funding Mining" version="1.0.0">
+    <description>The Funding Mining application mines the fulltext of publications and extracts links to projects. Currently, projects from EC (FP7/H2020), NSF (National Science Foundation, USA), NIH (National Institute of Health, USA), Wellcome Trust, FCT (Fundacao para a Ciencia e a Tecnologia, Portugal), ARC (Australian Research Council), NHMRC (National Health and Medical Research Council, Australia), CSF/HRZZ (Hrvatska Zaklada Za Znanost, Croatia), MSES-MZOS (Ministarstvo Znanosti, Obrazovanja i sporta, Croatia), SFI (Science foundation Ireland), NWO (Nederlandse Organisatie voor Wetenschappelijk Onderzoek, Netherlands) are supported, but new funders are added regularly.</description>
+    <requirements>
+        <container type="docker">antleb/madis-apps:1.0.0</container>
+    </requirements>
+    <command>
+mkdir tmp;
+#for $file in $component_InputFiles
+        cp $file tmp/$file.element_identifier;
+#end for
+madis.sh --algorithm funding --input tmp --output $output.job_working_directory/working/out/
+</command>
+    <inputs>
+        <param collection_type="list" format="pdf" label="component_InputFiles" name="component_InputFiles" type="data_collection"/>
+    </inputs>
+    <outputs>
+        <collection label="component_output" name="output" type="list">
+            <discover_datasets directory="out" format="pdf" pattern="__designation__" visible="false"/>
+        </collection>
+    </outputs>
+</tool>
+

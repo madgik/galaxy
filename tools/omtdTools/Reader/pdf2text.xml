@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool version="1.9.0-SNAPSHOT" name="PdfReader" id="mvn:de.tudarmstadt.ukp.dkpro.core:de.tudarmstadt.ukp.dkpro.core.io.pdf-asl:1.9.0-SNAPSHOT#de.tudarmstadt.ukp.dkpro.core.io.pdf.PdfReader">
+    <description>Collection reader for PDF files. Uses simple heuristics to detect headings and paragraphs.</description>
+    <requirements>
+        <container type="docker">galanisd/omtd-component-executor-uima:2.10</container>
+    </requirements>
+    <command>
+mkdir tmp;
+#for $file in $PdfReader_InputFiles
+	cp $file tmp/$file.element_identifier;
+#end for
+Linux_runUIMA.sh de.tudarmstadt.ukp.dkpro.core_de.tudarmstadt.ukp.dkpro.core.io.pdf-asl_1.9.0-SNAPSHOT de.tudarmstadt.ukp.dkpro.core.io.pdf.PdfReader -input tmp -output $output.job_working_directory/working/out/ 
+#if $substitutionTableLocation
+-PsubstitutionTableLocation='$substitutionTableLocation'
+#end if 
+#if $headingType
+-PheadingType='$headingType'
+#end if 
+#if $paragraphType
+-PparagraphType='$paragraphType'
+#end if 
+#if $startPage
+-PstartPage='$startPage'
+#end if 
+#if $endPage
+-PendPage='$endPage'
+#end if 
+#if $sourceLocation
+-PsourceLocation='$sourceLocation'
+#end if 
+#if $patterns
+-Ppatterns='$patterns'
+#end if 
+#if $useDefaultExcludes
+-PuseDefaultExcludes='$useDefaultExcludes'
+#end if 
+#if $includeHidden
+-PincludeHidden='$includeHidden'
+#end if 
+#if $language
+-Planguage='$language'
+#end if 
+#if $logFreq
+-PlogFreq='$logFreq'
+#end if
+</command>
+    <inputs>
+        <param value="&lt;built-in&gt;" type="text" optional="true" name="substitutionTableLocation" label="substitutionTableLocation" help="The location of the substitution table use to post-process the text extracted form the PDF,&#xA;e.g. to convert ligatures to separate characters.">
+            <sanitizer sanitize="False"/>
+        </param>
+        <param value="&lt;built-in&gt;" type="text" optional="true" name="headingType" label="headingType" help="The type used to annotate headings.">
+            <sanitizer sanitize="False"/>
+        </param>
+        <param value="&lt;built-in&gt;" type="text" optional="true" name="paragraphType" label="paragraphType" help="The type used to annotate paragraphs.">
+            <sanitizer sanitize="False"/>
+        </param>
+        <param value="-1" type="integer" optional="true" name="startPage" label="startPage" help="The first page to be extracted from the PDF."/>
+        <param value="-1" type="integer" optional="true" name="endPage" label="endPage" help="The last page to be extracted from the PDF."/>
+        <param type="text" optional="true" name="sourceLocation" label="sourceLocation" help="Location from which the input is read.">
+            <sanitizer sanitize="False"/>
+        </param>
+        <param type="text" optional="true" name="patterns" label="patterns" help="A set of Ant-like include/exclude patterns. A pattern starts with #INCLUDE_PREFIX [+]&#xA;if it is an include pattern and with #EXCLUDE_PREFIX [-] if it is an exclude pattern.&#xA;The wildcard &lt;code&gt;&amp;#47;**&amp;#47;&lt;/code&gt; can be used to address any number of sub-directories.&#xA;The wildcard * can be used to a address a part of a name.">
+            <sanitizer sanitize="False"/>
+        </param>
+        <param type="boolean" optional="false" name="useDefaultExcludes" label="useDefaultExcludes" help="Use the default excludes." checked="true"/>
+        <param type="boolean" optional="false" name="includeHidden" label="includeHidden" help="Include hidden files and directories." checked="false"/>
+        <param type="text" optional="true" name="language" label="language" help="Name of optional configuration parameter that contains the language of the documents in the&#xA;input directory. If specified, this information will be added to the CAS.">
+            <sanitizer sanitize="False"/>
+        </param>
+        <param value="1" type="integer" optional="false" name="logFreq" label="logFreq" help="The frequency with which read documents are logged. Default: 1 (log every document).&#xA;&lt;p&gt;&#xA;Set to 0 or negative values to deactivate logging."/>
+        <param type="data_collection" name="PdfReader_InputFiles" label="PdfReader_InputFiles" format="pdf" collection_type="list"/>
+    </inputs>
+    <outputs>
+        <collection type="list" name="output" label="PdfReader_output">
+            <discover_datasets visible="false" pattern="__designation__" format="pdf" directory="out"/>
+        </collection>
+    </outputs>
+</tool>
+

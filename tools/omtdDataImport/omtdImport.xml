@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool version="1.0.0" name="omtdImporter" id="omtdImporter">
+    <description>OMTD Importer</description>
+    <command>
+    mkdir -p $output.job_working_directory/working/out/;	
+    bash $__tool_directory__/omtdImport.sh $omtdStoreCorpusID $omtdSubArchive $output.job_working_directory/working/out/
+    </command>
+    <inputs>
+        <param type="text" optional="false" name="omtdStoreCorpusID" label="omtdStoreCorpusID" help="Corpus ID">
+            <sanitizer sanitize="False"/>
+        </param>
+        <param type="text" optional="false" name="omtdSubArchive" label="omtdSubArchive" help="subarchive name">
+            <sanitizer sanitize="False"/>
+        </param>        
+    </inputs>
+    <outputs>
+        <collection type="list" name="output" label="importer_output">
+            <discover_datasets visible="false" pattern="__designation__" format="pdf" directory="out"/>
+        </collection>
+    </outputs>
+</tool>
+
