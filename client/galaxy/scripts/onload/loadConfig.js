@@ -14,7 +14,7 @@ export function getAppRoot(defaultRoot = "/") {
             console.warn("Unable to find index link in head", err);
         }
     }
-    return root;
+    return defaultRoot;
 }
 
 // finds <link> in head element and pulls root url fragment from there
