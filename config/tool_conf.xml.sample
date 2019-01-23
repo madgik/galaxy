@@ -4,6 +4,8 @@
     <tool file="omtdDataImport/omtdImport.xml" />
     <tool file="omtdTools/Reader/pdf2text.xml" />
     <tool file="omtdTools/NamedEntitityRecognizer/funding.xml" />
+    <tool file="omtdTools/WP_VARIABLES_HISTOGRAM/WP_VARIABLES_HISTOGRAM.xml" />
+    WP_VARIABLES_HISTOGRAM
   </section>
   <!--
   <section id="getext" name="Get Data">
