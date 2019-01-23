@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool version="1.0.0" name="WP_VARIABLES_HISTOGRAM" id="WP_VARIABLES_HISTOGRAM">
+    <description>WP VARIABLES HISTOGRAM</description>
+        <command interpreter="python">WP_VARIABLES_HISTOGRAM.py -c1 '$column1' -c2 '$column2' -nb '$nobuckets' -d '$dataset' -f '$filter' -o '$output' </command>
+    <inputs>
+        <param type="text" name="column1" label="Column 1" help=""/>
+        <param type="text" optional="True" name="column2" label="Column 2" help=""/>
+        <param type="text" name="nobuckets" label="Number of Buckets" help=""/>
+        <param type="text" name="dataset" label="Dataset" help=""/>
+        <param type="text" optional="True" name="filter" label="Filter" help=""/>
+    </inputs>
+    <outputs>
+        <data name="output" format="txt" />
+    </outputs>
+</tool>
