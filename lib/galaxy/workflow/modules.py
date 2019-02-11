@@ -144,7 +144,7 @@ class WorkflowModule(object):
         else:
             self.state.inputs = safe_loads(state) or {}
 
-    def get_errors(self):
+    def get_errors(self, **kwargs):
         """ This returns a step related error message as string or None """
         return None
 
@@ -314,13 +314,10 @@ class WorkflowModule(object):
 
     def _find_collections_to_match(self, progress, step, all_inputs):
         collections_to_match = matching.CollectionsToMatch()
+        dataset_collection_type_descriptions = self.trans.app.dataset_collections_service.collection_type_descriptions
 
         for input_dict in all_inputs:
             name = input_dict["name"]
-            multiple = input_dict["multiple"]
-            if multiple:
-                continue
-
             data = progress.replacement_for_input(step, input_dict)
             can_map_over = hasattr(data, "collection")  # and data.collection.allow_implicit_mapping
 
@@ -329,13 +326,23 @@ class WorkflowModule(object):
 
             is_data_param = input_dict["input_type"] == "dataset"
             if is_data_param:
-                collections_to_match.add(name, data)
+                multiple = input_dict["multiple"]
+                if multiple:
+                    # multiple="true" data input, acts like "list" collection_type.
+                    # just need to figure out subcollection_type_description
+                    history_query = HistoryQuery.from_collection_types(
+                        ['list'],
+                        dataset_collection_type_descriptions,
+                    )
+                    subcollection_type_description = history_query.can_map_over(data)
+                    if subcollection_type_description:
+                        collections_to_match.add(name, data, subcollection_type=subcollection_type_description)
+                else:
+                    collections_to_match.add(name, data)
                 continue
 
             is_data_collection_param = input_dict["input_type"] == "dataset_collection"
             if is_data_collection_param:
-                dataset_collection_type_descriptions = self.trans.app.dataset_collections_service.collection_type_descriptions
-
                 history_query = HistoryQuery.from_collection_types(
                     input_dict.get("collection_types", None),
                     dataset_collection_type_descriptions,
@@ -414,6 +421,16 @@ class SubWorkflowModule(WorkflowModule):
                 inputs.append(input)
         return inputs
 
+    def get_modules(self):
+        return [module_factory.from_workflow_step(self.trans, step) for step in self.subworkflow.steps]
+
+    def get_errors(self, **kwargs):
+        errors = (module.get_errors(include_tool_id=True) for module in self.get_modules())
+        errors = [e for e in errors if e]
+        if any(errors):
+            return errors
+        return None
+
     def get_all_outputs(self, data_only=False):
         outputs = []
         if hasattr(self.subworkflow, 'workflow_outputs'):
@@ -425,20 +442,25 @@ class SubWorkflowModule(WorkflowModule):
                                                                                   tooltip=False)
             for order_index in sorted(subworkflow_dict['steps']):
                 step = subworkflow_dict['steps'][order_index]
-                data_outputs = subworkflow_dict['steps'][order_index]['outputs']
+                data_outputs = step['outputs']
                 for workflow_output in step['workflow_outputs']:
                     label = workflow_output['label']
                     if not label:
                         label = "%s:%s" % (order_index, workflow_output['output_name'])
+                    workflow_output_uuid = workflow_output.get('uuid') or object()
                     for data_output in data_outputs:
-                        if data_output['name'] == workflow_output['output_name']:
+                        data_output_uuid = data_output.get('uuid') or object()
+                        if data_output['name'] == workflow_output['output_name'] or data_output_uuid == workflow_output_uuid:
                             data_output['label'] = label
                             data_output['name'] = label
                             # That's the right data_output
                             break
                     else:
-                        # This hopefully can't happen, but let's be clear
-                        raise Exception("Workflow output '%s' defined, but not listed among data outputs" % workflow_output['output_name'])
+                        # This can happen when importing workflows with missing tools.
+                        # We can't raise an exception here, as that would prevent loading
+                        # the workflow.
+                        log.error("Workflow output '%s' defined, but not listed among data outputs" % workflow_output['output_name'])
+                        continue
                     outputs.append(data_output)
         return outputs
 
@@ -841,8 +863,12 @@ class ToolModule(WorkflowModule):
 
     # ---- Configuration time -----------------------------------------------
 
-    def get_errors(self):
-        return None if self.tool else "Tool is not installed."
+    def get_errors(self, include_tool_id=False, **kwargs):
+        if not self.tool:
+            if include_tool_id:
+                return "%s is not installed" % self.tool_id
+            else:
+                return "Tool is not installed"
 
     def get_inputs(self):
         return self.tool.inputs if self.tool else {}
@@ -982,7 +1008,8 @@ class ToolModule(WorkflowModule):
                     return ConnectedValue()
             visit_input_values(self.tool.inputs, self.state.inputs, callback)
         else:
-            raise ToolMissingException("Tool %s missing. Cannot add dummy datasets." % self.tool_id)
+            raise ToolMissingException("Tool %s missing. Cannot add dummy datasets." % self.tool_id,
+                                       tool_id=self.tool_id)
 
     def get_post_job_actions(self, incoming):
         return ActionBox.handle_incoming(incoming)
@@ -1082,7 +1109,8 @@ class ToolModule(WorkflowModule):
                     state.inputs[RUNTIME_STEP_META_STATE_KEY] = step_metadata_runtime_state
             return state, step_errors
         else:
-            raise ToolMissingException("Tool %s missing. Cannot compute runtime state." % self.tool_id)
+            raise ToolMissingException("Tool %s missing. Cannot compute runtime state." % self.tool_id,
+                                       tool_id=self.tool_id)
 
     def decode_runtime_state(self, runtime_state):
         """ Take runtime state from persisted invocation and convert it
@@ -1094,7 +1122,8 @@ class ToolModule(WorkflowModule):
                 self.__restore_step_meta_runtime_state(loads(runtime_state[RUNTIME_STEP_META_STATE_KEY]))
             return state
         else:
-            raise ToolMissingException("Tool %s missing. Cannot recover runtime state." % self.tool_id)
+            raise ToolMissingException("Tool %s missing. Cannot recover runtime state." % self.tool_id,
+                                       tool_id=self.tool_id)
 
     def execute(self, trans, progress, invocation_step, use_cached_job=False):
         invocation = invocation_step.workflow_invocation
@@ -1136,8 +1165,9 @@ class ToolModule(WorkflowModule):
 
                 replacement = NO_REPLACEMENT
                 if iteration_elements and prefixed_name in iteration_elements:
-                    if isinstance(input, DataToolParameter):
-                        # Pull out dataset instance from element.
+                    if isinstance(input, DataToolParameter) and hasattr(iteration_elements[prefixed_name], 'dataset_instance'):
+                        # Pull out dataset instance (=HDA) from element and set a temporary element_identifier attribute
+                        # See https://github.com/galaxyproject/galaxy/pull/1693 for context.
                         replacement = iteration_elements[prefixed_name].dataset_instance
                         if hasattr(iteration_elements[prefixed_name], u'element_identifier') and iteration_elements[prefixed_name].element_identifier:
                             replacement.element_identifier = iteration_elements[prefixed_name].element_identifier
