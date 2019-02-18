@@ -23,7 +23,6 @@ def main():
 	if not opts or len(opts) < 4:
 		print("Usage:")
 		print(" -in Input")
-		print(" -cl Classname")
 		print(" -a Alpha")
 		print(" -o Output")
 		return 0
@@ -32,7 +31,7 @@ def main():
 		inputFile = open(opts.get("-in"), "r")
 		inputData = inputFile.read()
 		inputJson = json.loads(inputData)
-		dbIdentifier = inputJson['DBIdentifier']
+		dbIdentifier = inputJson['dbIdentifier']
 		numberOfSplits = inputJson['numberOfSplits']
 	except ValueError:  # includes simplejson.decoder.JSONDecodeError
 		print("Input file should be:")
@@ -47,10 +46,6 @@ def main():
 		url= endpoint + '/mining/query/NAIVE_BAYES_TRAINING'
 		data = [
 			  {
-				"name": "classname",
-				"value": opts.get("-cl")
-			  },
-			  {
 				"name": "alpha",
 				"value": opts.get("-a")
 			  },
@@ -59,15 +54,16 @@ def main():
 				"value": str(i)
 			  },
 			  {
-				"name": "DBIdentifier",
+				"name": "dbIdentifier",
 				"value": dbIdentifier
 			  }
 			]
 		response = json.loads(requests.post(url,data=json.dumps(data),headers=headers).text)
 		responses.append(response['results'])
 	
-	data = {'numberOfSplits' : numberOfSplits}
-	data['model'] = responses
+	data = {'dbIdentifier' : dbIdentifier}
+	data['numberOfSplits'] = numberOfSplits
+	data['models'] = responses
 	
 	outputFile = open(opts.get("-o"), "w")
 	outputFile.write(json.dumps(data))
