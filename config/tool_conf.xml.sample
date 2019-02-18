@@ -2,5 +2,6 @@
 <toolbox monitor="true">
   <section id="testTools" name="Test Tools">
     <tool file="ExaremeTools/CROSS_VALIDATION_K_FOLD/CROSS_VALIDATION_K_FOLD.xml" />
+    <tool file="ExaremeTools/NAIVE_BAYES_TRAINING/NAIVE_BAYES_TRAINING.xml" />
   </section>
 </toolbox>

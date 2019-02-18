@@ -49,9 +49,13 @@ def main():
 			"value": opts.get("-k")
 		  }
 		]
-	r = requests.post(url,data=json.dumps(data),headers=headers)
+	response = requests.post(url,data=json.dumps(data),headers=headers)
+	
+	data = json.loads(response.text)
+	data['numberOfSplits'] = opts.get("-k")
+		
 	outputFile = open(opts.get("-o"), "w")
-	outputFile.write(r.text)
+	outputFile.write(json.dumps(data))
 	outputFile.close
 	
 if __name__ == "__main__":

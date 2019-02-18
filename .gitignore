@@ -154,3 +154,8 @@ client/webpack-stats.json
 *~
 .idea
 .vscode
+
+
+#Python Tools Project
+tools/ExaremeTools/.project
+tools/ExaremeTools/.pydevproject
