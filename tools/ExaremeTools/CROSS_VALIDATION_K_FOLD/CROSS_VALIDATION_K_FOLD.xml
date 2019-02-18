@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool version="1.0.0" name="CROSS VALIDATION K FOLD" id="CROSS_VALIDATION_K_FOLD">
+    <description>CROSS VALIDATION K FOLD</description>
+        <command interpreter="python">CROSS_VALIDATION_K_FOLD.py -d '$datasets' -col '$columns' -cl '$classname' -k '$kfold' -o '$output' </command>
+    <inputs>
+        <param type="text" name="datasets" label="Datasets" help=""/>
+        <param type="text" name="columns" label="Columns" help=""/>
+        <param type="text" name="classname" label="Classname" help=""/>
+        <param type="text" name="kfold" label="K Fold" help=""/>
+    </inputs>
+    <outputs>
+        <data name="output" format="json" />
+    </outputs>
+</tool>
