@@ -20,7 +20,7 @@ def main():
 
 	opts = getopts(args)
 		
-	if not opts or len(opts) < 4:
+	if not opts or len(opts) < 3:
 		print("Usage:")
 		print(" -in Input")
 		print(" -a Alpha")
@@ -58,6 +58,7 @@ def main():
 				"value": dbIdentifier
 			  }
 			]
+		print(response)
 		response = json.loads(requests.post(url,data=json.dumps(data),headers=headers).text)
 		responses.append(response['results'])
 	
