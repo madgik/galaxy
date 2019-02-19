@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <toolbox monitor="true">
   <section id="exaTools" name="Exareme Tools">
-    <tool file="exaremeTools/CROSS_VALIDATION_K_FOLD/CROSS_VALIDATION_K_FOLD.xml" />HEATMAP_HIGHCHART
+    <tool file="exaremeTools/CROSS_VALIDATION_K_FOLD/CROSS_VALIDATION_K_FOLD.xml" />
     <tool file="exaremeTools/NAIVE_BAYES_TRAINING/NAIVE_BAYES_TRAINING.xml" />
     <tool file="exaremeTools/NAIVE_BAYES_TESTING/NAIVE_BAYES_TESTING.xml" />
     <tool file="exaremeTools/HEATMAP_HIGHCHART/HEATMAP_HIGHCHART.xml" />
+    <tool file="exaremeTools/CONFUSION_MATRIX_STATISTICS/CONFUSION_MATRIX_STATISTICS.xml" />
   </section>
 </toolbox>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool version="1.0.0" name="CONFUSION MATRIX STATISTICS" id="CONFUSION_MATRIX_STATISTICS">
+    <description>CONFUSION MATRIX STATISTICS</description>
+        <command interpreter="python">CONFUSION_MATRIX_STATISTICS.py -in '$input' -o '$output' </command>
+    <inputs>
+		<param name="input" format="json" type="data" label="" help="" />
+    </inputs>
+    <outputs>
+        <data name="output" format="json" />
+    </outputs>
+</tool>
