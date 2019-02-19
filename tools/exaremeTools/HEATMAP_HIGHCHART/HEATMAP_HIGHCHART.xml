@@ -6,6 +6,6 @@
 		<param name="input" format="json" type="data" label="" />
     </inputs>
     <outputs>
-        <data name="output" format="js" />
+        <data name="output" format="json" />
     </outputs>
 </tool>
