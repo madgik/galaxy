@@ -25,16 +25,13 @@ def Rfunction_confusionmatrix(inputjson):
     #data:  a factor of predicted classes
     #reference: a factor of classes to be used as the true results
 
-    jsondata = json.loads(inputjson)
-    #print 'jsondata', jsondata
-
     data = []
     reference = []
     classnames = []
     resultdict = {}
 
     init = True
-    for x in jsondata:
+    for x in inputjson:
         # print 'x',x
         if init is True:
             variablenames =[]
@@ -113,7 +110,7 @@ def main():
 
 	opts = getopts(args)
 		
-	if not opts or len(opts) < 5:
+	if not opts or len(opts) < 2:
 		print("Usage:")
 		print(" -in Input")
 		print(" -o Output")
