@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool version="1.0.0" name="HEATMAP HIGHCHART" id="HEATMAP_HIGHCHART">
+    <description>HEATMAP HIGHCHART</description>
+        <command interpreter="python">HEATMAP_HIGHCHART.py -in '$input' -o '$output' </command>
+    <inputs>
+		<param name="input" format="json" type="data" label="" />
+    </inputs>
+    <outputs>
+        <data name="output" format="js" />
+    </outputs>
+</tool>
