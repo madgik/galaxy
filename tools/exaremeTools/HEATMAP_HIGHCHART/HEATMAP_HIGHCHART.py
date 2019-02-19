@@ -1,8 +1,5 @@
-import requests
 import json
 import sys
-
-endpoint='http://88.197.53.100:9090'
 
 
 def getopts(argv):
@@ -15,45 +12,6 @@ def getopts(argv):
             argv = argv[1:]
     return opts
 	
-def main():
-	args = sys.argv[1:]
-
-	opts = getopts(args)
-		
-	if not opts or len(opts) < 5:
-		print("Usage:")
-		print(" -in Input")
-		print(" -t Title")
-		print(" -xt xTitle")
-		print(" -yt yTitle")
-		print(" -o Output")
-		return 0
-		
-	try:
-		inputFile = open(opts.get("-in"), "r")
-		inputData = inputFile.read()
-		inputJson = json.loads(inputData)
-		title = opts.get("-x")
-		xtitle = opts.get("-xt")
-		ytitle = opts.get("-yt")
-		results = inputJson['results']
-	except ValueError:
-		print("Input file should be:")
-		print("{")
-		print('  "results" : [ ... ]')
-		print("}")
-	
-	highcharts = []
-	for result in results:
-		highcharts.append(heatmap(result,title,xtitle,ytitle))
-	
-	outputJson = {"highcharts" : highcharts}
-	
-	outputFile = open(opts.get("-o"), "w")
-	outputFile.write(json.dumps(outputJson))
-	outputFile.close
-	
-
 def heatmap(inputJson, title, xtitle, ytitle):
 
     #https://www.highcharts.com/demo/heatmap
@@ -93,6 +51,44 @@ def heatmap(inputJson, title, xtitle, ytitle):
     myresult += str(mydata)
     myresult += ", dataLabels: { enabled: true,color: '#000000'}}]"
     return myresult
+
+def main():
+	args = sys.argv[1:]
+
+	opts = getopts(args)
+		
+	if not opts or len(opts) < 5:
+		print("Usage:")
+		print(" -in Input")
+		print(" -t Title")
+		print(" -xt xTitle")
+		print(" -yt yTitle")
+		print(" -o Output")
+		return 0
+		
+	try:
+		inputFile = open(opts.get("-in"), "r")
+		inputData = inputFile.read()
+		inputJson = json.loads(inputData)
+		title = opts.get("-x")
+		xtitle = opts.get("-xt")
+		ytitle = opts.get("-yt")
+		results = inputJson['results']
+	except ValueError:
+		print("Input file should be:")
+		print("{")
+		print('  "results" : [ ... ]')
+		print("}")
+	
+	highcharts = []
+	for result in results:
+		highcharts.append(heatmap(result,title,xtitle,ytitle))
+	
+	outputJson = {"highcharts" : highcharts}
+	
+	outputFile = open(opts.get("-o"), "w")
+	outputFile.write(json.dumps(outputJson))
+	outputFile.close
 
 if __name__ == "__main__":
     main()
