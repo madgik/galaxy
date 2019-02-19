@@ -62,7 +62,6 @@ def main():
 		responses.append(response['results'])
 	
 	data = {'dbIdentifier' : dbIdentifier}
-	data['numberOfSplits'] = numberOfSplits
 	data['models'] = responses
 	
 	outputFile = open(opts.get("-o"), "w")

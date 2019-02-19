@@ -31,17 +31,16 @@ def main():
 		inputData = inputFile.read()
 		inputJson = json.loads(inputData)
 		dbIdentifier = inputJson['dbIdentifier']
-		numberOfSplits = inputJson['numberOfSplits']
 		models = inputJson['models']
 	except ValueError:  # includes simplejson.decoder.JSONDecodeError
 		print("Input file should be:")
 		print("{")
+		print('  "models" : [ ... ],')
 		print('  "dbIdentifier" : "randomIdentifier"')
-		print('  "numberOfSplits" : "5"')
 		print("}")
 		
 	responses = []
-	for i in xrange(int(numberOfSplits)):
+	for i in xrange(len(models)):
 		headers = {'Content-type': 'application/json', "Accept": "text/plain"}
 		url= endpoint + '/mining/query/NAIVE_BAYES_TESTING'
 		data = [
@@ -61,8 +60,7 @@ def main():
 		response = json.loads(requests.post(url,data=json.dumps(data),headers=headers).text)
 		responses.append(response)
 	
-	data = {"numberOfSplits" : numberOfSplits}
-	data['results'] = responses
+	data = {"results" : responses}
 	
 	outputFile = open(opts.get("-o"), "w")
 	outputFile.write(json.dumps(data))

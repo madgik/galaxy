@@ -3,7 +3,7 @@
     <description>NAIVE BAYES TESTING</description>
         <command interpreter="python">NAIVE_BAYES_TESTING.py -in '$input' -o '$output' </command>
     <inputs>
-		<param format="json" name="input" type="data" label="Input from K Fold"/>
+		<param name="input" format="json" type="data" label=""/>
     </inputs>
     <outputs>
         <data name="output" format="json" />
