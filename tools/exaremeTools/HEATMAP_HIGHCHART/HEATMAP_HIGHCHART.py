@@ -20,9 +20,12 @@ def main():
 
 	opts = getopts(args)
 		
-	if not opts or len(opts) < 2:
+	if not opts or len(opts) < 5:
 		print("Usage:")
 		print(" -in Input")
+		print(" -t Title")
+		print(" -xt xTitle")
+		print(" -yt yTitle")
 		print(" -o Output")
 		return 0
 		
@@ -30,9 +33,9 @@ def main():
 		inputFile = open(opts.get("-in"), "r")
 		inputData = inputFile.read()
 		inputJson = json.loads(inputData)
-		title = 'Confusion Matrix'
-		xtitle = 'Actual class'
-		ytitle = 'Predicted class'
+		title = opts.get("-x")
+		xtitle = opts.get("-xt")
+		ytitle = opts.get("-yt")
 		results = inputJson['results']
 	except ValueError:
 		print("Input file should be:")
