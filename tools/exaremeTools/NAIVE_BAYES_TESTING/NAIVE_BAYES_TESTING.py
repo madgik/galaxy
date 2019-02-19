@@ -46,7 +46,7 @@ def main():
 		url= endpoint + '/mining/query/NAIVE_BAYES_TESTING'
 		data = [
 			  {
-				"name": "iterationnumber",
+				"name": "iterationNumber",
 				"value": str(i)
 			  },
 			  {
@@ -56,10 +56,6 @@ def main():
 			  {
 				"name": "model",
 				"value": json.dumps(models[i])
-			  },
-			  {
-				"name": "classname",
-				"value": inputJson['classname']
 			  }
 			]
 		response = json.loads(requests.post(url,data=json.dumps(data),headers=headers).text)

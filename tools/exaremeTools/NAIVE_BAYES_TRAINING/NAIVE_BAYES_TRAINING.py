@@ -50,7 +50,7 @@ def main():
 				"value": opts.get("-a")
 			  },
 			  {
-				"name": "iterationnumber",
+				"name": "iterationNumber",
 				"value": str(i)
 			  },
 			  {
@@ -58,7 +58,6 @@ def main():
 				"value": dbIdentifier
 			  }
 			]
-		print(response)
 		response = json.loads(requests.post(url,data=json.dumps(data),headers=headers).text)
 		responses.append(response['results'])
 	

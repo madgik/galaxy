@@ -3,8 +3,8 @@
     <description>NAIVE BAYES TRAINING</description>
         <command interpreter="python">NAIVE_BAYES_TRAINING.py -in '$input' -a '$alpha' -o '$output' </command>
     <inputs>
-		<param format="json" name="input" type="data" label="Input from K Fold"/>
-        <param type="text" name="alpha" label="Alpha" help=""/>
+		<param format="json" name="input" type="data" label="Input from K Fold" />
+        <param type="text" name="alpha" label="Alpha" help="" />
     </inputs>
     <outputs>
         <data name="output" format="json" />
