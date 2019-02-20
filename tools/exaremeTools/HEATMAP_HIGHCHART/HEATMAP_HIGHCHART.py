@@ -70,7 +70,7 @@ def main():
 		inputFile = open(opts.get("-in"), "r")
 		inputData = inputFile.read()
 		inputJson = json.loads(inputData)
-		title = opts.get("-x")
+		title = opts.get("-t")
 		xtitle = opts.get("-xt")
 		ytitle = opts.get("-yt")
 		results = inputJson['results']
