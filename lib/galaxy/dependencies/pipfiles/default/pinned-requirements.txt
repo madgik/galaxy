@@ -103,7 +103,7 @@ pastescript==3.0.0
 pbr==5.1.1
 prettytable==0.7.2
 psutil==5.4.8
-pulsar-galaxy-lib==0.8.3
+pulsar-galaxy-lib>=0.8.3
 pyasn1==0.4.4
 pycparser==2.19
 pycryptodome==3.7.2
@@ -136,6 +136,7 @@ requests==2.20.1
 requestsexceptions==1.4.0
 rfc3986==1.2.0
 routes==2.4.1
+rpy2==2.8.0
 s3transfer==0.1.13
 simplejson==3.16.0
 six==1.11.0

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool version="1.0.0" name="NAIVE BAYES TESTING" id="NAIVE_BAYES_TESTING">
+    <description>NAIVE BAYES TESTING</description>
+        <command interpreter="python">NAIVE_BAYES_TESTING.py -in '$input' -o '$output' </command>
+    <inputs>
+		<param name="input" format="json" type="data" label=""/>
+    </inputs>
+    <outputs>
+        <data name="output" format="json" />
+    </outputs>
+</tool>

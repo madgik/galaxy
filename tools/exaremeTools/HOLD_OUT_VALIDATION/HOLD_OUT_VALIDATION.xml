@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool version="1.0.0" name="HOLD OUT VALIDATION" id="HOLD_OUT_VALIDATION">
+    <description>HOLD OUT VALIDATION</description>
+        <command interpreter="python">HOLD_OUT_VALIDATION.py -d '$datasets' -col '$columns' -cl '$classname' -tes '$test_size' -trs '$train_size' -rans '$random_state' -sh '$shuffle' -o '$output' </command>
+    <inputs>
+        <param type="text" name="datasets" label="Datasets" help="" />
+        <param type="text" name="columns" label="Columns" help="" />
+        <param type="text" name="classname" label="Classname" help="" />
+        <param type="text" name="test_size" label="Test Size" help="Default value 0.25" optional="true" />
+        <param type="text" name="train_size" label="Train Size" help="" optional="true" />
+        <param type="text" name="random_state" label="Random State" help="" optional="true" />
+        <param type="text" name="shuffle" label="Shuffle" help="" optional="true" />
+    </inputs>
+    <outputs>
+        <data name="output" format="json" />
+    </outputs>
+</tool>

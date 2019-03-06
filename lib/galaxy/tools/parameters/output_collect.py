@@ -481,7 +481,14 @@ class JobContext(object):
 
         if primary_data is None:
             if not library_folder:
-                primary_data = _new_hda(app, sa_session, ext, designation, visible, dbkey, self.permissions)
+				primary_data = app.model.HistoryDatasetAssociation(extension=ext,
+																   designation=designation,
+																   visible=visible,
+																   dbkey=dbkey,
+																   create_dataset=True,
+																   flush=False,
+																   sa_session=sa_session)
+				sa_session.add(primary_data)
             else:
                 primary_data = _new_ldda(self.work_context, name, ext, visible, dbkey, library_folder)
         else:

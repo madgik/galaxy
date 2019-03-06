@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <toolbox monitor="true">
+  <section id="testTools" name="Test Tools">
+    <tool file="omtdDataImport/omtdImport.xml" />
+    <tool file="omtdTools/Reader/pdf2text.xml" />
+    <tool file="omtdTools/NamedEntitityRecognizer/funding.xml" />
+  </section>
+  <!--
   <section id="getext" name="Get Data">
     <tool file="data_source/upload.xml" />
     <tool file="data_source/ucsc_tablebrowser.xml" />
@@ -138,5 +144,5 @@
   <label id="deprecated" text="DEPRECATED" />
   <section id="gatk" name="NGS: GATK Tools (beta)">
   </section>
-
+  -->
 </toolbox>
