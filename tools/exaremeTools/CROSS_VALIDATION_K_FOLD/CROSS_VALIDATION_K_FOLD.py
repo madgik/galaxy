@@ -22,7 +22,7 @@ def main():
 		
 	if not opts or len(opts) < 5:
 		print("Usage:")
-		print(" -d Datasets")
+		print(" -d Dataset")
 		print(" -col Columns")
 		print(" -cl Classname")
 		print(" -k KFold")
@@ -33,7 +33,7 @@ def main():
 	url= endpoint + '/mining/query/CROSS_VALIDATION_K_FOLD'
 	data = [
 		  {
-			"name": "datasets",
+			"name": "dataset",
 			"value": opts.get("-d")
 		  },
 		  {

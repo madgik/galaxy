@@ -22,7 +22,7 @@ def main():
 		
 	if not opts or len(opts) < 4:
 		print("Usage:")
-		print(" -d Datasets")
+		print(" -d Dataset")
 		print(" -col Columns")
 		print(" -cl Classname")
 		print(" -tes Test Size (Optional)")
@@ -36,7 +36,7 @@ def main():
 	url= endpoint + '/mining/query/HOLD_OUT_VALIDATION'
 	data = [
 		  {
-			"name": "datasets",
+			"name": "dataset",
 			"value": opts.get("-d")
 		  },
 		  {
