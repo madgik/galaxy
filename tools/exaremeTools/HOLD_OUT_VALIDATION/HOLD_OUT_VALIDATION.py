@@ -2,7 +2,7 @@ import requests
 import json
 import sys
 
-endpoint='http://88.197.53.100:9090'
+endpoint='http://88.197.53.36:9090'
 
 
 def getopts(argv):
