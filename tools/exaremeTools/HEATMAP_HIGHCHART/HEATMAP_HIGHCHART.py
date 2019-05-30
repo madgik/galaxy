@@ -120,10 +120,8 @@ def main():
                   'type': 'application/vnd.highcharts+json'}]}
         results.append(result)
 
-    outputJson = {'results': results}
-
     outputFile = open(opts.get('-o'), 'w')
-    outputFile.write(json.dumps(outputJson))
+    outputFile.write(json.dumps(results))
     outputFile.close
 
 
