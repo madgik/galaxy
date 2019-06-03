@@ -23,7 +23,7 @@ def main():
 	if not opts or len(opts) < 5:
 		print("Usage:")
 		print(" -d Dataset")
-		print(" -col Columns")
+		print(" -x X")
 		print(" -cl Classname")
 		print(" -k KFold")
 		print(" -o Output")
@@ -37,8 +37,8 @@ def main():
 			"value": opts.get("-d")
 		  },
 		  {
-			"name": "columns",
-			"value": opts.get("-col")
+			"name": "x",
+			"value": opts.get("-x")
 		  },
 		  {
 			"name": "classname",
