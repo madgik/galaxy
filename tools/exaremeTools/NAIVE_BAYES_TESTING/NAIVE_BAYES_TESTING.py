@@ -20,9 +20,11 @@ def main():
 
 	opts = getopts(args)
 		
-	if not opts or len(opts) < 2:
+	if not opts or len(opts) < 4:
 		print("Usage:")
 		print(" -in Input")
+		print(" -x X")
+		print(" -y Y")
 		print(" -o Output")
 		return 0
 
@@ -47,6 +49,14 @@ def main():
 			  {
 				"name": "iterationNumber",
 				"value": str(i)
+			  },
+			  {
+				"name": "x",
+				"value": opts.get("-x")
+			  },
+			  {
+				"name": "y",
+				"value": opts.get("-y")
 			  },
 			  {
 				"name": "dbIdentifier",

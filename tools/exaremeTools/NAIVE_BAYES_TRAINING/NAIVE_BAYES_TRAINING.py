@@ -20,9 +20,11 @@ def main():
 
 	opts = getopts(args)
 		
-	if not opts or len(opts) < 3:
+	if not opts or len(opts) < 5:
 		print("Usage:")
 		print(" -in Input")
+		print(" -x X")
+		print(" -y Y")
 		print(" -a Alpha")
 		print(" -o Output")
 		return 0
@@ -48,6 +50,14 @@ def main():
 			  {
 				"name": "alpha",
 				"value": opts.get("-a")
+			  },
+			  {
+				"name": "x",
+				"value": opts.get("-x")
+			  },
+			  {
+				"name": "y",
+				"value": opts.get("-y")
 			  },
 			  {
 				"name": "iterationNumber",
