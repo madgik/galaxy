@@ -24,7 +24,7 @@ def main():
 		print("Usage:")
 		print(" -d Dataset")
 		print(" -x X")
-		print(" -cl Classname")
+		print(" -y Y")
 		print(" -k KFold")
 		print(" -o Output")
 		return 0
@@ -41,8 +41,8 @@ def main():
 			"value": opts.get("-x")
 		  },
 		  {
-			"name": "classname",
-			"value": opts.get("-cl")
+			"name": "y",
+			"value": opts.get("-y")
 		  },
 		  {
 			"name": "kfold",
