@@ -25,8 +25,8 @@ def main():
 	if not opts or len(opts) < 4:
 		print("Usage:")
 		print(" -d Dataset")
-		print(" -col Columns")
-		print(" -cl Classname")
+		print(" -x Columns")
+		print(" -y Classname")
 		print(" -tes Test Size (Optional)")
 		print(" -trs Train Size (Optional)")
 		print(" -rans Random State (Optional)")
@@ -42,11 +42,11 @@ def main():
 			"value": opts.get("-d")
 		  },
 		  {
-			"name": "columns",
+			"name": "x",
 			"value": opts.get("-col")
 		  },
 		  {
-			"name": "classname",
+			"name": "y",
 			"value": opts.get("-cl")
 		  },
 		  {
