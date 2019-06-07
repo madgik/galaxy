@@ -1,0 +1,22 @@
+- hosts: galaxy
+  become: yes
+  gather_facts: no
+  tasks:
+      - name: Install python
+        raw: "apt-get update -y && apt-get install {{ python_package }} -y"
+        when: install_python
+      - name: Install docker
+        raw: "apt-get update -y && apt-get install {{ docker_package }} -y"
+        when: install_docker
+
+- hosts: galaxy
+  become: yes
+  roles:
+      - role: executor
+      - role: nfs
+
+- hosts: galaxy
+  become: yes
+  roles:
+    - { role: apache2, when: apache2_as_reverse_proxy }
+

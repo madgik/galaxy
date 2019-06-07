@@ -1,0 +1,53 @@
+# True if python and docker is needed to be installed first.
+install_python: True
+install_docker: True
+
+# Distro of python which has to be installed.
+python_package: python
+ansible_python_interpreter: /usr/bin/python
+docker_package: docker
+
+# Private Docker registry credentials
+# registry_url: https://registry.example.com
+# registry_username: omtduser
+# registry_password: omtdpass
+
+#####
+# Executor setup
+executor_port: 8080
+# executor_directory: /srv/executor
+# executor_version: dev
+# executor_db_name: executor
+# executor_db_user: executor
+# executor_db_password: executor
+# docker_pkg: docker
+
+#####
+# Editor setup
+editor_port: 8081
+editor_remote_user_secret: editoromtdsecret
+# editor_directory: /srv/editor
+# editor_version: editor
+# editor_db_name: editor
+# editor_db_user: editor
+# editor_db_password: editor
+
+#####
+# Apache2 setup - if False, no reverse proxy will be installed
+# If you already have an apache2 setup on the executor
+# machine, you may prefare to to this manually
+apache2_as_reverse_proxy: True
+
+# Set the fqdn of the host, if any. Ansible will try to figure it out otherwise
+# host_fqdn: example.com
+
+#####
+# NFS
+# data_share: /srv/executor/database
+
+
+# tools_share: /srv/executor/tools
+
+# Exareme endpoint variables
+exareme_ip: 88.197.53.36
+exareme_port: 9090
