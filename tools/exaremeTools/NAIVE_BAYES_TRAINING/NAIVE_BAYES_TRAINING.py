@@ -2,7 +2,9 @@ import requests
 import json
 import sys
 
-endpoint='http://88.197.53.36:9090'
+execfile('/srv/executor/tools/exaremeTools/exareme_environment.py')
+
+endpoint = 'http://' + EXAREME_IP + ':' + EXAREME_PORT
 
 
 def getopts(argv):
