@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <tool version="1.0.0" name="HOLD OUT VALIDATION" id="HOLD_OUT_VALIDATION">
     <description>HOLD OUT VALIDATION</description>
-        <command interpreter="python">HOLD_OUT_VALIDATION.py -d '$datasets' -x '$x' -y '$y' -tes '$test_size' -trs '$train_size' -rans '$random_state' -sh '$shuffle' -o '$output' </command>
+        <command interpreter="python">HOLD_OUT_VALIDATION.py -d '$dataset' -x '$x' -y '$y' -tes '$test_size' -trs '$train_size' -rans '$random_state' -sh '$shuffle' -o '$output' </command>
     <inputs>
         <param type="text" name="dataset" label="Dataset" help=""/>
         <param type="text" name="x" label="X" help="Column"/>
