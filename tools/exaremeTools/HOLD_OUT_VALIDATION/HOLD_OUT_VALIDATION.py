@@ -43,11 +43,11 @@ def main():
 		  },
 		  {
 			"name": "x",
-			"value": opts.get("-col")
+			"value": opts.get("-x")
 		  },
 		  {
 			"name": "y",
-			"value": opts.get("-cl")
+			"value": opts.get("-y")
 		  },
 		  {
 			"name": "test_size",
