@@ -55,7 +55,11 @@ def main():
 	
 	data = json.loads(response.text)
 	if "error" in data:
+		outputFile = open(opts.get("-o"), "w")
+		outputFile.write(json.dumps(data))
+		outputFile.close
 		raise ValueError(json.dumps(data))
+	
 	data['numberOfSplits'] = opts.get("-k")
 	
 	outputFile = open(opts.get("-o"), "w")
