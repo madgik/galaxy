@@ -70,6 +70,8 @@ def main():
 			  }
 			]
 		response = json.loads(requests.post(url,data=json.dumps(data),headers=headers).text)
+		if "error" in response:
+			raise ValueError(response)
 		responses.append(response)
 	
 	data = {"results" : responses}

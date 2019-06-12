@@ -54,8 +54,10 @@ def main():
 	response = requests.post(url,data=json.dumps(data),headers=headers)
 	
 	data = json.loads(response.text)
+	if "error" in data:
+		raise ValueError(data)
 	data['numberOfSplits'] = opts.get("-k")
-		
+	
 	outputFile = open(opts.get("-o"), "w")
 	outputFile.write(json.dumps(data))
 	outputFile.close
