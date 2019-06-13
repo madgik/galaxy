@@ -22,9 +22,10 @@ def main():
 
 	opts = getopts(args)
 		
-	if not opts or len(opts) < 4:
+	if not opts or len(opts) < 5:
 		print("Usage:")
 		print(" -in Input")
+		print(" -d Dataset")
 		print(" -x X")
 		print(" -y Y")
 		print(" -o Output")
@@ -51,6 +52,10 @@ def main():
 			  {
 				"name": "iterationNumber",
 				"value": str(i)
+			  },
+			  {
+				"name": "dataset",
+				"value": opts.get("-d")
 			  },
 			  {
 				"name": "x",
