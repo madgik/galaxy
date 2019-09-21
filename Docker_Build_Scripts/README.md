@@ -9,16 +9,16 @@ The following instructions are used to create a docker image of galaxy with a re
 ## Building the docker image:
 
 1. Edit the Dockerfile :
-	- On line 32 change the username and password (currently admin admin).
+	- On line 32 change the ```username``` and ```password```.
 
 2. Edit exareme_env.py :
-	- Exareme Ip and Port should be changed and point to the exareme instance.
+	- ```Exareme Ip``` and ```Port``` should be changed and point to the exareme instance.
 
 3. (Optional) Edit galaxy.conf :
 	- On line 15 and 37 change ```nativeGalaxy``` to the desired location.
 
 4. Create the docker image by running the command :
-	```docker build -t hbpmip/galaxy .```
+	```docker build -t hbpmip/galaxy```
 
 ## Deploy:
 
