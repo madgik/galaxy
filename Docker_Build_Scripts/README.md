@@ -89,6 +89,8 @@ After it is installed go to the folder ```/etc/apache2/sites-enabled/``` and mod
 	ProxyPassReverse / http://http://{Front End Installation Ip}:8090/
 </VirtualHost>
 ```
+```{Galaxy Installation Ip}``` and ```{Front End Installation Ip}``` should be modified accordingly.
+
 
 Then you can restart apache: ```sudo systemctl restart apache2``` 
 
