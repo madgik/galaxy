@@ -55,6 +55,10 @@ def main():
 				"value": str(i)
 			  },
 			  {
+				"name": "pathology",
+				"value": opts.get("-p")
+			  },
+			  {
 				"name": "dataset",
 				"value": opts.get("-d")
 			  },
