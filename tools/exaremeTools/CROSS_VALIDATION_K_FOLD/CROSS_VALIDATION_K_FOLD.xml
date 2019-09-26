@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <tool version="1.0.0" name="CROSS VALIDATION K FOLD" id="CROSS_VALIDATION_K_FOLD">
     <description>CROSS VALIDATION K FOLD</description>
-        <command interpreter="python">CROSS_VALIDATION_K_FOLD.py -d '$dataset' -x '$x' -y '$y' -k '$kfold' -o '$output' </command>
+        <command interpreter="python">CROSS_VALIDATION_K_FOLD.py -p '$pathology' -d '$dataset' -x '$x' -y '$y' -k '$kfold' -o '$output' </command>
     <inputs>
+        <param type="text" name="pathology" label="Pathology" help=""/>
         <param type="text" name="dataset" label="Dataset" help=""/>
         <param type="text" name="x" label="X" help="Column"/>
         <param type="text" name="y" label="Y" help="classname"/>

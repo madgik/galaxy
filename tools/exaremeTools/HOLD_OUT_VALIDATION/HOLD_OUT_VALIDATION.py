@@ -22,8 +22,9 @@ def main():
 
 	opts = getopts(args)
 		
-	if not opts or len(opts) < 4:
+	if not opts or len(opts) < 5:
 		print("Usage:")
+		print(" -p Pathology")
 		print(" -d Dataset")
 		print(" -x Columns")
 		print(" -y Classname")
@@ -38,6 +39,10 @@ def main():
 	url= endpoint + '/mining/query/HOLD_OUT_VALIDATION'
 	data = [
 		  {
+			"name": "pathology",
+			"value": opts.get("-p")
+		  },
+          {
 			"name": "dataset",
 			"value": opts.get("-d")
 		  },

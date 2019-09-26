@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <tool version="1.0.0" name="NAIVE BAYES TRAINING" id="NAIVE_BAYES_TRAINING">
     <description>NAIVE BAYES TRAINING</description>
-        <command interpreter="python">NAIVE_BAYES_TRAINING.py -in '$input' -d '$dataset' -x '$x' -y '$y' -a '$alpha' -o '$output' </command>
+        <command interpreter="python">NAIVE_BAYES_TRAINING.py -in '$input' -p '$pathology' -d '$dataset' -x '$x' -y '$y' -a '$alpha' -o '$output' </command>
     <inputs>
 		<param name="input" format="json" type="data" label="" />
+        <param type="text" name="pathology" label="Pathology" help=""/>
         <param type="text" name="dataset" label="Dataset" help=""/>
         <param type="text" name="x" label="X" help="Column"/>
         <param type="text" name="y" label="Y" help="classname"/>

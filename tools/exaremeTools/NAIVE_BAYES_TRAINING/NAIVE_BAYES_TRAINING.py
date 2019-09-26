@@ -22,9 +22,10 @@ def main():
 
 	opts = getopts(args)
 		
-	if not opts or len(opts) < 6:
+	if not opts or len(opts) < 7:
 		print("Usage:")
 		print(" -in Input")
+		print(" -p Pathology")
 		print(" -d Dataset")
 		print(" -x X")
 		print(" -y Y")
@@ -55,6 +56,10 @@ def main():
 				"value": opts.get("-a")
 			  },
 			  {
+				"name": "pathology",
+				"value": opts.get("-p")
+			  },
+              {
 				"name": "dataset",
 				"value": opts.get("-d")
 			  },

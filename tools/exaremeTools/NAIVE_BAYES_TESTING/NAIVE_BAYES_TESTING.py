@@ -22,9 +22,10 @@ def main():
 
 	opts = getopts(args)
 		
-	if not opts or len(opts) < 5:
+	if not opts or len(opts) < 6:
 		print("Usage:")
 		print(" -in Input")
+		print(" -p Pathology")
 		print(" -d Dataset")
 		print(" -x X")
 		print(" -y Y")

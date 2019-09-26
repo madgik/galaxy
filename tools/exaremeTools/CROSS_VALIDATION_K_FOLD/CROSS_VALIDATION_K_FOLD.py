@@ -22,8 +22,9 @@ def main():
 
 	opts = getopts(args)
 		
-	if not opts or len(opts) < 5:
+	if not opts or len(opts) < 6:
 		print("Usage:")
+		print(" -p Pathology")
 		print(" -d Dataset")
 		print(" -x X")
 		print(" -y Y")
@@ -35,6 +36,10 @@ def main():
 	url= endpoint + '/mining/query/CROSS_VALIDATION_K_FOLD'
 	data = [
 		  {
+			"name": "pathology",
+			"value": opts.get("-p")
+		  },
+          {
 			"name": "dataset",
 			"value": opts.get("-d")
 		  },
