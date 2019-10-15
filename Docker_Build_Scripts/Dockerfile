@@ -13,7 +13,7 @@ WORKDIR galaxyDir
 RUN git clone --branch v1.0.0 https://github.com/madgik/galaxy
 COPY galaxy.yml galaxy/config/galaxy.yml
 COPY galaxy.yml galaxy/config/galaxy.yml
-COPY exareme_env.py /srv/executor/tools/exaremeTools/exareme_environment.py
+ADD createExaremeVariables.sh galaxy/createExaremeVariables.sh
 RUN cat galaxy/config/galaxy.yml
 WORKDIR galaxy
 
@@ -29,6 +29,6 @@ RUN chown root:root galaxy.conf
 WORKDIR /etc/apache2/sites-enabled/
 RUN ln -s ../sites-available/galaxy.conf galaxy.conf
 RUN rm -rf 000-default.conf
-RUN htpasswd -bc /etc/apache2/htpasswd  username password
+RUN htpasswd -bc /etc/apache2/htpasswd username password
 
 WORKDIR /galaxyDir/galaxy
