@@ -14,6 +14,7 @@ RUN git clone --branch v1.0.0 https://github.com/madgik/galaxy
 COPY galaxy.yml galaxy/config/galaxy.yml
 COPY galaxy.yml galaxy/config/galaxy.yml
 ADD createExaremeVariables.sh galaxy/createExaremeVariables.sh
+RUN chmod 755 galaxy/createExaremeVariables.sh
 RUN cat galaxy/config/galaxy.yml
 WORKDIR galaxy
 
