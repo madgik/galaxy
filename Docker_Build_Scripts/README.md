@@ -25,7 +25,7 @@ The following instructions are used to create a docker image of galaxy with a re
 Use the following command after changing the appropriate variables:
 
 ```
-docker run -d -p 8090:80 hbpmip/galaxy /bin/bash -c "/etc/init.d/apache2 restart && ./run.sh"
+docker run -d -e EXAREME_IP=88.197.53.100 -e EXAREME_PORT=9090 -p 8090:80 thanasulas/galaxy /bin/bash -c "./createExaremeVariables.sh && /etc/init.d/apache2 restart && ./run.sh"
 ```
 
 Galaxy will take some time until it is up and running.
