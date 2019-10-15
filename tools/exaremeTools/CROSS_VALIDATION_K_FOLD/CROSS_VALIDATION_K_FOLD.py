@@ -2,7 +2,7 @@ import requests
 import json
 import sys
 
-execfile('/srv/executor/tools/exaremeTools/exareme_environment.py')
+execfile('/galaxyDir/galaxy/tools/exaremeTools/exareme_environment.py')
 
 endpoint = 'http://' + EXAREME_IP + ':' + EXAREME_PORT
 
