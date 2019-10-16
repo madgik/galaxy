@@ -8,16 +8,10 @@ The following instructions are used to create a docker image of galaxy with a re
 
 ## Building the docker image:
 
-1. Edit the Dockerfile :
-	- On line 32 change the ```username``` and ```password```.
-
-2. Edit exareme_env.py :
-	- ```Exareme Ip``` and ```Port``` should be changed and point to the exareme instance.
-
-3. (Optional) Edit galaxy.conf :
+1. (Optional) Edit galaxy.conf :
 	- On line 15 and 37 change ```nativeGalaxy``` to the desired location.
 
-4. Create the docker image by running the command :
+2. Create the docker image by running the command :
 	```docker build -t hbpmip/galaxy```
 
 ## Deploy:
@@ -25,7 +19,7 @@ The following instructions are used to create a docker image of galaxy with a re
 Use the following command after changing the appropriate variables:
 
 ```
-docker run -d -e EXAREME_IP=88.197.53.100 -e EXAREME_PORT=9090 -p 8090:80 thanasulas/galaxy /bin/bash -c "./createExaremeVariables.sh && /etc/init.d/apache2 restart && ./run.sh"
+docker run -d -e EXAREME_IP=88.197.53.100 -e EXAREME_PORT=9090 -p 8090:80 thanasulas/galaxy /bin/bash -c "htpasswd -bc /etc/apache2/htpasswd username password && ./createExaremeVariables.sh && /etc/init.d/apache2 restart && ./run.sh"
 ```
 
 Galaxy will take some time until it is up and running.
@@ -92,10 +86,6 @@ After it is installed go to the folder ```/etc/apache2/sites-enabled/``` and mod
 ```{Galaxy Installation Ip}``` and ```{Front End Installation Ip}``` should be modified accordingly.
 
 
-Then you can restart apache: ```sudo systemctl restart apache2``` 
+Then you can restart apache: ```sudo systemctl restart apache2```
 
 Galaxy should appear on the front end at the ```/galaxy``` location.
-
-
-
-

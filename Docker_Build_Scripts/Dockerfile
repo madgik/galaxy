@@ -30,6 +30,5 @@ RUN chown root:root galaxy.conf
 WORKDIR /etc/apache2/sites-enabled/
 RUN ln -s ../sites-available/galaxy.conf galaxy.conf
 RUN rm -rf 000-default.conf
-RUN htpasswd -bc /etc/apache2/htpasswd username password
 
 WORKDIR /galaxyDir/galaxy
