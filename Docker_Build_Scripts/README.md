@@ -18,12 +18,12 @@ The following instructions are used to create a docker image of galaxy with a re
 
 1. EXAREME_IP has to be the IP of the exareme.
 2. EXAREME_PORT has to be the port of the exareme.
-3. In the cmd "htpasswd -bc /etc/apache2/htpasswd admin password", you can change the password. Username(Admin) is used by other systems. Before changed it, you have change galaxy.conf(line 1274) and Middleware_API(https://github.com/madgik/Galaxy_Middleware_API). 
+3. In the cmd "htpasswd -bc /etc/apache2/htpasswd admin password", you can change the password. Username(Admin) is used by other systems. Before changed it, you have change galaxy.conf(line 1274) and Middleware_API(https://github.com/madgik/Galaxy_Middleware_API).
 
 Use the following command after changing the appropriate variables:
 
 ```
-docker run -d -e EXAREME_IP=88.197.53.100 -e EXAREME_PORT=9090 -p 8090:80 thanasulas/galaxy /bin/bash -c "htpasswd -bc /etc/apache2/htpasswd admin password && ./createExaremeVariables.sh && /etc/init.d/apache2 restart && ./run.sh"
+docker run -d -e EXAREME_IP=88.197.53.100 -e EXAREME_PORT=9090 -p 8090:80 kkech/galaxyreverseproxy:latest /bin/bash -c "htpasswd -bc /etc/apache2/htpasswd admin password && ./createExaremeVariables.sh && /etc/init.d/apache2 restart && ./run.sh"
 ```
 
 Galaxy will take some time until it is up and running.
