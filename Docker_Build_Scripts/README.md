@@ -18,7 +18,7 @@ The following instructions are used to create a docker image of galaxy with a re
 
 1. EXAREME_IP has to be the IP of the exareme.
 2. EXAREME_PORT has to be the port of the exareme.
-3. In the cmd "htpasswd -bc /etc/apache2/htpasswd admin password", you can change the password. Username(Admin) is used by other systems. Before changed it, you have change galaxy.conf(line 1274) and Middleware_API. 
+3. In the cmd "htpasswd -bc /etc/apache2/htpasswd admin password", you can change the password. Username(Admin) is used by other systems. Before changed it, you have change galaxy.conf(line 1274) and Middleware_API(https://github.com/madgik/Galaxy_Middleware_API). 
 
 Use the following command after changing the appropriate variables:
 
