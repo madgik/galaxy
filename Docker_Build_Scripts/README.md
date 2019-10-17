@@ -80,11 +80,11 @@ After it is installed go to the folder ```/etc/apache2/sites-enabled/``` and mod
 	#Include conf-available/serve-cgi-bin.conf
 
 
-	ProxyPass /nativeGalaxy http://{Galaxy Installation Ip}:8090/nativeGalaxy
-	ProxyPassReverse /nativeGalaxy http://{Galaxy Installation Ip}:8090/nativeGalaxy
+	ProxyPass /nativeGalaxy http://{Galaxy Installation Ip}:{Galaxy Installation Port}/nativeGalaxy
+	ProxyPassReverse /nativeGalaxy http://{Galaxy Installation Ip}:{Galaxy Installation Port}/nativeGalaxy
 
-	ProxyPass / http://http://{Front End Installation Ip}:8090/
-	ProxyPassReverse / http://http://{Front End Installation Ip}:8090/
+	ProxyPass / http://http://{Front End Installation Ip}:{Front End Installation Port}/
+	ProxyPassReverse / http://http://{Front End Installation Ip}:{Front End Installation Port}/
 </VirtualHost>
 ```
 ```{Galaxy Installation Ip}``` and ```{Front End Installation Ip}``` should be modified accordingly.
