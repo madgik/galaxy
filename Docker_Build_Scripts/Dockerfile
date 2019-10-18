@@ -10,7 +10,7 @@ RUN apt-get install systemd -y
 
 RUN mkdir galaxyDir
 WORKDIR galaxyDir
-RUN git clone --branch v1.0.0 https://github.com/madgik/galaxy
+RUN git clone --branch v1.2.1 https://github.com/madgik/galaxy
 COPY galaxy.yml galaxy/config/galaxy.yml
 COPY galaxy.yml galaxy/config/galaxy.yml
 ADD createExaremeVariables.sh galaxy/createExaremeVariables.sh
