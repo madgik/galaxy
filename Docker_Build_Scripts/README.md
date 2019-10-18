@@ -17,7 +17,7 @@ The following instructions are used to create a docker image of galaxy with a re
 3. (Optional) Pre-run the galaxy installer:
 	- Run and access the image internally with ```docker run -i -t hbpmip/galaxy:v1.2.2 bash```
 	- Run the galaxy installer ```./run.sh ```
-	- Exit the image with ```exit```
+	- After it is done installing and the service has started stop it with Ctrl+C and exit the image with ```exit```
 	- Get the container id with ```docker ps -a```
 	- Save the changes to the docker image with ```docker commit aaa527d9d22f hbpmip/galaxy:v1.2.2```
 	- Upload the image ```docker push hbpmip/galaxy:v1.2.2```
