@@ -9,10 +9,10 @@ The following instructions are used to create a docker image of galaxy with a re
 ## Building the docker image:
 
 1. (Optional) Edit galaxy.conf :
-	- On line 15 and 37 change ```nativeGalaxy``` to the desired location.
+	- On line 15 and 30 change ```nativeGalaxy``` to the desired location.
 
 2. Create the docker image by running the command :
-	```docker build -t hbpmip/galaxy```
+	```docker build -t hbpmip/galaxy:v1.2.0```
 
 ## Deploy:
 
