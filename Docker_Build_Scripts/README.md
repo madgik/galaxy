@@ -14,6 +14,14 @@ The following instructions are used to create a docker image of galaxy with a re
 2. Create the docker image by running the command :
 	```docker build -t hbpmip/galaxy:v1.2.2 . ```
 
+3. (Optional) Pre-run the galaxy installer:
+	- Run and access the image internally with ```docker run -i -t hbpmip/galaxy:v1.2.2 bash```
+	- Run the galaxy installer ```./run.sh ```
+	- Exit the image with ```exit```
+	- Get the container id with ```docker ps -a```
+	- Save the changes to the docker image with ```docker commit aaa527d9d22f hbpmip/galaxy:v1.2.2```
+	- Upload the image ```docker push hbpmip/galaxy:v1.2.2```
+
 ## Deploy:
 
 1. EXAREME_IP has to be the IP of the exareme.
