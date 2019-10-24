@@ -91,8 +91,8 @@ After it is installed go to the folder ```/etc/apache2/sites-enabled/``` and mod
 	ProxyPass /nativeGalaxy http://{Galaxy Installation Ip}:{Galaxy Installation Port}/nativeGalaxy
 	ProxyPassReverse /nativeGalaxy http://{Galaxy Installation Ip}:{Galaxy Installation Port}/nativeGalaxy
 
-	ProxyPass / http://http://{Front End Installation Ip}:{Front End Installation Port}/
-	ProxyPassReverse / http://http://{Front End Installation Ip}:{Front End Installation Port}/
+	ProxyPass / http://{Front End Installation Ip}:{Front End Installation Port}/
+	ProxyPassReverse / http://{Front End Installation Ip}:{Front End Installation Port}/
 </VirtualHost>
 ```
 ```{Galaxy Installation Ip}``` and ```{Front End Installation Ip}``` should be modified accordingly.
