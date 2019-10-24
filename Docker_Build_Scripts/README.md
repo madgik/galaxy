@@ -100,4 +100,4 @@ After it is installed go to the folder ```/etc/apache2/sites-enabled/``` and mod
 
 Then you can restart apache: ```sudo systemctl restart apache2```
 
-Galaxy should appear on the front end at the ```/galaxy``` location.
+Galaxy will be visible on the  ```/nativeGalaxy``` location.
