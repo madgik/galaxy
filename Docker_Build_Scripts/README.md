@@ -6,23 +6,6 @@ The following instructions are used to create a docker image of galaxy with a re
 
   - Docker Engine
 
-## Building the docker image:
-
-1. (Optional) Edit galaxy.conf :
-	- On line 15 and 30 change ```nativeGalaxy``` to the desired location.
-
-2. Create the docker image by running the command :
-	```docker build -t hbpmip/galaxy:v1.2.2 . ```
-
-3. (Optional) Pre-run the galaxy installer:
-	- Run and access the image internally with ```docker run -i -t hbpmip/galaxy:v1.2.2 bash```
-	- Run the galaxy installer ```./run.sh ```
-	- After it is done, open galaxy from the browser `localhost:8090/nativeGalaxy` and create all the workflows that you want to be pre-installed.
-	- Afterwards stop the running service with Ctrl+C and exit the image with ```exit```
-	- Get the container id with ```docker ps -a```
-	- Save the changes to the docker image with ```docker commit aaa527d9d22f hbpmip/galaxy:v1.2.2```
-	- Upload the image ```docker push hbpmip/galaxy:v1.2.2```
-
 ## Deploy:
 
 1. EXAREME_IP has to be the IP of the exareme.
@@ -40,3 +23,24 @@ Galaxy will take some time until it is up and running.
 You can check the logs by running the command ```docker ps```  and then ```docker logs CONTAINER_ID``` with the specific galaxy container id.
 
 Galaxy will be visible on the  ```localhost:8090/nativeGalaxy``` location.
+
+
+## Building the docker image:
+
+If you want to create a new image of Galaxy you can follow these instructions:
+
+1. (Optional) Edit galaxy.conf :
+	- On line 15 and 30 change ```nativeGalaxy``` to the desired location.
+
+2. Create the docker image by running the command :
+	```docker build -t hbpmip/galaxy:v1.2.2 . ```
+
+3. (Optional) Pre-run the galaxy installer:
+	- Run and access the image internally with ```docker run -i -t hbpmip/galaxy:v1.2.2 bash```
+	- Run the galaxy installer ```./run.sh ```
+	- After it is done, open galaxy from the browser `localhost:8090/nativeGalaxy` and create all the workflows that you want to be pre-installed.
+	- Afterwards stop the running service with Ctrl+C and exit the image with ```exit```
+	- Get the container id with ```docker ps -a```
+	- Save the changes to the docker image with ```docker commit aaa527d9d22f hbpmip/galaxy:v1.2.2```
+	- Upload the image ```docker push hbpmip/galaxy:v1.2.2```
+
