@@ -4,11 +4,489 @@
         <command interpreter="python">HEATMAP_HIGHCHART.py -in '$input' -t '$title' -xt '$xTitle' -yt '$yTitle' -o '$output' </command>
     <inputs>
 		<param name="input" format="json" type="data" label="" help="" />
-		<param name="title" type="text" label="Title" help="" />
-		<param name="xTitle" type="text" label="x Axis Title" help="" />
-		<param name="yTitle" type="text" label="y Axis Title" help="" />
+		<param name="title" type="text" label="Title" help="Title of the visualization." />
+		<param name="xTitle" type="text" label="x Axis Title" help="Title for the x Axis." />
+		<param name="yTitle" type="text" label="y Axis Title" help="Title for the y Axis." />
     </inputs>
     <outputs>
         <data name="output" format="json" />
     </outputs>
+	<help>
+** Heatmap Highchart **
+
+A heatmap visualization of the Naive Bayes Testing result.
+
+
+** Input **
+
+This algorithm can receive as input the output of **NAIVE_BAYES_TESTING**.
+
+Input example:
+{
+
+    "results": [
+        [
+            {
+                "actualclass": "AD",
+                "predictedclass": "AD",
+                "val": 18
+            },
+            {
+                "actualclass": "AD",
+                "predictedclass": "CN",
+                "val": 2
+            },
+            {
+                "actualclass": "AD",
+                "predictedclass": "Other",
+                "val": 53
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "AD",
+                "val": 3
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "CN",
+                "val": 11
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "Other",
+                "val": 71
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "AD",
+                "val": 22
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "CN",
+                "val": 17
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "Other",
+                "val": 159
+            }
+        ],
+        [
+            {
+                "actualclass": "AD",
+                "predictedclass": "AD",
+                "val": 33
+            },
+            {
+                "actualclass": "AD",
+                "predictedclass": "CN",
+                "val": 0
+            },
+            {
+                "actualclass": "AD",
+                "predictedclass": "Other",
+                "val": 55
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "AD",
+                "val": 6
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "CN",
+                "val": 0
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "Other",
+                "val": 93
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "AD",
+                "val": 25
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "CN",
+                "val": 0
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "Other",
+                "val": 144
+            }
+        ]
+    ]
+}
+
+
+** Output **
+
+This algorithm's output can be demonstrated using the heatmap highcharts visualizations.
+
+
+Output example:
+[
+
+    {
+        "result": [
+            {
+                "type": "application/vnd.highcharts+json",
+                "data": {
+                    "legend": {
+                        "layout": "vertical",
+                        "align": "right",
+                        "symbolHeight": 280,
+                        "y": 25,
+                        "verticalAlign": "top",
+                        "margin": 0
+                    },
+                    "xAxis": {
+                        "categories": [
+                            "AD",
+                            "CN",
+                            "Other"
+                        ],
+                        "title": {
+                            "text": "Actual Class",
+                            "style": {
+                                "fontWeight": "normal"
+                            },
+                            "enabled": true
+                        }
+                    },
+                    "title": {
+                        "text": "Confusion Matrix"
+                    },
+                    "series": [
+                        {
+                            "data": [
+                                [
+                                    0,
+                                    0,
+                                    18.0
+                                ],
+                                [
+                                    0,
+                                    1,
+                                    2.0
+                                ],
+                                [
+                                    0,
+                                    2,
+                                    53.0
+                                ],
+                                [
+                                    1,
+                                    0,
+                                    3.0
+                                ],
+                                [
+                                    1,
+                                    1,
+                                    11.0
+                                ],
+                                [
+                                    1,
+                                    2,
+                                    71.0
+                                ],
+                                [
+                                    2,
+                                    0,
+                                    22.0
+                                ],
+                                [
+                                    2,
+                                    1,
+                                    17.0
+                                ],
+                                [
+                                    2,
+                                    2,
+                                    159.0
+                                ]
+                            ],
+                            "borderWidth": 1,
+                            "dataLabels": {
+                                "color": "#000000",
+                                "enabled": true
+                            }
+                        }
+                    ],
+                    "yAxis": {
+                        "categories": [
+                            "AD",
+                            "CN",
+                            "Other"
+                        ],
+                        "title": {
+                            "text": "Predicted Class",
+                            "style": {
+                                "fontWeight": "normal"
+                            },
+                            "enabled": true
+                        }
+                    },
+                    "chart": {
+                        "marginTop": 40,
+                        "marginBottom": 80,
+                        "type": "heatmap",
+                        "plotBorderWidth": 1
+                    },
+                    "tooltip": {
+                        "enabled": false
+                    },
+                    "colorAxis": {
+                        "minColor": "#FFFFFF",
+                        "maxColor": "#6699ff",
+                        "min": 0
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "result": [
+            {
+                "type": "application/vnd.highcharts+json",
+                "data": {
+                    "legend": {
+                        "layout": "vertical",
+                        "align": "right",
+                        "symbolHeight": 280,
+                        "y": 25,
+                        "verticalAlign": "top",
+                        "margin": 0
+                    },
+                    "xAxis": {
+                        "categories": [
+                            "AD",
+                            "CN",
+                            "Other"
+                        ],
+                        "title": {
+                            "text": "Actual Class",
+                            "style": {
+                                "fontWeight": "normal"
+                            },
+                            "enabled": true
+                        }
+                    },
+                    "title": {
+                        "text": "Confusion Matrix"
+                    },
+                    "series": [
+                        {
+                            "data": [
+                                [
+                                    0,
+                                    0,
+                                    33.0
+                                ],
+                                [
+                                    0,
+                                    1,
+                                    0.0
+                                ],
+                                [
+                                    0,
+                                    2,
+                                    55.0
+                                ],
+                                [
+                                    1,
+                                    0,
+                                    6.0
+                                ],
+                                [
+                                    1,
+                                    1,
+                                    0.0
+                                ],
+                                [
+                                    1,
+                                    2,
+                                    93.0
+                                ],
+                                [
+                                    2,
+                                    0,
+                                    25.0
+                                ],
+                                [
+                                    2,
+                                    1,
+                                    0.0
+                                ],
+                                [
+                                    2,
+                                    2,
+                                    144.0
+                                ]
+                            ],
+                            "borderWidth": 1,
+                            "dataLabels": {
+                                "color": "#000000",
+                                "enabled": true
+                            }
+                        }
+                    ],
+                    "yAxis": {
+                        "categories": [
+                            "AD",
+                            "CN",
+                            "Other"
+                        ],
+                        "title": {
+                            "text": "Predicted Class",
+                            "style": {
+                                "fontWeight": "normal"
+                            },
+                            "enabled": true
+                        }
+                    },
+                    "chart": {
+                        "marginTop": 40,
+                        "marginBottom": 80,
+                        "type": "heatmap",
+                        "plotBorderWidth": 1
+                    },
+                    "tooltip": {
+                        "enabled": false
+                    },
+                    "colorAxis": {
+                        "minColor": "#FFFFFF",
+                        "maxColor": "#6699ff",
+                        "min": 0
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "result": [
+            {
+                "type": "application/vnd.highcharts+json",
+                "data": {
+                    "legend": {
+                        "layout": "vertical",
+                        "align": "right",
+                        "symbolHeight": 280,
+                        "y": 25,
+                        "verticalAlign": "top",
+                        "margin": 0
+                    },
+                    "xAxis": {
+                        "categories": [
+                            "AD",
+                            "CN",
+                            "Other"
+                        ],
+                        "title": {
+                            "text": "Actual Class",
+                            "style": {
+                                "fontWeight": "normal"
+                            },
+                            "enabled": true
+                        }
+                    },
+                    "title": {
+                        "text": "Confusion Matrix"
+                    },
+                    "series": [
+                        {
+                            "data": [
+                                [
+                                    0,
+                                    0,
+                                    26.0
+                                ],
+                                [
+                                    0,
+                                    1,
+                                    3.0
+                                ],
+                                [
+                                    0,
+                                    2,
+                                    32.0
+                                ],
+                                [
+                                    1,
+                                    0,
+                                    6.0
+                                ],
+                                [
+                                    1,
+                                    1,
+                                    12.0
+                                ],
+                                [
+                                    1,
+                                    2,
+                                    66.0
+                                ],
+                                [
+                                    2,
+                                    0,
+                                    27.0
+                                ],
+                                [
+                                    2,
+                                    1,
+                                    16.0
+                                ],
+                                [
+                                    2,
+                                    2,
+                                    166.0
+                                ]
+                            ],
+                            "borderWidth": 1,
+                            "dataLabels": {
+                                "color": "#000000",
+                                "enabled": true
+                            }
+                        }
+                    ],
+                    "yAxis": {
+                        "categories": [
+                            "AD",
+                            "CN",
+                            "Other"
+                        ],
+                        "title": {
+                            "text": "Predicted Class",
+                            "style": {
+                                "fontWeight": "normal"
+                            },
+                            "enabled": true
+                        }
+                    },
+                    "chart": {
+                        "marginTop": 40,
+                        "marginBottom": 80,
+                        "type": "heatmap",
+                        "plotBorderWidth": 1
+                    },
+                    "tooltip": {
+                        "enabled": false
+                    },
+                    "colorAxis": {
+                        "minColor": "#FFFFFF",
+                        "maxColor": "#6699ff",
+                        "min": 0
+                    }
+                }
+            }
+        ]
+    }
+
+]
+
+	</help>
 </tool>

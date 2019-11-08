@@ -3,14 +3,195 @@
     <description>NAIVE BAYES TRAINING</description>
         <command interpreter="python">NAIVE_BAYES_TRAINING.py -in '$input' -p '$pathology' -d '$dataset' -x '$x' -y '$y' -a '$alpha' -o '$output' </command>
     <inputs>
-		<param name="input" format="json" type="data" label="" />
-        <param type="text" name="pathology" label="Pathology" help=""/>
-        <param type="text" name="dataset" label="Dataset" help=""/>
-        <param type="text" name="x" label="X" help="Column"/>
-        <param type="text" name="y" label="Y" help="classname"/>
-        <param name="alpha" type="text" label="Alpha" help="" />
+		<param name="input" format="json" label="" type="data" />
+        <param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
+        <param type="text" name="pathology" label="Pathology" help="The name of the pathology in which the dataset belongs to."/>
+        <param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>
+        <param type="text" name="y" label="Y" help="Dependent variable: A variable from the database."/>
+        <param name="alpha" type="text" label="(Optional) Alpha" help="(Real) Additive (Laplace/Lidstone) smoothing parameter (0 for no smoothing, 1 is the default)." />
     </inputs>
     <outputs>
         <data name="output" format="json" />
     </outputs>
+	<help>
+
+** Naive Bayes Training **
+
+Naive Bayes classifier: Training phase
+
+
+** Input **
+
+This algorithm can receive as input the output of **CROSS VALIDATION K FOLD** or **HOLD OUT VALIDATION**.
+
+Input example from CROSS VALIDATION K FOLD:
+{
+	"numberOfSplits": "1", 
+	"dbIdentifier": "HOLD_OUT_VALIDATION_1573040331747"
+}
+
+
+
+** Output **
+
+This algorithm's output can be given as input to **Naive Bayes Training**.
+
+
+Output example:
+{
+    "models": [
+        [
+            {
+                "val": "AD",
+                "probability": 0.20985915492957746,
+                "average": "NA",
+                "colname": "alzheimerbroadcategory",
+                "classval": "AD",
+                "sigma": "NA"
+            },
+            {
+                "val": "CN",
+                "probability": 0.2577464788732394,
+                "average": "NA",
+                "colname": "alzheimerbroadcategory",
+                "classval": "CN",
+                "sigma": "NA"
+            },
+            {
+                "val": "Other",
+                "probability": 0.532394366197183,
+                "average": "NA",
+                "colname": "alzheimerbroadcategory",
+                "classval": "Other",
+                "sigma": "NA"
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 2.702834563758389,
+                "colname": "lefthippocampus",
+                "classval": "AD",
+                "sigma": 0.3773335373496032
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 3.0549337158469956,
+                "colname": "lefthippocampus",
+                "classval": "CN",
+                "sigma": 0.30897040046779706
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 2.943435873015874,
+                "colname": "lefthippocampus",
+                "classval": "Other",
+                "sigma": 0.3337508953784866
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 2.9044004026845625,
+                "colname": "righthippocampus",
+                "classval": "AD",
+                "sigma": 0.4009760569735567
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 3.24099699453552,
+                "colname": "righthippocampus",
+                "classval": "CN",
+                "sigma": 0.3367152045823858
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 3.141956772486772,
+                "colname": "righthippocampus",
+                "classval": "Other",
+                "sigma": 0.3577836011333657
+            }
+        ],
+        [
+            {
+                "val": "AD",
+                "probability": 0.18873239436619718,
+                "average": "NA",
+                "colname": "alzheimerbroadcategory",
+                "classval": "AD",
+                "sigma": "NA"
+            },
+            {
+                "val": "CN",
+                "probability": 0.2380281690140845,
+                "average": "NA",
+                "colname": "alzheimerbroadcategory",
+                "classval": "CN",
+                "sigma": "NA"
+            },
+            {
+                "val": "Other",
+                "probability": 0.5732394366197183,
+                "average": "NA",
+                "colname": "alzheimerbroadcategory",
+                "classval": "Other",
+                "sigma": "NA"
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 2.728512985074626,
+                "colname": "lefthippocampus",
+                "classval": "AD",
+                "sigma": 0.3558791335013939
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 3.0510920118343208,
+                "colname": "lefthippocampus",
+                "classval": "CN",
+                "sigma": 0.29408868331349175
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 2.965808943488944,
+                "colname": "lefthippocampus",
+                "classval": "Other",
+                "sigma": 0.331196486756742
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 2.9483179104477606,
+                "colname": "righthippocampus",
+                "classval": "AD",
+                "sigma": 0.3965721043656752
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 3.26563899408284,
+                "colname": "righthippocampus",
+                "classval": "CN",
+                "sigma": 0.31452310273735895
+            },
+            {
+                "val": "NA",
+                "probability": "NA",
+                "average": 3.1692549140049144,
+                "colname": "righthippocampus",
+                "classval": "Other",
+                "sigma": 0.3491381938874106
+            }
+        ]
+    ],
+    "dbIdentifier": "CROSS_VALIDATION_K_FOLD_1573040331747"
+}
+
+
+	</help>
 </tool>

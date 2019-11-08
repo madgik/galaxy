@@ -11,4 +11,128 @@
     <outputs>
         <data name="output" format="json" />
     </outputs>
+	<help>
+** Confusion Matrix Statistics **
+
+Statistics similar to what R is showing when running the Naive Bayes Testing algorithm.
+
+
+** Input **
+
+This algorithm can receive as input the output of **NAIVE_BAYES_TESTING**.
+
+
+Input example:
+{
+
+    "results": [
+        [
+            {
+                "actualclass": "AD",
+                "predictedclass": "AD",
+                "val": 18
+            },
+            {
+                "actualclass": "AD",
+                "predictedclass": "CN",
+                "val": 2
+            },
+            {
+                "actualclass": "AD",
+                "predictedclass": "Other",
+                "val": 53
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "AD",
+                "val": 3
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "CN",
+                "val": 11
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "Other",
+                "val": 71
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "AD",
+                "val": 22
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "CN",
+                "val": 17
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "Other",
+                "val": 159
+            }
+        ],
+        [
+            {
+                "actualclass": "AD",
+                "predictedclass": "AD",
+                "val": 33
+            },
+            {
+                "actualclass": "AD",
+                "predictedclass": "CN",
+                "val": 0
+            },
+            {
+                "actualclass": "AD",
+                "predictedclass": "Other",
+                "val": 55
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "AD",
+                "val": 6
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "CN",
+                "val": 0
+            },
+            {
+                "actualclass": "CN",
+                "predictedclass": "Other",
+                "val": 93
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "AD",
+                "val": 25
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "CN",
+                "val": 0
+            },
+            {
+                "actualclass": "Other",
+                "predictedclass": "Other",
+                "val": 144
+            }
+        ]
+    ]
+}
+
+
+** Output **
+
+Output example:
+{
+    "statistics": [
+        "{\"overall\": {\"Positive Class\":\"\",\"Accuracy\":0.52808988764,\"Kappa\":0.0800609108947,\"AccuracyLower\":0.47477998336,\"AccuracyUpper\":0.580928811167,\"AccuracyNull\":0.556179775281,\"AccuracyPValue\":0.868570075967,\"McnemarPValue\":5.27068778867e-10},\"Class name: AD\":{\"Sensitivity\":0.246575342466,\"Specificity\":0.129411764706,\"Pos Pred Value\":0.80303030303,\"Neg Pred Value\":0.911660777385,\"Precision\":0.929889298893,\"Recall\":0.215189873418,\"F1\":0.418604651163,\"Prevalence\":0.366666666667,\"Detection Rate\":0.56183745583,\"Detection Prevalence\":0.82428115016,\"Balanced Accuracy\":0.773006134969},\"Class name: CN\":{\"Sensitivity\":0.773006134969,\"Specificity\":0.465753424658,\"Pos Pred Value\":0.418604651163,\"Neg Pred Value\":0.366666666667,\"Precision\":0.56183745583,\"Recall\":0.246575342466,\"F1\":0.129411764706,\"Prevalence\":0.80303030303,\"Detection Rate\":0.310344827586,\"Detection Prevalence\":0.191304347826,\"Balanced Accuracy\":0.661122661123}}",
+        "{\"overall\": {\"Positive Class\":\"\",\"Accuracy\":0.497191011236,\"Kappa\":0.111934890462,\"AccuracyLower\":0.444059505848,\"AccuracyUpper\":0.550369612235,\"AccuracyNull\":0.474719101124,\"AccuracyPValue\":0.212935633183,\"McnemarPValue\":9.69466886645e-24},\"Class name: AD\":{\"Sensitivity\":0.375,\"Specificity\":0.0,\"Pos Pred Value\":0.852071005917,\"Neg Pred Value\":0.884328358209,\"Precision\":1.0,\"Recall\":0.208556149733,\"F1\":0.515625,\"Prevalence\":null,\"Detection Rate\":0.493150684932,\"Detection Prevalence\":0.811643835616,\"Balanced Accuracy\":0.72191011236},\"Class name: CN\":{\"Sensitivity\":0.72191011236,\"Specificity\":0.609375,\"Pos Pred Value\":0.515625,\"Neg Pred Value\":null,\"Precision\":0.493150684932,\"Recall\":0.375,\"F1\":0.0,\"Prevalence\":0.852071005917,\"Detection Rate\":0.434210526316,\"Detection Prevalence\":null,\"Balanced Accuracy\":0.624728850325}}",
+        "{\"overall\": {\"Positive Class\":\"\",\"Accuracy\":0.576271186441,\"Kappa\":0.169494971613,\"AccuracyLower\":0.522924443882,\"AccuracyUpper\":0.628331337543,\"AccuracyNull\":0.590395480226,\"AccuracyPValue\":0.72456514689,\"McnemarPValue\":5.46302270957e-07},\"Class name: AD\":{\"Sensitivity\":0.426229508197,\"Specificity\":0.142857142857,\"Pos Pred Value\":0.794258373206,\"Neg Pred Value\":0.887372013652,\"Precision\":0.92962962963,\"Recall\":0.324137931034,\"F1\":0.440677966102,\"Prevalence\":0.387096774194,\"Detection Rate\":0.628787878788,\"Detection Prevalence\":0.881355932203,\"Balanced Accuracy\":0.777089783282},\"Class name: CN\":{\"Sensitivity\":0.777089783282,\"Specificity\":0.522222222222,\"Pos Pred Value\":0.440677966102,\"Neg Pred Value\":0.387096774194,\"Precision\":0.628787878788,\"Recall\":0.426229508197,\"F1\":0.142857142857,\"Prevalence\":0.794258373206,\"Detection Rate\":0.433333333333,\"Detection Prevalence\":0.208695652174,\"Balanced Accuracy\":0.701902748414}}"
+    ]
+}
+	</help>
 </tool>
