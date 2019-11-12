@@ -14,7 +14,6 @@
         <data name="output" format="json" />
     </outputs>
 	<help>
-	
 ** K-Folds cross-validator **
 
 This algorithm splits the dataset into multiple pieces and provides the name of the local DB where it saved the results.
@@ -22,17 +21,13 @@ This algorithm splits the dataset into multiple pieces and provides the name of 
 
 ** Output **
 
-This algorithm's output can be given as input to **NAIVE BAYES TRAINING**.
+This algorithm&apos;s output can be given as input to **NAIVE BAYES TRAINING**.
 
 
 Output example:
 {
-	"numberOfSplits": "3", 
-	"dbIdentifier": "CROSS_VALIDATION_K_FOLD_1573040331747"
+	&quot;numberOfSplits&quot;: &quot;3&quot;, 
+	&quot;dbIdentifier&quot;: &quot;CROSS_VALIDATION_K_FOLD_1573040331747&quot;
 }
-
-
-
-
 	</help>
 </tool>

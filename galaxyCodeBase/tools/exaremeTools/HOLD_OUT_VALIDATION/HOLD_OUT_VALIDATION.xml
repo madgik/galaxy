@@ -16,7 +16,6 @@
         <data name="output" format="json" />
     </outputs>
 	<help>
-
 ** Hold Out Validation **
 
 This algorithm splits the dataset into random train and test subsets.
@@ -24,14 +23,13 @@ This algorithm splits the dataset into random train and test subsets.
 
 ** Output **
 
-This algorithm's output can be given as input to **NAIVE BAYES TRAINING**.
+This algorithm&apos;s output can be given as input to **NAIVE BAYES TRAINING**.
 
 
 Output example:
 {
-	"numberOfSplits": "1", 
-	"dbIdentifier": "HOLD_OUT_VALIDATION_1573040331747"
+	&quot;numberOfSplits&quot;: &quot;1&quot;, 
+	&quot;dbIdentifier&quot;: &quot;HOLD_OUT_VALIDATION_1573040331747&quot;
 }
-
 	</help>
 </tool>

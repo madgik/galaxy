@@ -13,7 +13,6 @@
         <data name="output" format="json" />
     </outputs>
 	<help>
-
 ** Naive Bayes Testing **
 
 Naive Bayes classifier: Testing phase
@@ -25,266 +24,265 @@ This algorithm can receive as input the output of **NAIVE_BAYES_TRAINING**.
 
 Input example from NAIVE BAYES TRAINING:
 {
-    "models": [
+    &quot;models&quot;: [
         [
             {
-                "val": "AD",
-                "probability": 0.20985915492957746,
-                "average": "NA",
-                "colname": "alzheimerbroadcategory",
-                "classval": "AD",
-                "sigma": "NA"
+                &quot;val&quot;: &quot;AD&quot;,
+                &quot;probability&quot;: 0.20985915492957746,
+                &quot;average&quot;: &quot;NA&quot;,
+                &quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+                &quot;classval&quot;: &quot;AD&quot;,
+                &quot;sigma&quot;: &quot;NA&quot;
             },
             {
-                "val": "CN",
-                "probability": 0.2577464788732394,
-                "average": "NA",
-                "colname": "alzheimerbroadcategory",
-                "classval": "CN",
-                "sigma": "NA"
+                &quot;val&quot;: &quot;CN&quot;,
+                &quot;probability&quot;: 0.2577464788732394,
+                &quot;average&quot;: &quot;NA&quot;,
+                &quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+                &quot;classval&quot;: &quot;CN&quot;,
+                &quot;sigma&quot;: &quot;NA&quot;
             },
             {
-                "val": "Other",
-                "probability": 0.532394366197183,
-                "average": "NA",
-                "colname": "alzheimerbroadcategory",
-                "classval": "Other",
-                "sigma": "NA"
+                &quot;val&quot;: &quot;Other&quot;,
+                &quot;probability&quot;: 0.532394366197183,
+                &quot;average&quot;: &quot;NA&quot;,
+                &quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+                &quot;classval&quot;: &quot;Other&quot;,
+                &quot;sigma&quot;: &quot;NA&quot;
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 2.702834563758389,
-                "colname": "lefthippocampus",
-                "classval": "AD",
-                "sigma": 0.3773335373496032
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 2.702834563758389,
+                &quot;colname&quot;: &quot;lefthippocampus&quot;,
+                &quot;classval&quot;: &quot;AD&quot;,
+                &quot;sigma&quot;: 0.3773335373496032
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 3.0549337158469956,
-                "colname": "lefthippocampus",
-                "classval": "CN",
-                "sigma": 0.30897040046779706
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 3.0549337158469956,
+                &quot;colname&quot;: &quot;lefthippocampus&quot;,
+                &quot;classval&quot;: &quot;CN&quot;,
+                &quot;sigma&quot;: 0.30897040046779706
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 2.943435873015874,
-                "colname": "lefthippocampus",
-                "classval": "Other",
-                "sigma": 0.3337508953784866
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 2.943435873015874,
+                &quot;colname&quot;: &quot;lefthippocampus&quot;,
+                &quot;classval&quot;: &quot;Other&quot;,
+                &quot;sigma&quot;: 0.3337508953784866
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 2.9044004026845625,
-                "colname": "righthippocampus",
-                "classval": "AD",
-                "sigma": 0.4009760569735567
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 2.9044004026845625,
+                &quot;colname&quot;: &quot;righthippocampus&quot;,
+                &quot;classval&quot;: &quot;AD&quot;,
+                &quot;sigma&quot;: 0.4009760569735567
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 3.24099699453552,
-                "colname": "righthippocampus",
-                "classval": "CN",
-                "sigma": 0.3367152045823858
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 3.24099699453552,
+                &quot;colname&quot;: &quot;righthippocampus&quot;,
+                &quot;classval&quot;: &quot;CN&quot;,
+                &quot;sigma&quot;: 0.3367152045823858
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 3.141956772486772,
-                "colname": "righthippocampus",
-                "classval": "Other",
-                "sigma": 0.3577836011333657
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 3.141956772486772,
+                &quot;colname&quot;: &quot;righthippocampus&quot;,
+                &quot;classval&quot;: &quot;Other&quot;,
+                &quot;sigma&quot;: 0.3577836011333657
             }
         ],
         [
             {
-                "val": "AD",
-                "probability": 0.18873239436619718,
-                "average": "NA",
-                "colname": "alzheimerbroadcategory",
-                "classval": "AD",
-                "sigma": "NA"
+                &quot;val&quot;: &quot;AD&quot;,
+                &quot;probability&quot;: 0.18873239436619718,
+                &quot;average&quot;: &quot;NA&quot;,
+                &quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+                &quot;classval&quot;: &quot;AD&quot;,
+                &quot;sigma&quot;: &quot;NA&quot;
             },
             {
-                "val": "CN",
-                "probability": 0.2380281690140845,
-                "average": "NA",
-                "colname": "alzheimerbroadcategory",
-                "classval": "CN",
-                "sigma": "NA"
+                &quot;val&quot;: &quot;CN&quot;,
+                &quot;probability&quot;: 0.2380281690140845,
+                &quot;average&quot;: &quot;NA&quot;,
+                &quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+                &quot;classval&quot;: &quot;CN&quot;,
+                &quot;sigma&quot;: &quot;NA&quot;
             },
             {
-                "val": "Other",
-                "probability": 0.5732394366197183,
-                "average": "NA",
-                "colname": "alzheimerbroadcategory",
-                "classval": "Other",
-                "sigma": "NA"
+                &quot;val&quot;: &quot;Other&quot;,
+                &quot;probability&quot;: 0.5732394366197183,
+                &quot;average&quot;: &quot;NA&quot;,
+                &quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+                &quot;classval&quot;: &quot;Other&quot;,
+                &quot;sigma&quot;: &quot;NA&quot;
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 2.728512985074626,
-                "colname": "lefthippocampus",
-                "classval": "AD",
-                "sigma": 0.3558791335013939
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 2.728512985074626,
+                &quot;colname&quot;: &quot;lefthippocampus&quot;,
+                &quot;classval&quot;: &quot;AD&quot;,
+                &quot;sigma&quot;: 0.3558791335013939
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 3.0510920118343208,
-                "colname": "lefthippocampus",
-                "classval": "CN",
-                "sigma": 0.29408868331349175
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 3.0510920118343208,
+                &quot;colname&quot;: &quot;lefthippocampus&quot;,
+                &quot;classval&quot;: &quot;CN&quot;,
+                &quot;sigma&quot;: 0.29408868331349175
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 2.965808943488944,
-                "colname": "lefthippocampus",
-                "classval": "Other",
-                "sigma": 0.331196486756742
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 2.965808943488944,
+                &quot;colname&quot;: &quot;lefthippocampus&quot;,
+                &quot;classval&quot;: &quot;Other&quot;,
+                &quot;sigma&quot;: 0.331196486756742
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 2.9483179104477606,
-                "colname": "righthippocampus",
-                "classval": "AD",
-                "sigma": 0.3965721043656752
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 2.9483179104477606,
+                &quot;colname&quot;: &quot;righthippocampus&quot;,
+                &quot;classval&quot;: &quot;AD&quot;,
+                &quot;sigma&quot;: 0.3965721043656752
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 3.26563899408284,
-                "colname": "righthippocampus",
-                "classval": "CN",
-                "sigma": 0.31452310273735895
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 3.26563899408284,
+                &quot;colname&quot;: &quot;righthippocampus&quot;,
+                &quot;classval&quot;: &quot;CN&quot;,
+                &quot;sigma&quot;: 0.31452310273735895
             },
             {
-                "val": "NA",
-                "probability": "NA",
-                "average": 3.1692549140049144,
-                "colname": "righthippocampus",
-                "classval": "Other",
-                "sigma": 0.3491381938874106
+                &quot;val&quot;: &quot;NA&quot;,
+                &quot;probability&quot;: &quot;NA&quot;,
+                &quot;average&quot;: 3.1692549140049144,
+                &quot;colname&quot;: &quot;righthippocampus&quot;,
+                &quot;classval&quot;: &quot;Other&quot;,
+                &quot;sigma&quot;: 0.3491381938874106
             }
         ]
     ],
-    "dbIdentifier": "CROSS_VALIDATION_K_FOLD_1573040331747"
+    &quot;dbIdentifier&quot;: &quot;CROSS_VALIDATION_K_FOLD_1573040331747&quot;
 }
 
 
 
 ** Output **
 
-This algorithm's output can be given as input to **HEATMAP HIGHCHART** OR **CONFUSION MATRIX STATISTICS**.
+This algorithm&apos;s output can be given as input to **HEATMAP HIGHCHART** OR **CONFUSION MATRIX STATISTICS**.
 
 
 Output example:
 {
-    "results": [
+    &quot;results&quot;: [
         [
             {
-                "actualclass": "AD",
-                "predictedclass": "AD",
-                "val": 18
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 18
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "CN",
-                "val": 2
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 2
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "Other",
-                "val": 53
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 53
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "AD",
-                "val": 3
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 3
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "CN",
-                "val": 11
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 11
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "Other",
-                "val": 71
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 71
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "AD",
-                "val": 22
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 22
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "CN",
-                "val": 17
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 17
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "Other",
-                "val": 159
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 159
             }
         ],
         [
             {
-                "actualclass": "AD",
-                "predictedclass": "AD",
-                "val": 33
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 33
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "CN",
-                "val": 0
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 0
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "Other",
-                "val": 55
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 55
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "AD",
-                "val": 6
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 6
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "CN",
-                "val": 0
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 0
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "Other",
-                "val": 93
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 93
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "AD",
-                "val": 25
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 25
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "CN",
-                "val": 0
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 0
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "Other",
-                "val": 144
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 144
             }
         ]
     ]
 }
-
 
 	</help>
 </tool>

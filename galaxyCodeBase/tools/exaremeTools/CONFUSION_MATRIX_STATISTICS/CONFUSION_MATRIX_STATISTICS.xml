@@ -25,99 +25,99 @@ This algorithm can receive as input the output of **NAIVE_BAYES_TESTING**.
 Input example:
 {
 
-    "results": [
+    &quot;results&quot;: [
         [
             {
-                "actualclass": "AD",
-                "predictedclass": "AD",
-                "val": 18
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 18
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "CN",
-                "val": 2
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 2
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "Other",
-                "val": 53
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 53
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "AD",
-                "val": 3
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 3
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "CN",
-                "val": 11
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 11
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "Other",
-                "val": 71
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 71
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "AD",
-                "val": 22
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 22
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "CN",
-                "val": 17
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 17
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "Other",
-                "val": 159
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 159
             }
         ],
         [
             {
-                "actualclass": "AD",
-                "predictedclass": "AD",
-                "val": 33
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 33
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "CN",
-                "val": 0
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 0
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "Other",
-                "val": 55
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 55
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "AD",
-                "val": 6
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 6
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "CN",
-                "val": 0
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 0
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "Other",
-                "val": 93
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 93
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "AD",
-                "val": 25
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 25
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "CN",
-                "val": 0
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 0
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "Other",
-                "val": 144
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 144
             }
         ]
     ]
@@ -128,10 +128,10 @@ Input example:
 
 Output example:
 {
-    "statistics": [
-        "{\"overall\": {\"Positive Class\":\"\",\"Accuracy\":0.52808988764,\"Kappa\":0.0800609108947,\"AccuracyLower\":0.47477998336,\"AccuracyUpper\":0.580928811167,\"AccuracyNull\":0.556179775281,\"AccuracyPValue\":0.868570075967,\"McnemarPValue\":5.27068778867e-10},\"Class name: AD\":{\"Sensitivity\":0.246575342466,\"Specificity\":0.129411764706,\"Pos Pred Value\":0.80303030303,\"Neg Pred Value\":0.911660777385,\"Precision\":0.929889298893,\"Recall\":0.215189873418,\"F1\":0.418604651163,\"Prevalence\":0.366666666667,\"Detection Rate\":0.56183745583,\"Detection Prevalence\":0.82428115016,\"Balanced Accuracy\":0.773006134969},\"Class name: CN\":{\"Sensitivity\":0.773006134969,\"Specificity\":0.465753424658,\"Pos Pred Value\":0.418604651163,\"Neg Pred Value\":0.366666666667,\"Precision\":0.56183745583,\"Recall\":0.246575342466,\"F1\":0.129411764706,\"Prevalence\":0.80303030303,\"Detection Rate\":0.310344827586,\"Detection Prevalence\":0.191304347826,\"Balanced Accuracy\":0.661122661123}}",
-        "{\"overall\": {\"Positive Class\":\"\",\"Accuracy\":0.497191011236,\"Kappa\":0.111934890462,\"AccuracyLower\":0.444059505848,\"AccuracyUpper\":0.550369612235,\"AccuracyNull\":0.474719101124,\"AccuracyPValue\":0.212935633183,\"McnemarPValue\":9.69466886645e-24},\"Class name: AD\":{\"Sensitivity\":0.375,\"Specificity\":0.0,\"Pos Pred Value\":0.852071005917,\"Neg Pred Value\":0.884328358209,\"Precision\":1.0,\"Recall\":0.208556149733,\"F1\":0.515625,\"Prevalence\":null,\"Detection Rate\":0.493150684932,\"Detection Prevalence\":0.811643835616,\"Balanced Accuracy\":0.72191011236},\"Class name: CN\":{\"Sensitivity\":0.72191011236,\"Specificity\":0.609375,\"Pos Pred Value\":0.515625,\"Neg Pred Value\":null,\"Precision\":0.493150684932,\"Recall\":0.375,\"F1\":0.0,\"Prevalence\":0.852071005917,\"Detection Rate\":0.434210526316,\"Detection Prevalence\":null,\"Balanced Accuracy\":0.624728850325}}",
-        "{\"overall\": {\"Positive Class\":\"\",\"Accuracy\":0.576271186441,\"Kappa\":0.169494971613,\"AccuracyLower\":0.522924443882,\"AccuracyUpper\":0.628331337543,\"AccuracyNull\":0.590395480226,\"AccuracyPValue\":0.72456514689,\"McnemarPValue\":5.46302270957e-07},\"Class name: AD\":{\"Sensitivity\":0.426229508197,\"Specificity\":0.142857142857,\"Pos Pred Value\":0.794258373206,\"Neg Pred Value\":0.887372013652,\"Precision\":0.92962962963,\"Recall\":0.324137931034,\"F1\":0.440677966102,\"Prevalence\":0.387096774194,\"Detection Rate\":0.628787878788,\"Detection Prevalence\":0.881355932203,\"Balanced Accuracy\":0.777089783282},\"Class name: CN\":{\"Sensitivity\":0.777089783282,\"Specificity\":0.522222222222,\"Pos Pred Value\":0.440677966102,\"Neg Pred Value\":0.387096774194,\"Precision\":0.628787878788,\"Recall\":0.426229508197,\"F1\":0.142857142857,\"Prevalence\":0.794258373206,\"Detection Rate\":0.433333333333,\"Detection Prevalence\":0.208695652174,\"Balanced Accuracy\":0.701902748414}}"
+    &quot;statistics&quot;: [
+        &quot;{&quot;overall&quot;: {&quot;Positive Class&quot;:&quot;&quot;,&quot;Accuracy&quot;:0.52808988764,&quot;Kappa&quot;:0.0800609108947,&quot;AccuracyLower&quot;:0.47477998336,&quot;AccuracyUpper&quot;:0.580928811167,&quot;AccuracyNull&quot;:0.556179775281,&quot;AccuracyPValue&quot;:0.868570075967,&quot;McnemarPValue&quot;:5.27068778867e-10},&quot;Class name: AD&quot;:{&quot;Sensitivity&quot;:0.246575342466,&quot;Specificity&quot;:0.129411764706,&quot;Pos Pred Value&quot;:0.80303030303,&quot;Neg Pred Value&quot;:0.911660777385,&quot;Precision&quot;:0.929889298893,&quot;Recall&quot;:0.215189873418,&quot;F1&quot;:0.418604651163,&quot;Prevalence&quot;:0.366666666667,&quot;Detection Rate&quot;:0.56183745583,&quot;Detection Prevalence&quot;:0.82428115016,&quot;Balanced Accuracy&quot;:0.773006134969},&quot;Class name: CN&quot;:{&quot;Sensitivity&quot;:0.773006134969,&quot;Specificity&quot;:0.465753424658,&quot;Pos Pred Value&quot;:0.418604651163,&quot;Neg Pred Value&quot;:0.366666666667,&quot;Precision&quot;:0.56183745583,&quot;Recall&quot;:0.246575342466,&quot;F1&quot;:0.129411764706,&quot;Prevalence&quot;:0.80303030303,&quot;Detection Rate&quot;:0.310344827586,&quot;Detection Prevalence&quot;:0.191304347826,&quot;Balanced Accuracy&quot;:0.661122661123}}&quot;,
+        &quot;{&quot;overall&quot;: {&quot;Positive Class&quot;:&quot;&quot;,&quot;Accuracy&quot;:0.497191011236,&quot;Kappa&quot;:0.111934890462,&quot;AccuracyLower&quot;:0.444059505848,&quot;AccuracyUpper&quot;:0.550369612235,&quot;AccuracyNull&quot;:0.474719101124,&quot;AccuracyPValue&quot;:0.212935633183,&quot;McnemarPValue&quot;:9.69466886645e-24},&quot;Class name: AD&quot;:{&quot;Sensitivity&quot;:0.375,&quot;Specificity&quot;:0.0,&quot;Pos Pred Value&quot;:0.852071005917,&quot;Neg Pred Value&quot;:0.884328358209,&quot;Precision&quot;:1.0,&quot;Recall&quot;:0.208556149733,&quot;F1&quot;:0.515625,&quot;Prevalence&quot;:null,&quot;Detection Rate&quot;:0.493150684932,&quot;Detection Prevalence&quot;:0.811643835616,&quot;Balanced Accuracy&quot;:0.72191011236},&quot;Class name: CN&quot;:{&quot;Sensitivity&quot;:0.72191011236,&quot;Specificity&quot;:0.609375,&quot;Pos Pred Value&quot;:0.515625,&quot;Neg Pred Value&quot;:null,&quot;Precision&quot;:0.493150684932,&quot;Recall&quot;:0.375,&quot;F1&quot;:0.0,&quot;Prevalence&quot;:0.852071005917,&quot;Detection Rate&quot;:0.434210526316,&quot;Detection Prevalence&quot;:null,&quot;Balanced Accuracy&quot;:0.624728850325}}&quot;,
+        &quot;{&quot;overall&quot;: {&quot;Positive Class&quot;:&quot;&quot;,&quot;Accuracy&quot;:0.576271186441,&quot;Kappa&quot;:0.169494971613,&quot;AccuracyLower&quot;:0.522924443882,&quot;AccuracyUpper&quot;:0.628331337543,&quot;AccuracyNull&quot;:0.590395480226,&quot;AccuracyPValue&quot;:0.72456514689,&quot;McnemarPValue&quot;:5.46302270957e-07},&quot;Class name: AD&quot;:{&quot;Sensitivity&quot;:0.426229508197,&quot;Specificity&quot;:0.142857142857,&quot;Pos Pred Value&quot;:0.794258373206,&quot;Neg Pred Value&quot;:0.887372013652,&quot;Precision&quot;:0.92962962963,&quot;Recall&quot;:0.324137931034,&quot;F1&quot;:0.440677966102,&quot;Prevalence&quot;:0.387096774194,&quot;Detection Rate&quot;:0.628787878788,&quot;Detection Prevalence&quot;:0.881355932203,&quot;Balanced Accuracy&quot;:0.777089783282},&quot;Class name: CN&quot;:{&quot;Sensitivity&quot;:0.777089783282,&quot;Specificity&quot;:0.522222222222,&quot;Pos Pred Value&quot;:0.440677966102,&quot;Neg Pred Value&quot;:0.387096774194,&quot;Precision&quot;:0.628787878788,&quot;Recall&quot;:0.426229508197,&quot;F1&quot;:0.142857142857,&quot;Prevalence&quot;:0.794258373206,&quot;Detection Rate&quot;:0.433333333333,&quot;Detection Prevalence&quot;:0.208695652174,&quot;Balanced Accuracy&quot;:0.701902748414}}&quot;
     ]
 }
 	</help>

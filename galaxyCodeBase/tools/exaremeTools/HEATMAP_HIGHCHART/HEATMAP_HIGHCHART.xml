@@ -24,99 +24,99 @@ This algorithm can receive as input the output of **NAIVE_BAYES_TESTING**.
 Input example:
 {
 
-    "results": [
+    &quot;results&quot;: [
         [
             {
-                "actualclass": "AD",
-                "predictedclass": "AD",
-                "val": 18
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 18
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "CN",
-                "val": 2
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 2
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "Other",
-                "val": 53
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 53
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "AD",
-                "val": 3
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 3
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "CN",
-                "val": 11
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 11
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "Other",
-                "val": 71
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 71
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "AD",
-                "val": 22
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 22
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "CN",
-                "val": 17
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 17
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "Other",
-                "val": 159
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 159
             }
         ],
         [
             {
-                "actualclass": "AD",
-                "predictedclass": "AD",
-                "val": 33
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 33
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "CN",
-                "val": 0
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 0
             },
             {
-                "actualclass": "AD",
-                "predictedclass": "Other",
-                "val": 55
+                &quot;actualclass&quot;: &quot;AD&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 55
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "AD",
-                "val": 6
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 6
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "CN",
-                "val": 0
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 0
             },
             {
-                "actualclass": "CN",
-                "predictedclass": "Other",
-                "val": 93
+                &quot;actualclass&quot;: &quot;CN&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 93
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "AD",
-                "val": 25
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;AD&quot;,
+                &quot;val&quot;: 25
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "CN",
-                "val": 0
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;CN&quot;,
+                &quot;val&quot;: 0
             },
             {
-                "actualclass": "Other",
-                "predictedclass": "Other",
-                "val": 144
+                &quot;actualclass&quot;: &quot;Other&quot;,
+                &quot;predictedclass&quot;: &quot;Other&quot;,
+                &quot;val&quot;: 144
             }
         ]
     ]
@@ -125,45 +125,45 @@ Input example:
 
 ** Output **
 
-This algorithm's output can be demonstrated using the heatmap highcharts visualizations.
+This algorithm&apos;s output can be demonstrated using the heatmap highcharts visualizations.
 
 
 Output example:
 [
 
     {
-        "result": [
+        &quot;result&quot;: [
             {
-                "type": "application/vnd.highcharts+json",
-                "data": {
-                    "legend": {
-                        "layout": "vertical",
-                        "align": "right",
-                        "symbolHeight": 280,
-                        "y": 25,
-                        "verticalAlign": "top",
-                        "margin": 0
+                &quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
+                &quot;data&quot;: {
+                    &quot;legend&quot;: {
+                        &quot;layout&quot;: &quot;vertical&quot;,
+                        &quot;align&quot;: &quot;right&quot;,
+                        &quot;symbolHeight&quot;: 280,
+                        &quot;y&quot;: 25,
+                        &quot;verticalAlign&quot;: &quot;top&quot;,
+                        &quot;margin&quot;: 0
                     },
-                    "xAxis": {
-                        "categories": [
-                            "AD",
-                            "CN",
-                            "Other"
+                    &quot;xAxis&quot;: {
+                        &quot;categories&quot;: [
+                            &quot;AD&quot;,
+                            &quot;CN&quot;,
+                            &quot;Other&quot;
                         ],
-                        "title": {
-                            "text": "Actual Class",
-                            "style": {
-                                "fontWeight": "normal"
+                        &quot;title&quot;: {
+                            &quot;text&quot;: &quot;Actual Class&quot;,
+                            &quot;style&quot;: {
+                                &quot;fontWeight&quot;: &quot;normal&quot;
                             },
-                            "enabled": true
+                            &quot;enabled&quot;: true
                         }
                     },
-                    "title": {
-                        "text": "Confusion Matrix"
+                    &quot;title&quot;: {
+                        &quot;text&quot;: &quot;Confusion Matrix&quot;
                     },
-                    "series": [
+                    &quot;series&quot;: [
                         {
-                            "data": [
+                            &quot;data&quot;: [
                                 [
                                     0,
                                     0,
@@ -210,78 +210,78 @@ Output example:
                                     159.0
                                 ]
                             ],
-                            "borderWidth": 1,
-                            "dataLabels": {
-                                "color": "#000000",
-                                "enabled": true
+                            &quot;borderWidth&quot;: 1,
+                            &quot;dataLabels&quot;: {
+                                &quot;color&quot;: &quot;#000000&quot;,
+                                &quot;enabled&quot;: true
                             }
                         }
                     ],
-                    "yAxis": {
-                        "categories": [
-                            "AD",
-                            "CN",
-                            "Other"
+                    &quot;yAxis&quot;: {
+                        &quot;categories&quot;: [
+                            &quot;AD&quot;,
+                            &quot;CN&quot;,
+                            &quot;Other&quot;
                         ],
-                        "title": {
-                            "text": "Predicted Class",
-                            "style": {
-                                "fontWeight": "normal"
+                        &quot;title&quot;: {
+                            &quot;text&quot;: &quot;Predicted Class&quot;,
+                            &quot;style&quot;: {
+                                &quot;fontWeight&quot;: &quot;normal&quot;
                             },
-                            "enabled": true
+                            &quot;enabled&quot;: true
                         }
                     },
-                    "chart": {
-                        "marginTop": 40,
-                        "marginBottom": 80,
-                        "type": "heatmap",
-                        "plotBorderWidth": 1
+                    &quot;chart&quot;: {
+                        &quot;marginTop&quot;: 40,
+                        &quot;marginBottom&quot;: 80,
+                        &quot;type&quot;: &quot;heatmap&quot;,
+                        &quot;plotBorderWidth&quot;: 1
                     },
-                    "tooltip": {
-                        "enabled": false
+                    &quot;tooltip&quot;: {
+                        &quot;enabled&quot;: false
                     },
-                    "colorAxis": {
-                        "minColor": "#FFFFFF",
-                        "maxColor": "#6699ff",
-                        "min": 0
+                    &quot;colorAxis&quot;: {
+                        &quot;minColor&quot;: &quot;#FFFFFF&quot;,
+                        &quot;maxColor&quot;: &quot;#6699ff&quot;,
+                        &quot;min&quot;: 0
                     }
                 }
             }
         ]
     },
     {
-        "result": [
+        &quot;result&quot;: [
             {
-                "type": "application/vnd.highcharts+json",
-                "data": {
-                    "legend": {
-                        "layout": "vertical",
-                        "align": "right",
-                        "symbolHeight": 280,
-                        "y": 25,
-                        "verticalAlign": "top",
-                        "margin": 0
+                &quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
+                &quot;data&quot;: {
+                    &quot;legend&quot;: {
+                        &quot;layout&quot;: &quot;vertical&quot;,
+                        &quot;align&quot;: &quot;right&quot;,
+                        &quot;symbolHeight&quot;: 280,
+                        &quot;y&quot;: 25,
+                        &quot;verticalAlign&quot;: &quot;top&quot;,
+                        &quot;margin&quot;: 0
                     },
-                    "xAxis": {
-                        "categories": [
-                            "AD",
-                            "CN",
-                            "Other"
+                    &quot;xAxis&quot;: {
+                        &quot;categories&quot;: [
+                            &quot;AD&quot;,
+                            &quot;CN&quot;,
+                            &quot;Other&quot;
                         ],
-                        "title": {
-                            "text": "Actual Class",
-                            "style": {
-                                "fontWeight": "normal"
+                        &quot;title&quot;: {
+                            &quot;text&quot;: &quot;Actual Class&quot;,
+                            &quot;style&quot;: {
+                                &quot;fontWeight&quot;: &quot;normal&quot;
                             },
-                            "enabled": true
+                            &quot;enabled&quot;: true
                         }
                     },
-                    "title": {
-                        "text": "Confusion Matrix"
+                    &quot;title&quot;: {
+                        &quot;text&quot;: &quot;Confusion Matrix&quot;
                     },
-                    "series": [
+                    &quot;series&quot;: [
                         {
-                            "data": [
+                            &quot;data&quot;: [
                                 [
                                     0,
                                     0,
@@ -328,78 +328,78 @@ Output example:
                                     144.0
                                 ]
                             ],
-                            "borderWidth": 1,
-                            "dataLabels": {
-                                "color": "#000000",
-                                "enabled": true
+                            &quot;borderWidth&quot;: 1,
+                            &quot;dataLabels&quot;: {
+                                &quot;color&quot;: &quot;#000000&quot;,
+                                &quot;enabled&quot;: true
                             }
                         }
                     ],
-                    "yAxis": {
-                        "categories": [
-                            "AD",
-                            "CN",
-                            "Other"
+                    &quot;yAxis&quot;: {
+                        &quot;categories&quot;: [
+                            &quot;AD&quot;,
+                            &quot;CN&quot;,
+                            &quot;Other&quot;
                         ],
-                        "title": {
-                            "text": "Predicted Class",
-                            "style": {
-                                "fontWeight": "normal"
+                        &quot;title&quot;: {
+                            &quot;text&quot;: &quot;Predicted Class&quot;,
+                            &quot;style&quot;: {
+                                &quot;fontWeight&quot;: &quot;normal&quot;
                             },
-                            "enabled": true
+                            &quot;enabled&quot;: true
                         }
                     },
-                    "chart": {
-                        "marginTop": 40,
-                        "marginBottom": 80,
-                        "type": "heatmap",
-                        "plotBorderWidth": 1
+                    &quot;chart&quot;: {
+                        &quot;marginTop&quot;: 40,
+                        &quot;marginBottom&quot;: 80,
+                        &quot;type&quot;: &quot;heatmap&quot;,
+                        &quot;plotBorderWidth&quot;: 1
                     },
-                    "tooltip": {
-                        "enabled": false
+                    &quot;tooltip&quot;: {
+                        &quot;enabled&quot;: false
                     },
-                    "colorAxis": {
-                        "minColor": "#FFFFFF",
-                        "maxColor": "#6699ff",
-                        "min": 0
+                    &quot;colorAxis&quot;: {
+                        &quot;minColor&quot;: &quot;#FFFFFF&quot;,
+                        &quot;maxColor&quot;: &quot;#6699ff&quot;,
+                        &quot;min&quot;: 0
                     }
                 }
             }
         ]
     },
     {
-        "result": [
+        &quot;result&quot;: [
             {
-                "type": "application/vnd.highcharts+json",
-                "data": {
-                    "legend": {
-                        "layout": "vertical",
-                        "align": "right",
-                        "symbolHeight": 280,
-                        "y": 25,
-                        "verticalAlign": "top",
-                        "margin": 0
+                &quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
+                &quot;data&quot;: {
+                    &quot;legend&quot;: {
+                        &quot;layout&quot;: &quot;vertical&quot;,
+                        &quot;align&quot;: &quot;right&quot;,
+                        &quot;symbolHeight&quot;: 280,
+                        &quot;y&quot;: 25,
+                        &quot;verticalAlign&quot;: &quot;top&quot;,
+                        &quot;margin&quot;: 0
                     },
-                    "xAxis": {
-                        "categories": [
-                            "AD",
-                            "CN",
-                            "Other"
+                    &quot;xAxis&quot;: {
+                        &quot;categories&quot;: [
+                            &quot;AD&quot;,
+                            &quot;CN&quot;,
+                            &quot;Other&quot;
                         ],
-                        "title": {
-                            "text": "Actual Class",
-                            "style": {
-                                "fontWeight": "normal"
+                        &quot;title&quot;: {
+                            &quot;text&quot;: &quot;Actual Class&quot;,
+                            &quot;style&quot;: {
+                                &quot;fontWeight&quot;: &quot;normal&quot;
                             },
-                            "enabled": true
+                            &quot;enabled&quot;: true
                         }
                     },
-                    "title": {
-                        "text": "Confusion Matrix"
+                    &quot;title&quot;: {
+                        &quot;text&quot;: &quot;Confusion Matrix&quot;
                     },
-                    "series": [
+                    &quot;series&quot;: [
                         {
-                            "data": [
+                            &quot;data&quot;: [
                                 [
                                     0,
                                     0,
@@ -446,47 +446,45 @@ Output example:
                                     166.0
                                 ]
                             ],
-                            "borderWidth": 1,
-                            "dataLabels": {
-                                "color": "#000000",
-                                "enabled": true
+                            &quot;borderWidth&quot;: 1,
+                            &quot;dataLabels&quot;: {
+                                &quot;color&quot;: &quot;#000000&quot;,
+                                &quot;enabled&quot;: true
                             }
                         }
                     ],
-                    "yAxis": {
-                        "categories": [
-                            "AD",
-                            "CN",
-                            "Other"
+                    &quot;yAxis&quot;: {
+                        &quot;categories&quot;: [
+                            &quot;AD&quot;,
+                            &quot;CN&quot;,
+                            &quot;Other&quot;
                         ],
-                        "title": {
-                            "text": "Predicted Class",
-                            "style": {
-                                "fontWeight": "normal"
+                        &quot;title&quot;: {
+                            &quot;text&quot;: &quot;Predicted Class&quot;,
+                            &quot;style&quot;: {
+                                &quot;fontWeight&quot;: &quot;normal&quot;
                             },
-                            "enabled": true
+                            &quot;enabled&quot;: true
                         }
                     },
-                    "chart": {
-                        "marginTop": 40,
-                        "marginBottom": 80,
-                        "type": "heatmap",
-                        "plotBorderWidth": 1
+                    &quot;chart&quot;: {
+                        &quot;marginTop&quot;: 40,
+                        &quot;marginBottom&quot;: 80,
+                        &quot;type&quot;: &quot;heatmap&quot;,
+                        &quot;plotBorderWidth&quot;: 1
                     },
-                    "tooltip": {
-                        "enabled": false
+                    &quot;tooltip&quot;: {
+                        &quot;enabled&quot;: false
                     },
-                    "colorAxis": {
-                        "minColor": "#FFFFFF",
-                        "maxColor": "#6699ff",
-                        "min": 0
+                    &quot;colorAxis&quot;: {
+                        &quot;minColor&quot;: &quot;#FFFFFF&quot;,
+                        &quot;maxColor&quot;: &quot;#6699ff&quot;,
+                        &quot;min&quot;: 0
                     }
                 }
             }
         ]
     }
-
 ]
-
 	</help>
 </tool>
