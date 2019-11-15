@@ -6,11 +6,11 @@
         <param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
         <param type="text" name="pathology" label="Pathology" help="The name of the pathology in which the dataset belongs to."/>
         <param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>
-        <param type="text" name="y" label="Y" help="Dependent variable: A variable from the database."/>
-        <param type="text" name="test_size" label="(Optional) Test Size" help="(Real) If real, should be between 0.0 and 1.0 and represent the proportion of the dataset to include in the test split. If None, the value is set to the complement of the train size. If train_size is also None, it will be set to 0.25." optional="true" />
-        <param type="text" name="train_size" label="(Optional) Train Size" help="(Real) If real, should be between 0.0 and 1.0 and represent the proportion of the dataset to include in the train split. If None, the value is automatically set to the complement of the test size." optional="true" />
-        <param type="text" name="random_state" label="(Optional) Random State" help="(Integer) It is the seed used by the random number generator." optional="true" />
-        <param type="text" name="shuffle" label="(Optional) Shuffle" help="(String) Whether or not to shuffle the data before splitting. It can be True,False or None." optional="true" />
+        <param type="text" name="y" label="Y" help="Dependent variable: A categorical variable from the database."/>
+        <param type="text" name="test_size" label="(Optional) Test Size" help="(Optional, Real). If it is between 0.0 and 1.0, it represents the proportion of the dataset to include in the test split. If None, the value is set to the complement of the train size. If train_size is also None, it will be set to 0.25." optional="true" />
+        <param type="text" name="train_size" label="(Optional) Train Size" help="(Optional,Real). If it is between 0.0 and 1.0, it represents the proportion of the dataset to include in the train split. If None, the value is automatically set to the complement of the test size." optional="true" />
+        <param type="text" name="random_state" label="(Optional) Random State" help="(Optional,Integer) It is the seed used by the random number generator." optional="true" />
+        <param type="text" name="shuffle" label="(Optional) Shuffle" help="(Optional, String: 'True' or'False]) Whether or not to shuffle the data before splitting." optional="true" />
     </inputs>
     <outputs>
         <data name="output" format="json" />
@@ -18,7 +18,9 @@
 	<help>
 ** Hold Out Validation **
 
-This algorithm splits the dataset into random train and test subsets.
+This algorithm splits the dataset into random train and test subsets and provides as output: 
+		1) the number of splits
+		2) the name of the local DB where it saved the results.
 
 
 ** Output **
