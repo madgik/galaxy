@@ -16,7 +16,9 @@
 	<help>
 ** K-Folds cross-validator **
 
-This algorithm splits the dataset into multiple pieces and provides the name of the local DB where it saved the results.
+This algorithm splits the dataset into multiple pieces and provides as output: 
+		1) the number of splits
+		2) the name of the local DB where it saved the results
 
 
 ** Output **
