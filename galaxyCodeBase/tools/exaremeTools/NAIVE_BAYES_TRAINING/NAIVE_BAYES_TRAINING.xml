@@ -7,8 +7,8 @@
         <param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
         <param type="text" name="pathology" label="Pathology" help="The name of the pathology in which the dataset belongs to."/>
         <param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>
-        <param type="text" name="y" label="Y" help="Dependent variable: A variable from the database."/>
-        <param name="alpha" type="text" label="(Optional) Alpha" help="(Real) Additive (Laplace/Lidstone) smoothing parameter (0 for no smoothing, 1 is the default)." />
+        <param type="text" name="y" label="Y" help="Dependent variable: A categorical variable from the database."/>
+        <param name="alpha" type="text" label="(Optional) Alpha" help="(Real) Additive smoothing parameter (0 for no smoothing, 1 is the default)." />
     </inputs>
     <outputs>
         <data name="output" format="json" />
