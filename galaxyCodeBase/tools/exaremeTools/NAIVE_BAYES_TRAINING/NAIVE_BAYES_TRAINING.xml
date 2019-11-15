@@ -3,7 +3,7 @@
     <description>NAIVE BAYES TRAINING</description>
         <command interpreter="python">NAIVE_BAYES_TRAINING.py -in '$input' -p '$pathology' -d '$dataset' -x '$x' -y '$y' -a '$alpha' -o '$output' </command>
     <inputs>
-		<param name="input" format="json" label="" type="data" />
+	<param name="input" format="json" label="" type="data" help = "The output of **CROSS VALIDATION K FOLD** or **HOLD OUT VALIDATION**."/>
         <param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
         <param type="text" name="pathology" label="Pathology" help="The name of the pathology in which the dataset belongs to."/>
         <param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>
@@ -19,21 +19,10 @@
 Naive Bayes classifier: Training phase
 
 
-** Input **
-
-This algorithm can receive as input the output of **CROSS VALIDATION K FOLD** or **HOLD OUT VALIDATION**.
-
-Input example from CROSS VALIDATION K FOLD:
-{
-&quot;numberOfSplits&quot;: &quot;1&quot;, 
-&quot;dbIdentifier&quot;: &quot;HOLD_OUT_VALIDATION_1573040331747&quot;
-}
-
-
-
+		
 ** Output **
 
-This algorithm&apos;s output can be given as input to **Naive Bayes Training**.
+This algorithm&apos;s output can be given as input to **Naive Bayes Testing**.
 
 
 Output example:
