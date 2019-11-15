@@ -28,6 +28,7 @@ def main():
 		print(" -d Dataset")
 		print(" -x Columns")
 		print(" -y Classname")
+        print(" -f Filter (Optional)")
 		print(" -tes Test Size (Optional)")
 		print(" -trs Train Size (Optional)")
 		print(" -rans Random State (Optional)")
@@ -55,6 +56,10 @@ def main():
 			"value": opts.get("-y")
 		  },
 		  {
+			"name": "f",
+			"value": opts.get("-f")
+		  },
+		  {
 			"name": "test_size",
 			"value": opts.get("-tes")
 		  },
@@ -71,10 +76,13 @@ def main():
 			"value": opts.get("-sh")
 		  }
 		]
-	print (json.dumps(data))
 	response = requests.post(url,data=json.dumps(data),headers=headers)
 	
 	data = json.loads(response.text)
+    if 'result' in data:
+        if 'error' in data['result'][0]['type']:
+            raise ValueError(json.dumps(data))
+	
 	data['numberOfSplits'] = '1'
 		
 	outputFile = open(opts.get("-o"), "w")

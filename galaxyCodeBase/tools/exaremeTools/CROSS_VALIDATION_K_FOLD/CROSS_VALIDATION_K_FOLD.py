@@ -28,6 +28,7 @@ def main():
 		print(" -d Dataset")
 		print(" -x X")
 		print(" -y Y")
+        print(" -f (Optional) Filter")
 		print(" -k KFold")
 		print(" -o Output")
 		return 0
@@ -52,6 +53,10 @@ def main():
 			"value": opts.get("-y")
 		  },
 		  {
+			"name": "filter",
+			"value": opts.get("-f")
+		  },
+		  {
 			"name": "kfold",
 			"value": opts.get("-k")
 		  }
@@ -59,11 +64,9 @@ def main():
 	response = requests.post(url,data=json.dumps(data),headers=headers)
 	
 	data = json.loads(response.text)
-	if "error" in data:
-		outputFile = open(opts.get("-o"), "w")
-		outputFile.write(json.dumps(data))
-		outputFile.close
-		raise ValueError(json.dumps(data))
+    if 'result' in data:
+        if 'error' in data['result'][0]['type']:
+            raise ValueError(json.dumps(data))
 	
 	data['numberOfSplits'] = opts.get("-k")
 	

@@ -80,11 +80,9 @@ def main():
 			  }
 			]
 		response = json.loads(requests.post(url,data=json.dumps(data),headers=headers).text)
-		if "error" in response:
-			outputFile = open(opts.get("-o"), "w")
-			outputFile.write(json.dumps(response))
-			outputFile.close
-			raise ValueError(json.dumps(response))
+        if 'result' in response:
+            if 'error' in response['result'][0]['type']:
+                raise ValueError(json.dumps(response))
 		responses.append(response)
 	
 	data = {"results" : responses}
