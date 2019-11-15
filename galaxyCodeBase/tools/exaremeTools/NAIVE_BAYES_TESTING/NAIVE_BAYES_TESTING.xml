@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tool version="1.0.0" name="NAIVE BAYES TESTING" id="NAIVE_BAYES_TESTING">
-    <description>NAIVE BAYES TESTING</description>
-        <command interpreter="python">NAIVE_BAYES_TESTING.py -in '$input' -p '$pathology' -d '$dataset' -x '$x' -y '$y' -o '$output' </command>
+<tool version="1.0.0" name="Naive Bayes Testing" id="NAIVE_BAYES_TESTING">
+    <command interpreter="python">NAIVE_BAYES_TESTING.py -in '$input' -p '$pathology' -d '$dataset' -x '$x' -y '$y' -o '$output' </command>
     <inputs>
-	<param name="input" format="json" type="data" label="" help="The output of **NAIVE_BAYES_TRAINING**."/>
-        <param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
-        <param type="text" name="pathology" label="Pathology" help="The name of the pathology in which the dataset belongs to."/>
-        <param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>
-        <param type="text" name="y" label="Y" help="Dependent variable: A categorical variable from the database."/>
+		<param name="input" format="json" type="data" label="" help="The output of **NAIVE_BAYES_TRAINING**."/>
+		<param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
+		<param type="text" name="pathology" label="Pathology" help="The name of the pathology in which the dataset belongs to."/>
+		<param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>
+		<param type="text" name="y" label="Y" help="Dependent variable: A categorical variable from the database."/>
     </inputs>
     <outputs>
         <data name="output" format="json" />

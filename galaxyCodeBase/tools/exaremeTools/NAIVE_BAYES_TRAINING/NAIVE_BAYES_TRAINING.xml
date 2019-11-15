@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tool version="1.0.0" name="NAIVE BAYES TRAINING" id="NAIVE_BAYES_TRAINING">
-    <description>NAIVE BAYES TRAINING</description>
-        <command interpreter="python">NAIVE_BAYES_TRAINING.py -in '$input' -p '$pathology' -d '$dataset' -x '$x' -y '$y' -a '$alpha' -o '$output' </command>
+<tool version="1.0.0" name="Naive Bayes Training" id="NAIVE_BAYES_TRAINING">
+    <command interpreter="python">NAIVE_BAYES_TRAINING.py -in '$input' -p '$pathology' -d '$dataset' -x '$x' -y '$y' -a '$alpha' -o '$output' </command>
     <inputs>
-	<param name="input" format="json" label="" type="data" help = "The output of **CROSS VALIDATION K FOLD** or **HOLD OUT VALIDATION**."/>
+		<param name="input" format="json" label="" type="data" help = "The output of **CROSS VALIDATION K FOLD** or **HOLD OUT VALIDATION**."/>
         <param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
         <param type="text" name="pathology" label="Pathology" help="The name of the pathology in which the dataset belongs to."/>
         <param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>

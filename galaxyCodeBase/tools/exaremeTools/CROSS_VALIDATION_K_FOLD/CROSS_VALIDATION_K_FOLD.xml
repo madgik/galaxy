@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tool version="1.0.0" name="CROSS VALIDATION K FOLD" id="CROSS_VALIDATION_K_FOLD">
-    <description>CROSS VALIDATION K FOLD</description>
-        <command interpreter="python">CROSS_VALIDATION_K_FOLD.py -p '$pathology' -d '$dataset' -x '$x' -y '$y' -k '$kfold' -o '$output' </command>
+<tool version="1.0.0" name="Cross Validation K Fold" id="CROSS_VALIDATION_K_FOLD">
+    <command interpreter="python">CROSS_VALIDATION_K_FOLD.py -p '$pathology' -d '$dataset' -x '$x' -y '$y' -f '$filter' -k '$kfold' -o '$output' </command>
     <inputs>
         <param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
         <param type="text" name="pathology" label="Pathology" help="The name of the pathology in which the dataset belongs to."/>
-	<param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>
-        <param type="text" name="y" label="Y" help="Dependent variable: A categorical variable from the database."/>
-        <param type="text" name="kfold" label="K Fold" help="(Integer) Number of pieces the database will be split."/>
-	    
+		<param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>
+        <param type="text" name="y" label="Y" help="Dependent variable: A categorical variable from the database."/>  
+		<param type="text" name="kfold" label="K Fold" help="(Integer) Number of pieces the database will be split."/>
+		<param type="text" name="filter" label="(Optional) Filter" help="Filter database prior to algorithm execution." />  
     </inputs>
     <outputs>
         <data name="output" format="json" />
@@ -24,7 +23,6 @@ This algorithm splits the dataset into multiple pieces and provides as output:
 ** Output **
 
 This algorithm&apos;s output can be given as input to **NAIVE BAYES TRAINING**.
-
 
 Output example:
 {

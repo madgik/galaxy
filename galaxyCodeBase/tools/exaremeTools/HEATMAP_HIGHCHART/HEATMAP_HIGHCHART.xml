@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tool version="1.0.0" name="HEATMAP HIGHCHART" id="HEATMAP_HIGHCHART">
-    <description>HEATMAP HIGHCHART</description>
-        <command interpreter="python">HEATMAP_HIGHCHART.py -in '$input' -t '$title' -xt '$xTitle' -yt '$yTitle' -o '$output' </command>
+<tool version="1.0.0" name="Heatmap Highchart" id="HEATMAP_HIGHCHART">
+    <command interpreter="python">HEATMAP_HIGHCHART.py -in '$input' -t '$title' -xt '$xTitle' -yt '$yTitle' -o '$output' </command>
     <inputs>
 		<param name="input" format="json" type="data" label="" help="The output of **NAIVE_BAYES_TESTING**." />
 		<param name="title" type="text" label="Title" help="Title of the visualization." />
@@ -21,7 +20,6 @@ This algorithm&apos;s output can be demonstrated using the heatmap highcharts vi
 
 Output example:
 [
-
 {
 &quot;result&quot;: [
 {
