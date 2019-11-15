@@ -3,7 +3,7 @@
     <description>HEATMAP HIGHCHART</description>
         <command interpreter="python">HEATMAP_HIGHCHART.py -in '$input' -t '$title' -xt '$xTitle' -yt '$yTitle' -o '$output' </command>
     <inputs>
-		<param name="input" format="json" type="data" label="" help="" />
+		<param name="input" format="json" type="data" label="" help="The output of **NAIVE_BAYES_TESTING**." />
 		<param name="title" type="text" label="Title" help="Title of the visualization." />
 		<param name="xTitle" type="text" label="x Axis Title" help="Title for the x Axis." />
 		<param name="yTitle" type="text" label="y Axis Title" help="Title for the y Axis." />
@@ -14,118 +14,10 @@
 	<help>
 ** Heatmap Highchart **
 
-A heatmap visualization of the Naive Bayes Testing result.
-
-
-** Input **
-
-This algorithm can receive as input the output of **NAIVE_BAYES_TESTING**.
-
-Input example:
-{
-&quot;results&quot;: [
-[
-{
-&quot;actualclass&quot;: &quot;AD&quot;,
-&quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 18
-},
-{
-&quot;actualclass&quot;: &quot;AD&quot;,
-&quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 2
-},
-{
-&quot;actualclass&quot;: &quot;AD&quot;,
-&quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 53
-},
-{
-&quot;actualclass&quot;: &quot;CN&quot;,
-&quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 3
-},
-{
-&quot;actualclass&quot;: &quot;CN&quot;,
-&quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 11
-},
-{
-&quot;actualclass&quot;: &quot;CN&quot;,
-&quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 71
-},
-{
-&quot;actualclass&quot;: &quot;Other&quot;,
-&quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 22
-},
-{
-&quot;actualclass&quot;: &quot;Other&quot;,
-&quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 17
-},
-{
-&quot;actualclass&quot;: &quot;Other&quot;,
-&quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 159
-}
-],
-[
-{
-&quot;actualclass&quot;: &quot;AD&quot;,
-&quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 33
-},
-{
-&quot;actualclass&quot;: &quot;AD&quot;,
-&quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 0
-},
-{
-&quot;actualclass&quot;: &quot;AD&quot;,
-&quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 55
-},
-{
-&quot;actualclass&quot;: &quot;CN&quot;,
-&quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 6
-},
-{
-&quot;actualclass&quot;: &quot;CN&quot;,
-&quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 0
-},
-{
-&quot;actualclass&quot;: &quot;CN&quot;,
-&quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 93
-},
-{
-&quot;actualclass&quot;: &quot;Other&quot;,
-&quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 25
-},
-{
-&quot;actualclass&quot;: &quot;Other&quot;,
-&quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 0
-},
-{
-&quot;actualclass&quot;: &quot;Other&quot;,
-&quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 144
-}
-]
-]
-}
-
-
+A heatmap visualization of a confusion matrrix (i.e. result of Naive Bayes Testing) .
 ** Output **
 
 This algorithm&apos;s output can be demonstrated using the heatmap highcharts visualizations.
-
 
 Output example:
 [
