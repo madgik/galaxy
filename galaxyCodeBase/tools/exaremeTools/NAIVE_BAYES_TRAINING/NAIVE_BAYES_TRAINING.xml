@@ -16,10 +16,11 @@
 	<help>
 ** Naive Bayes Training **
 
-Naive Bayes classifier: Training phase
-
-
+This algorithm executed the training phase of Naive Bayes Classifier and provides as output: 
+		1) the training model
+		2) the name of the local DB where it saved the results.
 		
+			
 ** Output **
 
 This algorithm&apos;s output can be given as input to **Naive Bayes Testing**.
