@@ -89,7 +89,6 @@ def main():
     args = sys.argv[1:]
 
     opts = getopts(args)
-
     if not opts or len(opts) < 5:
         print 'Usage:'
         print ' -in Input'
@@ -98,26 +97,35 @@ def main():
         print ' -yt yTitle'
         print ' -o Output'
         return 0
+    title = opts.get('-t')
+    xtitle = opts.get('-xt')
+    ytitle = opts.get('-yt')
 
     try:
         inputFile = open(opts.get('-in'), 'r')
         inputData = inputFile.read()
         inputJson = json.loads(inputData)
-        title = opts.get('-t')
-        xtitle = opts.get('-xt')
-        ytitle = opts.get('-yt')
-        previousResults = inputJson['results']
     except ValueError:
-        print 'Input file should be:'
-        print '{'
-        print '  "results" : [ ... ]'
-        print '}'
+        print("Input file should be:")
+        print('[{ "result" : [{')
+        print('  "data": [...],')
+        print('  "type": "application/json"')
+        print('   } , ... ')
+        print('] }')
 
     results = []
-    for previousResult in previousResults:
-        result = {'result': [{'data': heatmap(previousResult, title,
-                  xtitle, ytitle),
-                  'type': 'application/vnd.highcharts+json'}]}
+    for i in xrange(len(inputJson)):
+        try:
+            result = {'result': [{'data': heatmap(inputJson[i]['result'][0]['data'], title,
+                    xtitle, ytitle),'type': 'application/vnd.highcharts+json'}]}
+        except ValueError:
+            print("Input file should be:")
+            print('[{ "result" : [{')
+            print('  "data": [...],')
+            print('  "type": "application/json"')
+            print('   } , ... ')
+            print('] }')
+
         results.append(result)
 
     outputFile = open(opts.get('-o'), 'w')

@@ -68,7 +68,7 @@ def main():
         if 'error' in data['result'][0]['type']:
             raise ValueError(json.dumps(data))
     
-    data['numberOfSplits'] = opts.get("-k")
+    data['result'][0]['numberOfSplits'] = opts.get("-k")
     
     outputFile = open(opts.get("-o"), "w")
     outputFile.write(json.dumps(data))

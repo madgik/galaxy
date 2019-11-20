@@ -31,22 +31,33 @@ def main():
         print(" -y Y")
         print(" -o Output")
         return 0
-
     try:
         inputFile = open(opts.get("-in"), "r")
         inputData = inputFile.read()
         inputJson = json.loads(inputData)
-        dbIdentifier = inputJson['dbIdentifier']
-        models = inputJson['models']
     except ValueError:  # includes simplejson.decoder.JSONDecodeError
         print("Input file should be:")
-        print("{")
-        print('  "models" : [ ... ],')
-        print('  "dbIdentifier" : "randomIdentifier"')
-        print("}")
-        
+        print('[{ "result" : [{')
+        print('  "data": [...],')
+        print('  "type": "application/json",')
+        print('  "dbIdentifier": "CROSS_VALIDATION_K_FOLD_1574239799896"')
+        print('   } , ... ')
+        print('] }')
+
     responses = []
-    for i in xrange(len(models)):
+    for i in xrange(len(inputJson)):
+        try:
+            dbIdentifier = inputJson[i]['result'][0]['dbIdentifier']
+            model = inputJson[i]['result'][0]['data']
+        except ValueError:  # includes simplejson.decoder.JSONDecodeError
+            print("Input file should be:")
+            print('[{ "result" : [{')
+            print('  "data": [...],')
+            print('  "type": "application/json",')
+            print('  "dbIdentifier": "CROSS_VALIDATION_K_FOLD_1574239799896"')
+            print('   } , ... ')
+            print('] }')
+    
         headers = {'Content-type': 'application/json', "Accept": "text/plain"}
         url= endpoint + '/mining/query/NAIVE_BAYES_TESTING'
         data = [
@@ -76,7 +87,7 @@ def main():
               },
               {
                 "name": "model",
-                "value": json.dumps(models[i])
+                "value": json.dumps(model)
               }
             ]
         response = json.loads(requests.post(url,data=json.dumps(data),headers=headers).text)
@@ -84,11 +95,9 @@ def main():
             if 'error' in response['result'][0]['type']:
                 raise ValueError(json.dumps(response))
         responses.append(response)
-    
-    data = {"results" : responses}
-    
+        
     outputFile = open(opts.get("-o"), "w")
-    outputFile.write(json.dumps(data))
+    outputFile.write(json.dumps(responses))
     outputFile.close
     
 if __name__ == "__main__":

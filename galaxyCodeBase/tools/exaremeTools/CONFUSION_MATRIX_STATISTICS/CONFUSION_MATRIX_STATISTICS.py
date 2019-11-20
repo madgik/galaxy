@@ -135,21 +135,29 @@ def main():
         inputFile = open(opts.get("-in"), "r")
         inputData = inputFile.read()
         inputJson = json.loads(inputData)
-        results = inputJson['results']
     except ValueError:
         print("Input file should be:")
-        print("{")
-        print('  "results" : [ ... ]')
-        print("}")
+        print('[{ "result" : [{')
+        print('  "data": [...],')
+        print('  "type": "application/json"')
+        print('   } , ... ')
+        print('] }')
     
     statistics = []
-    for result in results:
-        statistics.append(Rfunction_confusionmatrix(result))
-    
-    outputJson = {"statistics" : statistics}
+    for i in xrange(len(inputJson)):
+        try:
+            result = {'result': [{'data': Rfunction_confusionmatrix(inputJson[i]['result'][0]['data']),'type': 'text'}]}
+        except ValueError:
+            print("Input file should be:")
+            print('[{ "result" : [{')
+            print('  "data": [...],')
+            print('  "type": "application/json"')
+            print('   } , ... ')
+            print('] }')
+        statistics.append(result)
     
     outputFile = open(opts.get("-o"), "w")
-    outputFile.write(json.dumps(outputJson))
+    outputFile.write(json.dumps(statistics))
     outputFile.close
 
 if __name__ == "__main__":

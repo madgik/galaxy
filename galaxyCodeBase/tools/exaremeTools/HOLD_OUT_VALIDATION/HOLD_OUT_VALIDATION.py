@@ -83,7 +83,7 @@ def main():
         if 'error' in data['result'][0]['type']:
             raise ValueError(json.dumps(data))
     
-    data['numberOfSplits'] = '1'
+    data['result'][0]['numberOfSplits'] = '1'
         
     outputFile = open(opts.get("-o"), "w")
     outputFile.write(json.dumps(data))

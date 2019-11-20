@@ -37,14 +37,15 @@ def main():
         inputFile = open(opts.get("-in"), "r")
         inputData = inputFile.read()
         inputJson = json.loads(inputData)
-        dbIdentifier = inputJson['dbIdentifier']
-        numberOfSplits = inputJson['numberOfSplits']
+        dbIdentifier = inputJson['result'][0]['dbIdentifier']
+        numberOfSplits = inputJson['result'][0]['numberOfSplits']
     except ValueError:  # includes simplejson.decoder.JSONDecodeError
-        print("Input file should be:")
-        print("{")
-        print('  "dbIdentifier" : "randomIdentifier",')
-        print('  "numberOfSplits" : "5"')
-        print("}")
+        print('Input file should be:')
+        print('{ "result": [{')
+        print('  "numberOfSplits" : "5",')
+        print('  "type": "application/json",')
+        print('  "dbIdentifier" : "randomIdentifier"')
+        print('} ] }')
         
     responses = []
     for i in xrange(int(numberOfSplits)):
@@ -80,17 +81,15 @@ def main():
                 "value": dbIdentifier
               }
             ]
+
         response = json.loads(requests.post(url,data=json.dumps(data),headers=headers).text)
         if 'result' in response:
             if 'error' in response['result'][0]['type']:
                 raise ValueError(json.dumps(response))
-        responses.append(response['results'])
-    
-    data = {'dbIdentifier' : dbIdentifier}
-    data['models'] = responses
+        responses.append(response)
     
     outputFile = open(opts.get("-o"), "w")
-    outputFile.write(json.dumps(data))
+    outputFile.write(json.dumps(responses))
     outputFile.close
     
 if __name__ == "__main__":
