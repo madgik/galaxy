@@ -2,7 +2,7 @@
 <tool version="1.0.0" name="Heatmap Highchart" id="HEATMAP_HIGHCHART">
     <command interpreter="python">HEATMAP_HIGHCHART.py -in '$input' -t '$title' -xt '$xTitle' -yt '$yTitle' -o '$output' </command>
     <inputs>
-		<param name="input" format="json" type="data" label="" help="The output of **NAIVE_BAYES_TESTING**." />
+		<param name="input" format="json" type="data" label="" help="The output of NAIVE_BAYES_TESTING." />
 		<param name="title" type="text" label="Title" help="Title of the visualization." />
 		<param name="xTitle" type="text" label="x Axis Title" help="Title for the x Axis." />
 		<param name="yTitle" type="text" label="y Axis Title" help="Title for the y Axis." />
@@ -11,10 +11,11 @@
         <data name="output" format="json" />
     </outputs>
 	<help>
-** Heatmap Highchart **
+**Heatmap Highchart**
 
-A heatmap visualization of a confusion matrrix (i.e. result of Naive Bayes Testing) .
-** Output **
+A heatmap visualization of a confusion matrrix (i.e. result of Naive Bayes Testing).
+
+**Output**
 
 This algorithm&apos;s output can be demonstrated using the heatmap highcharts visualizations.
 

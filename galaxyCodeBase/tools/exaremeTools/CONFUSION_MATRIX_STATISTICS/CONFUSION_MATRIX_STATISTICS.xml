@@ -5,18 +5,18 @@
 	</requirements>
     <command interpreter="python">CONFUSION_MATRIX_STATISTICS.py -in '$input' -o '$output' </command>
     <inputs>
-		<param name="input" format="json" type="data" label="" help="The output of **NAIVE_BAYES_TESTING**" />
+		<param name="input" format="json" type="data" label="" help="The output of NAIVE_BAYES_TESTING" />
     </inputs>
     <outputs>
         <data name="output" format="json" />
     </outputs>
 	<help>
-** Confusion Matrix Statistics **
+**Confusion Matrix Statistics**
 
 Statistics similar to what R is showing when running the Naive Bayes Testing algorithm.
 
 
-** Output **
+**Output**
 
 Output example:
 {

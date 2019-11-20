@@ -2,25 +2,25 @@
 <tool version="1.0.0" name="Naive Bayes Training" id="NAIVE_BAYES_TRAINING">
     <command interpreter="python">NAIVE_BAYES_TRAINING.py -in '$input' -p '$pathology' -d '$dataset' -x '$x' -y '$y' -a '$alpha' -o '$output' </command>
     <inputs>
-		<param name="input" format="json" label="" type="data" help = "The output of **CROSS VALIDATION K FOLD** or **HOLD OUT VALIDATION**."/>
+		<param name="input" format="json" label="" type="data" help = "The output of CROSS VALIDATION K FOLD or HOLD OUT VALIDATION."/>
         <param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
         <param type="text" name="pathology" label="Pathology" help="The name of the pathology in which the dataset belongs to."/>
         <param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>
         <param type="text" name="y" label="Y" help="Dependent variable: A categorical variable from the database."/>
-        <param name="alpha" type="text" label="(Optional) Alpha" help="(Real) Additive smoothing parameter (0 for no smoothing, 1 is the default)." />
+        <param name="alpha" type="text" label="Alpha" help="(Real) Additive smoothing parameter (0 for no smoothing, 1 is the default)." />
     </inputs>
     <outputs>
         <data name="output" format="json" />
     </outputs>
 	<help>
-** Naive Bayes Training **
+**Naive Bayes Training**
 
 This algorithm executed the training phase of Naive Bayes Classifier and provides as output: 
 		1) the training model
 		2) the name of the local DB where it saved the results.
 		
 			
-** Output **
+**Output**
 
 This algorithm&apos;s output can be given as input to **Naive Bayes Testing**.
 

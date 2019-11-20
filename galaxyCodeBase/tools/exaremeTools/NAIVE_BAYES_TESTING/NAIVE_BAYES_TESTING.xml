@@ -2,7 +2,7 @@
 <tool version="1.0.0" name="Naive Bayes Testing" id="NAIVE_BAYES_TESTING">
     <command interpreter="python">NAIVE_BAYES_TESTING.py -in '$input' -p '$pathology' -d '$dataset' -x '$x' -y '$y' -o '$output' </command>
     <inputs>
-		<param name="input" format="json" type="data" label="" help="The output of **NAIVE_BAYES_TRAINING**."/>
+		<param name="input" format="json" type="data" label="" help="The output of NAIVE_BAYES_TRAINING."/>
 		<param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
 		<param type="text" name="pathology" label="Pathology" help="The name of the pathology in which the dataset belongs to."/>
 		<param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>
@@ -12,11 +12,11 @@
         <data name="output" format="json" />
     </outputs>
 	<help>
-** Naive Bayes Testing **
+**Naive Bayes Testing**
 
 This algorithm executed the testing phase of Naive Bayes Classifier and provides as output a confusion matrix in json format.
 		
-** Output **
+**Output**
 
 This algorithm&apos;s output can be given as input to **HEATMAP HIGHCHART** OR **CONFUSION MATRIX STATISTICS**.
 		

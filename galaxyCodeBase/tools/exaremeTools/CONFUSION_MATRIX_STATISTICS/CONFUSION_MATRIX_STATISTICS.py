@@ -121,36 +121,36 @@ def Rfunction_confusionmatrix(inputjson):
     return jsonResult
 
 def main():
-	args = sys.argv[1:]
+    args = sys.argv[1:]
 
-	opts = getopts(args)
-		
-	if not opts or len(opts) < 2:
-		print("Usage:")
-		print(" -in Input")
-		print(" -o Output")
-		return 0
-		
-	try:
-		inputFile = open(opts.get("-in"), "r")
-		inputData = inputFile.read()
-		inputJson = json.loads(inputData)
-		results = inputJson['results']
-	except ValueError:
-		print("Input file should be:")
-		print("{")
-		print('  "results" : [ ... ]')
-		print("}")
-	
-	statistics = []
-	for result in results:
-		statistics.append(Rfunction_confusionmatrix(result))
-	
-	outputJson = {"statistics" : statistics}
-	
-	outputFile = open(opts.get("-o"), "w")
-	outputFile.write(json.dumps(outputJson))
-	outputFile.close
+    opts = getopts(args)
+        
+    if not opts or len(opts) < 2:
+        print("Usage:")
+        print(" -in Input")
+        print(" -o Output")
+        return 0
+        
+    try:
+        inputFile = open(opts.get("-in"), "r")
+        inputData = inputFile.read()
+        inputJson = json.loads(inputData)
+        results = inputJson['results']
+    except ValueError:
+        print("Input file should be:")
+        print("{")
+        print('  "results" : [ ... ]')
+        print("}")
+    
+    statistics = []
+    for result in results:
+        statistics.append(Rfunction_confusionmatrix(result))
+    
+    outputJson = {"statistics" : statistics}
+    
+    outputFile = open(opts.get("-o"), "w")
+    outputFile.write(json.dumps(outputJson))
+    outputFile.close
 
 if __name__ == "__main__":
     main()

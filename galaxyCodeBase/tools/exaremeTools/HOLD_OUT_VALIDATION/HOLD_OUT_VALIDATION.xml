@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <tool version="1.0.0" name="Hold Out Validation" id="HOLD_OUT_VALIDATION">
-    <description>HOLD OUT VALIDATION</description>
     <command interpreter="python">HOLD_OUT_VALIDATION.py -p '$pathology' -d '$dataset' -x '$x' -y '$y' -f '$filter' -tes '$test_size' -trs '$train_size' -rans '$random_state' -sh '$shuffle' -o '$output' </command>
     <inputs>
         <param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
@@ -18,17 +17,16 @@ complement of the train size. If train_size is also None, it will be set to 0.25
         <data name="output" format="json" />
     </outputs>
 	<help>
-** Hold Out Validation **
+**Hold Out Validation**
 
 This algorithm splits the dataset into random train and test subsets and provides as output: 
 		1) the number of splits
 		2) the name of the local DB where it saved the results.
 
 
-** Output **
+**Output**
 
 This algorithm&apos;s output can be given as input to **NAIVE BAYES TRAINING**.
-
 
 Output example:
 {

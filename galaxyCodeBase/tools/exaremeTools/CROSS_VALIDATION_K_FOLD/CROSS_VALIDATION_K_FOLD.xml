@@ -13,14 +13,16 @@
         <data name="output" format="json" />
     </outputs>
 	<help>
-** K-Folds cross-validator **
+
+**K-Folds cross-validator**
+
 
 This algorithm splits the dataset into multiple pieces and provides as output: 
-		1) the number of splits
-		2) the name of the local DB where it saved the results
+	1) the number of splits
+	2) the name of the local DB where it saved the results
 
 
-** Output **
+**Output**
 
 This algorithm&apos;s output can be given as input to **NAIVE BAYES TRAINING**.
 
