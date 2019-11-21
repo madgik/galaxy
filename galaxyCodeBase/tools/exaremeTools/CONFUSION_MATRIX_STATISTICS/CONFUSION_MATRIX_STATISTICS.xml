@@ -19,12 +19,137 @@ Statistics similar to what R is showing when running the Naive Bayes Testing alg
 **Output**
 
 Output example:
-{
-&quot;statistics&quot;: [
-&quot;{&quot;overall&quot;: {&quot;Positive Class&quot;:&quot;&quot;,&quot;Accuracy&quot;:0.52808988764,&quot;Kappa&quot;:0.0800609108947,&quot;AccuracyLower&quot;:0.47477998336,&quot;AccuracyUpper&quot;:0.580928811167,&quot;AccuracyNull&quot;:0.556179775281,&quot;AccuracyPValue&quot;:0.868570075967,&quot;McnemarPValue&quot;:5.27068778867e-10},&quot;Class name: AD&quot;:{&quot;Sensitivity&quot;:0.246575342466,&quot;Specificity&quot;:0.129411764706,&quot;Pos Pred Value&quot;:0.80303030303,&quot;Neg Pred Value&quot;:0.911660777385,&quot;Precision&quot;:0.929889298893,&quot;Recall&quot;:0.215189873418,&quot;F1&quot;:0.418604651163,&quot;Prevalence&quot;:0.366666666667,&quot;Detection Rate&quot;:0.56183745583,&quot;Detection Prevalence&quot;:0.82428115016,&quot;Balanced Accuracy&quot;:0.773006134969},&quot;Class name: CN&quot;:{&quot;Sensitivity&quot;:0.773006134969,&quot;Specificity&quot;:0.465753424658,&quot;Pos Pred Value&quot;:0.418604651163,&quot;Neg Pred Value&quot;:0.366666666667,&quot;Precision&quot;:0.56183745583,&quot;Recall&quot;:0.246575342466,&quot;F1&quot;:0.129411764706,&quot;Prevalence&quot;:0.80303030303,&quot;Detection Rate&quot;:0.310344827586,&quot;Detection Prevalence&quot;:0.191304347826,&quot;Balanced Accuracy&quot;:0.661122661123}}&quot;,
-&quot;{&quot;overall&quot;: {&quot;Positive Class&quot;:&quot;&quot;,&quot;Accuracy&quot;:0.497191011236,&quot;Kappa&quot;:0.111934890462,&quot;AccuracyLower&quot;:0.444059505848,&quot;AccuracyUpper&quot;:0.550369612235,&quot;AccuracyNull&quot;:0.474719101124,&quot;AccuracyPValue&quot;:0.212935633183,&quot;McnemarPValue&quot;:9.69466886645e-24},&quot;Class name: AD&quot;:{&quot;Sensitivity&quot;:0.375,&quot;Specificity&quot;:0.0,&quot;Pos Pred Value&quot;:0.852071005917,&quot;Neg Pred Value&quot;:0.884328358209,&quot;Precision&quot;:1.0,&quot;Recall&quot;:0.208556149733,&quot;F1&quot;:0.515625,&quot;Prevalence&quot;:null,&quot;Detection Rate&quot;:0.493150684932,&quot;Detection Prevalence&quot;:0.811643835616,&quot;Balanced Accuracy&quot;:0.72191011236},&quot;Class name: CN&quot;:{&quot;Sensitivity&quot;:0.72191011236,&quot;Specificity&quot;:0.609375,&quot;Pos Pred Value&quot;:0.515625,&quot;Neg Pred Value&quot;:null,&quot;Precision&quot;:0.493150684932,&quot;Recall&quot;:0.375,&quot;F1&quot;:0.0,&quot;Prevalence&quot;:0.852071005917,&quot;Detection Rate&quot;:0.434210526316,&quot;Detection Prevalence&quot;:null,&quot;Balanced Accuracy&quot;:0.624728850325}}&quot;,
-&quot;{&quot;overall&quot;: {&quot;Positive Class&quot;:&quot;&quot;,&quot;Accuracy&quot;:0.576271186441,&quot;Kappa&quot;:0.169494971613,&quot;AccuracyLower&quot;:0.522924443882,&quot;AccuracyUpper&quot;:0.628331337543,&quot;AccuracyNull&quot;:0.590395480226,&quot;AccuracyPValue&quot;:0.72456514689,&quot;McnemarPValue&quot;:5.46302270957e-07},&quot;Class name: AD&quot;:{&quot;Sensitivity&quot;:0.426229508197,&quot;Specificity&quot;:0.142857142857,&quot;Pos Pred Value&quot;:0.794258373206,&quot;Neg Pred Value&quot;:0.887372013652,&quot;Precision&quot;:0.92962962963,&quot;Recall&quot;:0.324137931034,&quot;F1&quot;:0.440677966102,&quot;Prevalence&quot;:0.387096774194,&quot;Detection Rate&quot;:0.628787878788,&quot;Detection Prevalence&quot;:0.881355932203,&quot;Balanced Accuracy&quot;:0.777089783282},&quot;Class name: CN&quot;:{&quot;Sensitivity&quot;:0.777089783282,&quot;Specificity&quot;:0.522222222222,&quot;Pos Pred Value&quot;:0.440677966102,&quot;Neg Pred Value&quot;:0.387096774194,&quot;Precision&quot;:0.628787878788,&quot;Recall&quot;:0.426229508197,&quot;F1&quot;:0.142857142857,&quot;Prevalence&quot;:0.794258373206,&quot;Detection Rate&quot;:0.433333333333,&quot;Detection Prevalence&quot;:0.208695652174,&quot;Balanced Accuracy&quot;:0.701902748414}}&quot;
+[{
+&quot;result&quot;: [{
+&quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
+&quot;data&quot;: {
+&quot;Class name: AD&quot;: {
+&quot;F1&quot;: 0.418604651163,
+&quot;Pos Pred Value&quot;: 0.80303030303,
+&quot;Prevalence&quot;: 0.366666666667,
+&quot;Recall&quot;: 0.215189873418,
+&quot;Sensitivity&quot;: 0.246575342466,
+&quot;Precision&quot;: 0.929889298893,
+&quot;Neg Pred Value&quot;: 0.911660777385,
+&quot;Balanced Accuracy&quot;: 0.773006134969,
+&quot;Specificity&quot;: 0.129411764706,
+&quot;Detection Prevalence&quot;: 0.82428115016,
+&quot;Detection Rate&quot;: 0.56183745583
+},
+&quot;overall&quot;: {
+&quot;AccuracyUpper&quot;: 0.580928811167,
+&quot;Kappa&quot;: 0.0800609108947,
+&quot;McnemarPValue&quot;: 5.27068778867e-10,
+&quot;AccuracyNull&quot;: 0.556179775281,
+&quot;AccuracyPValue&quot;: 0.868570075967,
+&quot;AccuracyLower&quot;: 0.47477998336,
+&quot;Positive Class&quot;: &quot;&quot;,
+&quot;Accuracy&quot;: 0.52808988764
+},
+&quot;Class name: CN&quot;: {
+&quot;F1&quot;: 0.129411764706,
+&quot;Pos Pred Value&quot;: 0.418604651163,
+&quot;Prevalence&quot;: 0.80303030303,
+&quot;Recall&quot;: 0.246575342466,
+&quot;Sensitivity&quot;: 0.773006134969,
+&quot;Precision&quot;: 0.56183745583,
+&quot;Neg Pred Value&quot;: 0.366666666667,
+&quot;Balanced Accuracy&quot;: 0.661122661123,
+&quot;Specificity&quot;: 0.465753424658,
+&quot;Detection Prevalence&quot;: 0.191304347826,
+&quot;Detection Rate&quot;: 0.310344827586
+}
+}
+}
+]
+}, {
+&quot;result&quot;: [{
+&quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
+&quot;data&quot;: {
+&quot;Class name: AD&quot;: {
+&quot;F1&quot;: 0.515625,
+&quot;Pos Pred Value&quot;: 0.852071005917,
+&quot;Prevalence&quot;: null,
+&quot;Recall&quot;: 0.208556149733,
+&quot;Sensitivity&quot;: 0.375,
+&quot;Precision&quot;: 1.0,
+&quot;Neg Pred Value&quot;: 0.884328358209,
+&quot;Balanced Accuracy&quot;: 0.72191011236,
+&quot;Specificity&quot;: 0.0,
+&quot;Detection Prevalence&quot;: 0.811643835616,
+&quot;Detection Rate&quot;: 0.493150684932
+},
+&quot;overall&quot;: {
+&quot;AccuracyUpper&quot;: 0.550369612235,
+&quot;Kappa&quot;: 0.111934890462,
+&quot;McnemarPValue&quot;: 9.69466886645e-24,
+&quot;AccuracyNull&quot;: 0.474719101124,
+&quot;AccuracyPValue&quot;: 0.212935633183,
+&quot;AccuracyLower&quot;: 0.444059505848,
+&quot;Positive Class&quot;: &quot;&quot;,
+&quot;Accuracy&quot;: 0.497191011236
+},
+&quot;Class name: CN&quot;: {
+&quot;F1&quot;: 0.0,
+&quot;Pos Pred Value&quot;: 0.515625,
+&quot;Prevalence&quot;: 0.852071005917,
+&quot;Recall&quot;: 0.375,
+&quot;Sensitivity&quot;: 0.72191011236,
+&quot;Precision&quot;: 0.493150684932,
+&quot;Neg Pred Value&quot;: null,
+&quot;Balanced Accuracy&quot;: 0.624728850325,
+&quot;Specificity&quot;: 0.609375,
+&quot;Detection Prevalence&quot;: null,
+&quot;Detection Rate&quot;: 0.434210526316
+}
+}
+}
+]
+}, {
+&quot;result&quot;: [{
+&quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
+&quot;data&quot;: {
+&quot;Class name: AD&quot;: {
+&quot;F1&quot;: 0.440677966102,
+&quot;Pos Pred Value&quot;: 0.794258373206,
+&quot;Prevalence&quot;: 0.387096774194,
+&quot;Recall&quot;: 0.324137931034,
+&quot;Sensitivity&quot;: 0.426229508197,
+&quot;Precision&quot;: 0.92962962963,
+&quot;Neg Pred Value&quot;: 0.887372013652,
+&quot;Balanced Accuracy&quot;: 0.777089783282,
+&quot;Specificity&quot;: 0.142857142857,
+&quot;Detection Prevalence&quot;: 0.881355932203,
+&quot;Detection Rate&quot;: 0.628787878788
+},
+&quot;overall&quot;: {
+&quot;AccuracyUpper&quot;: 0.628331337543,
+&quot;Kappa&quot;: 0.169494971613,
+&quot;McnemarPValue&quot;: 5.46302270957e-07,
+&quot;AccuracyNull&quot;: 0.590395480226,
+&quot;AccuracyPValue&quot;: 0.72456514689,
+&quot;AccuracyLower&quot;: 0.522924443882,
+&quot;Positive Class&quot;: &quot;&quot;,
+&quot;Accuracy&quot;: 0.576271186441
+},
+&quot;Class name: CN&quot;: {
+&quot;F1&quot;: 0.142857142857,
+&quot;Pos Pred Value&quot;: 0.440677966102,
+&quot;Prevalence&quot;: 0.794258373206,
+&quot;Recall&quot;: 0.426229508197,
+&quot;Sensitivity&quot;: 0.777089783282,
+&quot;Precision&quot;: 0.628787878788,
+&quot;Neg Pred Value&quot;: 0.387096774194,
+&quot;Balanced Accuracy&quot;: 0.701902748414,
+&quot;Specificity&quot;: 0.522222222222,
+&quot;Detection Prevalence&quot;: 0.208695652174,
+&quot;Detection Rate&quot;: 0.433333333333
+}
+}
+}
 ]
 }
+]
+
 	</help>
 </tool>

@@ -146,7 +146,7 @@ def main():
     statistics = []
     for i in xrange(len(inputJson)):
         try:
-            result = {'result': [{'data': Rfunction_confusionmatrix(inputJson[i]['result'][0]['data']),'type': 'text'}]}
+            result = {'result': [{'data': json.loads(Rfunction_confusionmatrix(inputJson[i]['result'][0]['data'])),'type': 'application/vnd.dataresource+json'}]}
         except ValueError:
             print("Input file should be:")
             print('[{ "result" : [{')

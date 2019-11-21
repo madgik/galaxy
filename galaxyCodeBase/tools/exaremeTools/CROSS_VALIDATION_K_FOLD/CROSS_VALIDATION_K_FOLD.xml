@@ -28,8 +28,13 @@ This algorithm&apos;s output can be given as input to **NAIVE BAYES TRAINING**.
 
 Output example:
 {
-&quot;numberOfSplits&quot;: &quot;3&quot;, 
-&quot;dbIdentifier&quot;: &quot;CROSS_VALIDATION_K_FOLD_1573040331747&quot;
+&quot;result&quot;: [{
+&quot;numberOfSplits&quot;: &quot;3&quot;,
+&quot;type&quot;: &quot;application/json&quot;,
+&quot;dbIdentifier&quot;: &quot;CROSS_VALIDATION_K_FOLD_1574330976375&quot;
 }
+]
+}
+
 	</help>
 </tool>

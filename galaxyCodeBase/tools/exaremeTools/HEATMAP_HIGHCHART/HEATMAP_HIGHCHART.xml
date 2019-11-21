@@ -20,10 +20,8 @@ A heatmap visualization of a confusion matrrix (i.e. result of Naive Bayes Testi
 This algorithm&apos;s output can be demonstrated using the heatmap highcharts visualizations.
 
 Output example:
-[
-{
-&quot;result&quot;: [
-{
+[{
+&quot;result&quot;: [{
 &quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
 &quot;data&quot;: {
 &quot;legend&quot;: {
@@ -35,13 +33,9 @@ Output example:
 &quot;margin&quot;: 0
 },
 &quot;xAxis&quot;: {
-&quot;categories&quot;: [
-&quot;AD&quot;,
-&quot;CN&quot;,
-&quot;Other&quot;
-],
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
 &quot;title&quot;: {
-&quot;text&quot;: &quot;Actual Class&quot;,
+&quot;text&quot;: &quot;&quot;,
 &quot;style&quot;: {
 &quot;fontWeight&quot;: &quot;normal&quot;
 },
@@ -51,55 +45,8 @@ Output example:
 &quot;title&quot;: {
 &quot;text&quot;: &quot;Confusion Matrix&quot;
 },
-&quot;series&quot;: [
-{
-&quot;data&quot;: [
-[
-0,
-0,
-18.0
-],
-[
-0,
-1,
-2.0
-],
-[
-0,
-2,
-53.0
-],
-[
-1,
-0,
-3.0
-],
-[
-1,
-1,
-11.0
-],
-[
-1,
-2,
-71.0
-],
-[
-2,
-0,
-22.0
-],
-[
-2,
-1,
-17.0
-],
-[
-2,
-2,
-159.0
-]
-],
+&quot;series&quot;: [{
+&quot;data&quot;: [[0, 0, 18.0], [0, 1, 2.0], [0, 2, 53.0], [1, 0, 3.0], [1, 1, 11.0], [1, 2, 71.0], [2, 0, 22.0], [2, 1, 17.0], [2, 2, 159.0]],
 &quot;borderWidth&quot;: 1,
 &quot;dataLabels&quot;: {
 &quot;color&quot;: &quot;#000000&quot;,
@@ -108,13 +55,9 @@ Output example:
 }
 ],
 &quot;yAxis&quot;: {
-&quot;categories&quot;: [
-&quot;AD&quot;,
-&quot;CN&quot;,
-&quot;Other&quot;
-],
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
 &quot;title&quot;: {
-&quot;text&quot;: &quot;Predicted Class&quot;,
+&quot;text&quot;: &quot;&quot;,
 &quot;style&quot;: {
 &quot;fontWeight&quot;: &quot;normal&quot;
 },
@@ -138,10 +81,8 @@ Output example:
 }
 }
 ]
-},
-{
-&quot;result&quot;: [
-{
+}, {
+&quot;result&quot;: [{
 &quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
 &quot;data&quot;: {
 &quot;legend&quot;: {
@@ -153,13 +94,9 @@ Output example:
 &quot;margin&quot;: 0
 },
 &quot;xAxis&quot;: {
-&quot;categories&quot;: [
-&quot;AD&quot;,
-&quot;CN&quot;,
-&quot;Other&quot;
-],
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
 &quot;title&quot;: {
-&quot;text&quot;: &quot;Actual Class&quot;,
+&quot;text&quot;: &quot;&quot;,
 &quot;style&quot;: {
 &quot;fontWeight&quot;: &quot;normal&quot;
 },
@@ -169,55 +106,8 @@ Output example:
 &quot;title&quot;: {
 &quot;text&quot;: &quot;Confusion Matrix&quot;
 },
-&quot;series&quot;: [
-{
-&quot;data&quot;: [
-[
-0,
-0,
-33.0
-],
-[
-0,
-1,
-0.0
-],
-[
-0,
-2,
-55.0
-],
-[
-1,
-0,
-6.0
-],
-[
-1,
-1,
-0.0
-],
-[
-1,
-2,
-93.0
-],
-[
-2,
-0,
-25.0
-],
-[
-2,
-1,
-0.0
-],
-[
-2,
-2,
-144.0
-]
-],
+&quot;series&quot;: [{
+&quot;data&quot;: [[0, 0, 33.0], [0, 1, 0.0], [0, 2, 55.0], [1, 0, 6.0], [1, 1, 0.0], [1, 2, 93.0], [2, 0, 25.0], [2, 1, 0.0], [2, 2, 144.0]],
 &quot;borderWidth&quot;: 1,
 &quot;dataLabels&quot;: {
 &quot;color&quot;: &quot;#000000&quot;,
@@ -226,13 +116,9 @@ Output example:
 }
 ],
 &quot;yAxis&quot;: {
-&quot;categories&quot;: [
-&quot;AD&quot;,
-&quot;CN&quot;,
-&quot;Other&quot;
-],
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
 &quot;title&quot;: {
-&quot;text&quot;: &quot;Predicted Class&quot;,
+&quot;text&quot;: &quot;&quot;,
 &quot;style&quot;: {
 &quot;fontWeight&quot;: &quot;normal&quot;
 },
@@ -256,10 +142,8 @@ Output example:
 }
 }
 ]
-},
-{
-&quot;result&quot;: [
-{
+}, {
+&quot;result&quot;: [{
 &quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
 &quot;data&quot;: {
 &quot;legend&quot;: {
@@ -271,13 +155,9 @@ Output example:
 &quot;margin&quot;: 0
 },
 &quot;xAxis&quot;: {
-&quot;categories&quot;: [
-&quot;AD&quot;,
-&quot;CN&quot;,
-&quot;Other&quot;
-],
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
 &quot;title&quot;: {
-&quot;text&quot;: &quot;Actual Class&quot;,
+&quot;text&quot;: &quot;&quot;,
 &quot;style&quot;: {
 &quot;fontWeight&quot;: &quot;normal&quot;
 },
@@ -287,55 +167,8 @@ Output example:
 &quot;title&quot;: {
 &quot;text&quot;: &quot;Confusion Matrix&quot;
 },
-&quot;series&quot;: [
-{
-&quot;data&quot;: [
-[
-0,
-0,
-26.0
-],
-[
-0,
-1,
-3.0
-],
-[
-0,
-2,
-32.0
-],
-[
-1,
-0,
-6.0
-],
-[
-1,
-1,
-12.0
-],
-[
-1,
-2,
-66.0
-],
-[
-2,
-0,
-27.0
-],
-[
-2,
-1,
-16.0
-],
-[
-2,
-2,
-166.0
-]
-],
+&quot;series&quot;: [{
+&quot;data&quot;: [[0, 0, 26.0], [0, 1, 3.0], [0, 2, 32.0], [1, 0, 6.0], [1, 1, 12.0], [1, 2, 66.0], [2, 0, 27.0], [2, 1, 16.0], [2, 2, 166.0]],
 &quot;borderWidth&quot;: 1,
 &quot;dataLabels&quot;: {
 &quot;color&quot;: &quot;#000000&quot;,
@@ -344,13 +177,9 @@ Output example:
 }
 ],
 &quot;yAxis&quot;: {
-&quot;categories&quot;: [
-&quot;AD&quot;,
-&quot;CN&quot;,
-&quot;Other&quot;
-],
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
 &quot;title&quot;: {
-&quot;text&quot;: &quot;Predicted Class&quot;,
+&quot;text&quot;: &quot;&quot;,
 &quot;style&quot;: {
 &quot;fontWeight&quot;: &quot;normal&quot;
 },
@@ -376,5 +205,6 @@ Output example:
 ]
 }
 ]
+
 	</help>
 </tool>

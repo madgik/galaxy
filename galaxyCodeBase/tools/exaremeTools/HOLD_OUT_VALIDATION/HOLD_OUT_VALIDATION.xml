@@ -30,8 +30,12 @@ This algorithm&apos;s output can be given as input to **NAIVE BAYES TRAINING**.
 
 Output example:
 {
-&quot;numberOfSplits&quot;: &quot;1&quot;, 
-&quot;dbIdentifier&quot;: &quot;HOLD_OUT_VALIDATION_1573040331747&quot;
+&quot;result&quot;: [{
+&quot;numberOfSplits&quot;: &quot;1&quot;,
+&quot;type&quot;: &quot;application/json&quot;,
+&quot;dbIdentifier&quot;: &quot;HOLD_OUT_VALIDATION_1574330976375&quot;
+}
+]
 }
 	</help>
 </tool>

@@ -21,104 +21,137 @@ This algorithm executed the testing phase of Naive Bayes Classifier and provides
 This algorithm&apos;s output can be given as input to **HEATMAP HIGHCHART** OR **CONFUSION MATRIX STATISTICS**.
 		
 Output example:
-{
-&quot;results&quot;: [
-[
-{
+[{
+&quot;result&quot;: [{
+&quot;data&quot;: [{
 &quot;actualclass&quot;: &quot;AD&quot;,
 &quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 18
-},
-{
+&quot;val&quot;: 18.0
+}, {
 &quot;actualclass&quot;: &quot;AD&quot;,
 &quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 2
-},
-{
+&quot;val&quot;: 2.0
+}, {
 &quot;actualclass&quot;: &quot;AD&quot;,
 &quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 53
-},
-{
+&quot;val&quot;: 53.0
+}, {
 &quot;actualclass&quot;: &quot;CN&quot;,
 &quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 3
-},
-{
+&quot;val&quot;: 3.0
+}, {
 &quot;actualclass&quot;: &quot;CN&quot;,
 &quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 11
-},
-{
+&quot;val&quot;: 11.0
+}, {
 &quot;actualclass&quot;: &quot;CN&quot;,
 &quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 71
-},
-{
+&quot;val&quot;: 71.0
+}, {
 &quot;actualclass&quot;: &quot;Other&quot;,
 &quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 22
-},
-{
+&quot;val&quot;: 22.0
+}, {
 &quot;actualclass&quot;: &quot;Other&quot;,
 &quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 17
-},
-{
+&quot;val&quot;: 17.0
+}, {
 &quot;actualclass&quot;: &quot;Other&quot;,
 &quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 159
+&quot;val&quot;: 159.0
 }
 ],
-[
-{
-&quot;actualclass&quot;: &quot;AD&quot;,
-&quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 33
-},
-{
-&quot;actualclass&quot;: &quot;AD&quot;,
-&quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 0
-},
-{
-&quot;actualclass&quot;: &quot;AD&quot;,
-&quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 55
-},
-{
-&quot;actualclass&quot;: &quot;CN&quot;,
-&quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 6
-},
-{
-&quot;actualclass&quot;: &quot;CN&quot;,
-&quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 0
-},
-{
-&quot;actualclass&quot;: &quot;CN&quot;,
-&quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 93
-},
-{
-&quot;actualclass&quot;: &quot;Other&quot;,
-&quot;predictedclass&quot;: &quot;AD&quot;,
-&quot;val&quot;: 25
-},
-{
-&quot;actualclass&quot;: &quot;Other&quot;,
-&quot;predictedclass&quot;: &quot;CN&quot;,
-&quot;val&quot;: 0
-},
-{
-&quot;actualclass&quot;: &quot;Other&quot;,
-&quot;predictedclass&quot;: &quot;Other&quot;,
-&quot;val&quot;: 144
+&quot;type&quot;: &quot;application/json&quot;
 }
 ]
+}, {
+&quot;result&quot;: [{
+&quot;data&quot;: [{
+&quot;actualclass&quot;: &quot;AD&quot;,
+&quot;predictedclass&quot;: &quot;AD&quot;,
+&quot;val&quot;: 33.0
+}, {
+&quot;actualclass&quot;: &quot;AD&quot;,
+&quot;predictedclass&quot;: &quot;CN&quot;,
+&quot;val&quot;: 0.0
+}, {
+&quot;actualclass&quot;: &quot;AD&quot;,
+&quot;predictedclass&quot;: &quot;Other&quot;,
+&quot;val&quot;: 55.0
+}, {
+&quot;actualclass&quot;: &quot;CN&quot;,
+&quot;predictedclass&quot;: &quot;AD&quot;,
+&quot;val&quot;: 6.0
+}, {
+&quot;actualclass&quot;: &quot;CN&quot;,
+&quot;predictedclass&quot;: &quot;CN&quot;,
+&quot;val&quot;: 0.0
+}, {
+&quot;actualclass&quot;: &quot;CN&quot;,
+&quot;predictedclass&quot;: &quot;Other&quot;,
+&quot;val&quot;: 93.0
+}, {
+&quot;actualclass&quot;: &quot;Other&quot;,
+&quot;predictedclass&quot;: &quot;AD&quot;,
+&quot;val&quot;: 25.0
+}, {
+&quot;actualclass&quot;: &quot;Other&quot;,
+&quot;predictedclass&quot;: &quot;CN&quot;,
+&quot;val&quot;: 0.0
+}, {
+&quot;actualclass&quot;: &quot;Other&quot;,
+&quot;predictedclass&quot;: &quot;Other&quot;,
+&quot;val&quot;: 144.0
+}
+],
+&quot;type&quot;: &quot;application/json&quot;
+}
+]
+}, {
+&quot;result&quot;: [{
+&quot;data&quot;: [{
+&quot;actualclass&quot;: &quot;AD&quot;,
+&quot;predictedclass&quot;: &quot;AD&quot;,
+&quot;val&quot;: 26.0
+}, {
+&quot;actualclass&quot;: &quot;AD&quot;,
+&quot;predictedclass&quot;: &quot;CN&quot;,
+&quot;val&quot;: 3.0
+}, {
+&quot;actualclass&quot;: &quot;AD&quot;,
+&quot;predictedclass&quot;: &quot;Other&quot;,
+&quot;val&quot;: 32.0
+}, {
+&quot;actualclass&quot;: &quot;CN&quot;,
+&quot;predictedclass&quot;: &quot;AD&quot;,
+&quot;val&quot;: 6.0
+}, {
+&quot;actualclass&quot;: &quot;CN&quot;,
+&quot;predictedclass&quot;: &quot;CN&quot;,
+&quot;val&quot;: 12.0
+}, {
+&quot;actualclass&quot;: &quot;CN&quot;,
+&quot;predictedclass&quot;: &quot;Other&quot;,
+&quot;val&quot;: 66.0
+}, {
+&quot;actualclass&quot;: &quot;Other&quot;,
+&quot;predictedclass&quot;: &quot;AD&quot;,
+&quot;val&quot;: 27.0
+}, {
+&quot;actualclass&quot;: &quot;Other&quot;,
+&quot;predictedclass&quot;: &quot;CN&quot;,
+&quot;val&quot;: 16.0
+}, {
+&quot;actualclass&quot;: &quot;Other&quot;,
+&quot;predictedclass&quot;: &quot;Other&quot;,
+&quot;val&quot;: 166.0
+}
+],
+&quot;type&quot;: &quot;application/json&quot;
+}
 ]
 }
+]
 
 	</help>
 </tool>
