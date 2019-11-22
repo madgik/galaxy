@@ -61,8 +61,8 @@ def Rfunction_confusionmatrix(inputjson):
             if str(x[variablenames[0]]) not in  classnames:
                 classnames.append(str(x[variablenames[0]]))
 
-    # print "Predicted vector:", str(data)
-    # print "Actual vector:", str(reference)
+    print "Predicted vector:", str(data)
+    print "Actual vector:", str(reference)
 
     numberofclassnames = len(classnames)
 
@@ -74,50 +74,80 @@ def Rfunction_confusionmatrix(inputjson):
 
     Rresult = caret.confusionMatrix(base.factor(StrVector(data)),base.factor(StrVector(reference)))
 
-    jsonResult = '{"overall": {'
-
-
+    #####################################################
+    dataOverall = []
     if numberofclassnames == 2:
-        jsonResult += '"Positive Class":"' + Rresult[0][0]+'",'
+        dataOverall.append(["Positive Class",Rresult[0][0]])
     else:
-        jsonResult += '"Positive Class":"' + '' +'",'
+        dataOverall.append(["Positive Class",None])
 
     #Rresult[1] -->Table (I have already computed this)
 
     #Rresult[2] -->overall statistics
-    jsonResult += '"Accuracy":' + str(Rresult[2][0]) +','
-    jsonResult += '"Kappa":' + str(Rresult[2][1]) +','
-    jsonResult += '"AccuracyLower":' + str(Rresult[2][2]) +','
-    jsonResult += '"AccuracyUpper":' + str(Rresult[2][3]) +','
-    jsonResult += '"AccuracyNull":' + str(Rresult[2][4]) +','
-    jsonResult += '"AccuracyPValue":' + str(Rresult[2][5]) +','
-    jsonResult += '"McnemarPValue":' + str(Rresult[2][6]) +'},'
+    dataOverall.append(["Accuracy",(Rresult[2][0])])
+    dataOverall.append(["Kappa",(Rresult[2][1])])
+    dataOverall.append(["AccuracyLower",(Rresult[2][2])])
+    dataOverall.append(["AccuracyUpper",(Rresult[2][3])])
+    dataOverall.append(["AccuracyNull",(Rresult[2][4])])
+    dataOverall.append(["AccuracyPValue",(Rresult[2][5])])
+    dataOverall.append(["McnemarPValue",(Rresult[2][6])])
+
+    ResultOverall = { "data": {
+            "profile": "tabular-data-resource",
+            "data": dataOverall,
+            "name": "Overall",
+            "schema": {
+              "fields": [
+                {
+                  "type": "text",
+                  "name": "StatisticName"
+                },
+                {
+                  "type": "real",
+                  "name": "Value"
+                }
+              ]
+            }
+          },
+          "type": "application/vnd.dataresource+json"
+        }
+    #####################################################
+
+    FieldClassNames =  [
+      { "type": "text",
+        "name": "StatisticName" }]
+    for i in xrange(len(classnames)-1):
+        FieldClassNames.append(
+          {
+            "type": "real",
+            "name": classnames[i] +"' class"
+          })
+
+    DataClassNames = [["Sensitivity"],["Specificity"],["Pos Pred Value"],["Neg Pred Value"],["Precision"],["Recall"],
+    ["F1"],["Prevalence"],["Detection Rate"],["Detection Prevalence"],["Balanced Accuracy"]]
 
     #Rresult[3] -->byClass statistics
     for i in xrange(len(classnames)-1):
         # print i,classnames[i]
         j = i*10
+        for k in xrange(11):
+            if str(Rresult[3][j+k])!='nan' and str(Rresult[3][j+k])!='NA':
+                DataClassNames[k].append((Rresult[3][j+k]))
+            else:
+                DataClassNames[k].append(None)
 
-        jsonResult += '"Class name: '+ classnames[i] +'":{'
-        jsonResult += '"Sensitivity":' + str(Rresult[3][j+0]) + ','
-        jsonResult += '"Specificity":' + str(Rresult[3][j+1]) + ','
-        jsonResult += '"Pos Pred Value":' + str(Rresult[3][j+2]) + ','
-        jsonResult += '"Neg Pred Value":' + str(Rresult[3][j+3]) + ','
-        jsonResult += '"Precision":' + str(Rresult[3][j+4]) + ','
-        jsonResult += '"Recall":' + str(Rresult[3][j+5]) + ','
-        jsonResult += '"F1":' + str(Rresult[3][j+6]) + ','
-        jsonResult += '"Prevalence":' + str(Rresult[3][j+7]) + ','
-        jsonResult += '"Detection Rate":' + str(Rresult[3][j+8]) + ','
-        jsonResult += '"Detection Prevalence":' + str(Rresult[3][j+9]) + ','
-        jsonResult += '"Balanced Accuracy":'+ str(Rresult[3][j+10]) +'}'
-        if i == len(classnames)-2:
-            jsonResult += '}'
-        else:
-            jsonResult += ','
 
-        jsonResult = jsonResult.replace(":nan",":null")
-        jsonResult = jsonResult.replace(":NA",":null")
+    ResultClassNames = {
+    "data": {
+            "profile": "tabular-data-resource",
+            "data": DataClassNames,
+            "name": "ClassNames",
+            "schema": { "fields": FieldClassNames}
+            },
+   "type": "application/vnd.dataresource+json"}
 
+
+    jsonResult = { "result": [ ResultOverall, ResultClassNames ] }
     return jsonResult
 
 def main():
@@ -146,7 +176,7 @@ def main():
     statistics = []
     for i in xrange(len(inputJson)):
         try:
-            result = {'result': [{'data': json.loads(Rfunction_confusionmatrix(inputJson[i]['result'][0]['data'])),'type': 'application/vnd.dataresource+json'}]}
+            result = Rfunction_confusionmatrix(inputJson[i]['result'][0]['data'])
         except ValueError:
             print("Input file should be:")
             print('[{ "result" : [{')
