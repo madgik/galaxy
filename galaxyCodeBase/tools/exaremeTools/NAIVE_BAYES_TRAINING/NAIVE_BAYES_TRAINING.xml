@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool version="1.0.0" name="Naive Bayes Training" id="NAIVE_BAYES_TRAINING">
+    <command interpreter="python">NAIVE_BAYES_TRAINING.py -in '$input' -p '$pathology' -d '$dataset' -x '$x' -y '$y' -a '$alpha' -o '$output' </command>
+    <inputs>
+		<param name="input" format="json" label="" type="data" help = "The output of CROSS VALIDATION K FOLD or HOLD OUT VALIDATION."/>
+        <param type="text" name="dataset" label="Dataset" help="The names of one or more datasets, in which the algorithm will be executed."/>
+        <param type="text" name="pathology" label="Pathology" help="The name of the pathology in which the dataset belongs to."/>
+        <param type="text" name="x" label="X" help="Independent variables: A list of variables from the database."/>
+        <param type="text" name="y" label="Y" help="Dependent variable: A categorical variable from the database."/>
+        <param name="alpha" type="text" label="Alpha" help="(Real) Additive smoothing parameter (0 for no smoothing, 1 is the default)." />
+    </inputs>
+    <outputs>
+        <data name="output" format="json" />
+    </outputs>
+	<help>
+**Naive Bayes Training**
+
+This algorithm executed the training phase of Naive Bayes Classifier and provides as output: 
+		1) the training model
+		2) the name of the local DB where it saved the results.
+		
+			
+**Output**
+
+This algorithm&apos;s output can be given as input to **Naive Bayes Testing**.
+
+
+Output example:
+[{
+&quot;result&quot;: [{
+&quot;data&quot;: [{
+&quot;val&quot;: &quot;AD&quot;,
+&quot;probability&quot;: 0.20985915492957746,
+&quot;average&quot;: &quot;NA&quot;,
+&quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+&quot;classval&quot;: &quot;AD&quot;,
+&quot;sigma&quot;: &quot;NA&quot;
+}, {
+&quot;val&quot;: &quot;CN&quot;,
+&quot;probability&quot;: 0.2577464788732394,
+&quot;average&quot;: &quot;NA&quot;,
+&quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+&quot;classval&quot;: &quot;CN&quot;,
+&quot;sigma&quot;: &quot;NA&quot;
+}, {
+&quot;val&quot;: &quot;Other&quot;,
+&quot;probability&quot;: 0.532394366197183,
+&quot;average&quot;: &quot;NA&quot;,
+&quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+&quot;classval&quot;: &quot;Other&quot;,
+&quot;sigma&quot;: &quot;NA&quot;
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 2.702834563758389,
+&quot;colname&quot;: &quot;lefthippocampus&quot;,
+&quot;classval&quot;: &quot;AD&quot;,
+&quot;sigma&quot;: 0.3773335373496032
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 3.0549337158469956,
+&quot;colname&quot;: &quot;lefthippocampus&quot;,
+&quot;classval&quot;: &quot;CN&quot;,
+&quot;sigma&quot;: 0.30897040046779706
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 2.943435873015874,
+&quot;colname&quot;: &quot;lefthippocampus&quot;,
+&quot;classval&quot;: &quot;Other&quot;,
+&quot;sigma&quot;: 0.3337508953784866
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 2.9044004026845625,
+&quot;colname&quot;: &quot;righthippocampus&quot;,
+&quot;classval&quot;: &quot;AD&quot;,
+&quot;sigma&quot;: 0.4009760569735567
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 3.24099699453552,
+&quot;colname&quot;: &quot;righthippocampus&quot;,
+&quot;classval&quot;: &quot;CN&quot;,
+&quot;sigma&quot;: 0.3367152045823858
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 3.141956772486772,
+&quot;colname&quot;: &quot;righthippocampus&quot;,
+&quot;classval&quot;: &quot;Other&quot;,
+&quot;sigma&quot;: 0.3577836011333657
+}
+],
+&quot;type&quot;: &quot;application/json&quot;,
+&quot;dbIdentifier&quot;: &quot;CROSS_VALIDATION_K_FOLD_1574330976375&quot;
+}
+]
+}, {
+&quot;result&quot;: [{
+&quot;data&quot;: [{
+&quot;val&quot;: &quot;AD&quot;,
+&quot;probability&quot;: 0.18873239436619718,
+&quot;average&quot;: &quot;NA&quot;,
+&quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+&quot;classval&quot;: &quot;AD&quot;,
+&quot;sigma&quot;: &quot;NA&quot;
+}, {
+&quot;val&quot;: &quot;CN&quot;,
+&quot;probability&quot;: 0.2380281690140845,
+&quot;average&quot;: &quot;NA&quot;,
+&quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+&quot;classval&quot;: &quot;CN&quot;,
+&quot;sigma&quot;: &quot;NA&quot;
+}, {
+&quot;val&quot;: &quot;Other&quot;,
+&quot;probability&quot;: 0.5732394366197183,
+&quot;average&quot;: &quot;NA&quot;,
+&quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+&quot;classval&quot;: &quot;Other&quot;,
+&quot;sigma&quot;: &quot;NA&quot;
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 2.728512985074626,
+&quot;colname&quot;: &quot;lefthippocampus&quot;,
+&quot;classval&quot;: &quot;AD&quot;,
+&quot;sigma&quot;: 0.3558791335013939
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 3.0510920118343208,
+&quot;colname&quot;: &quot;lefthippocampus&quot;,
+&quot;classval&quot;: &quot;CN&quot;,
+&quot;sigma&quot;: 0.29408868331349175
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 2.965808943488944,
+&quot;colname&quot;: &quot;lefthippocampus&quot;,
+&quot;classval&quot;: &quot;Other&quot;,
+&quot;sigma&quot;: 0.331196486756742
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 2.9483179104477606,
+&quot;colname&quot;: &quot;righthippocampus&quot;,
+&quot;classval&quot;: &quot;AD&quot;,
+&quot;sigma&quot;: 0.3965721043656752
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 3.26563899408284,
+&quot;colname&quot;: &quot;righthippocampus&quot;,
+&quot;classval&quot;: &quot;CN&quot;,
+&quot;sigma&quot;: 0.31452310273735895
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 3.1692549140049144,
+&quot;colname&quot;: &quot;righthippocampus&quot;,
+&quot;classval&quot;: &quot;Other&quot;,
+&quot;sigma&quot;: 0.3491381938874106
+}
+],
+&quot;type&quot;: &quot;application/json&quot;,
+&quot;dbIdentifier&quot;: &quot;CROSS_VALIDATION_K_FOLD_1574330976375&quot;
+}
+]
+}, {
+&quot;result&quot;: [{
+&quot;data&quot;: [{
+&quot;val&quot;: &quot;AD&quot;,
+&quot;probability&quot;: 0.22612359550561797,
+&quot;average&quot;: &quot;NA&quot;,
+&quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+&quot;classval&quot;: &quot;AD&quot;,
+&quot;sigma&quot;: &quot;NA&quot;
+}, {
+&quot;val&quot;: &quot;CN&quot;,
+&quot;probability&quot;: 0.25842696629213485,
+&quot;average&quot;: &quot;NA&quot;,
+&quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+&quot;classval&quot;: &quot;CN&quot;,
+&quot;sigma&quot;: &quot;NA&quot;
+}, {
+&quot;val&quot;: &quot;Other&quot;,
+&quot;probability&quot;: 0.5154494382022472,
+&quot;average&quot;: &quot;NA&quot;,
+&quot;colname&quot;: &quot;alzheimerbroadcategory&quot;,
+&quot;classval&quot;: &quot;Other&quot;,
+&quot;sigma&quot;: &quot;NA&quot;
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 2.7286152173913045,
+&quot;colname&quot;: &quot;lefthippocampus&quot;,
+&quot;classval&quot;: &quot;AD&quot;,
+&quot;sigma&quot;: 0.34223134980609926
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 3.070971086956522,
+&quot;colname&quot;: &quot;lefthippocampus&quot;,
+&quot;classval&quot;: &quot;CN&quot;,
+&quot;sigma&quot;: 0.29852748129332074
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 2.9479056675749313,
+&quot;colname&quot;: &quot;lefthippocampus&quot;,
+&quot;classval&quot;: &quot;Other&quot;,
+&quot;sigma&quot;: 0.3468712898196191
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 2.9493390062111806,
+&quot;colname&quot;: &quot;righthippocampus&quot;,
+&quot;classval&quot;: &quot;AD&quot;,
+&quot;sigma&quot;: 0.3696886464736258
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 3.2657216304347814,
+&quot;colname&quot;: &quot;righthippocampus&quot;,
+&quot;classval&quot;: &quot;CN&quot;,
+&quot;sigma&quot;: 0.3268698057582899
+}, {
+&quot;val&quot;: &quot;NA&quot;,
+&quot;probability&quot;: &quot;NA&quot;,
+&quot;average&quot;: 3.151968910081745,
+&quot;colname&quot;: &quot;righthippocampus&quot;,
+&quot;classval&quot;: &quot;Other&quot;,
+&quot;sigma&quot;: 0.3716628136293239
+}
+],
+&quot;type&quot;: &quot;application/json&quot;,
+&quot;dbIdentifier&quot;: &quot;CROSS_VALIDATION_K_FOLD_1574330976375&quot;
+}
+]
+}
+]
+
+	</help>
+</tool>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool version="1.0.0" name="Confusion Matrix Statistics" id="CONFUSION_MATRIX_STATISTICS">
+	<requirements>
+		<requirement type="package" version="2.8.0">rpy2</requirement>
+	</requirements>
+    <command interpreter="python">CONFUSION_MATRIX_STATISTICS.py -in '$input' -o '$output' </command>
+    <inputs>
+		<param name="input" format="json" type="data" label="" help="The output of NAIVE_BAYES_TESTING" />
+    </inputs>
+    <outputs>
+        <data name="output" format="json" />
+    </outputs>
+	<help>
+**Confusion Matrix Statistics**
+
+Statistics similar to what R is showing when running the Naive Bayes Testing algorithm.
+
+
+**Output**
+
+Output example:
+[{
+&quot;result&quot;: [{
+&quot;type&quot;: &quot;application/vnd.dataresource+json&quot;,
+&quot;data&quot;: {
+&quot;profile&quot;: &quot;tabular-data-resource&quot;,
+&quot;data&quot;: [[&quot;Positive Class&quot;, null], [&quot;Accuracy&quot;, 0.5280898876404494], [&quot;Kappa&quot;, 0.08006091089474404], [&quot;AccuracyLower&quot;, 0.4747799833596294], [&quot;AccuracyUpper&quot;, 0.5809288111673974], [&quot;AccuracyNull&quot;, 0.5561797752808989], [&quot;AccuracyPValue&quot;, 0.8685700759671025], [&quot;McnemarPValue&quot;, 5.270687788673587e-10]],
+&quot;name&quot;: &quot;Overall&quot;,
+&quot;schema&quot;: {
+&quot;fields&quot;: [{
+&quot;type&quot;: &quot;text&quot;,
+&quot;name&quot;: &quot;StatisticName&quot;
+}, {
+&quot;type&quot;: &quot;real&quot;,
+&quot;name&quot;: &quot;Value&quot;
+}
+]
+}
+}
+}
+]
+}
+]
+
+	</help>
+</tool>

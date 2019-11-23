@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tool version="1.0.0" name="Heatmap Highchart" id="HEATMAP_HIGHCHART">
+    <command interpreter="python">HEATMAP_HIGHCHART.py -in '$input' -t '$title' -xt '$xTitle' -yt '$yTitle' -o '$output' </command>
+    <inputs>
+		<param name="input" format="json" type="data" label="" help="The output of NAIVE_BAYES_TESTING." />
+		<param name="title" type="text" label="Title" help="Title of the visualization." />
+		<param name="xTitle" type="text" label="x Axis Title" help="Title for the x Axis." />
+		<param name="yTitle" type="text" label="y Axis Title" help="Title for the y Axis." />
+    </inputs>
+    <outputs>
+        <data name="output" format="json" />
+    </outputs>
+	<help>
+**Heatmap Highchart**
+
+A heatmap visualization of a confusion matrrix (i.e. result of Naive Bayes Testing).
+
+**Output**
+
+This algorithm&apos;s output can be demonstrated using the heatmap highcharts visualizations.
+
+Output example:
+[{
+&quot;result&quot;: [{
+&quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
+&quot;data&quot;: {
+&quot;legend&quot;: {
+&quot;layout&quot;: &quot;vertical&quot;,
+&quot;align&quot;: &quot;right&quot;,
+&quot;symbolHeight&quot;: 280,
+&quot;y&quot;: 25,
+&quot;verticalAlign&quot;: &quot;top&quot;,
+&quot;margin&quot;: 0
+},
+&quot;xAxis&quot;: {
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
+&quot;title&quot;: {
+&quot;text&quot;: &quot;&quot;,
+&quot;style&quot;: {
+&quot;fontWeight&quot;: &quot;normal&quot;
+},
+&quot;enabled&quot;: true
+}
+},
+&quot;title&quot;: {
+&quot;text&quot;: &quot;Confusion Matrix&quot;
+},
+&quot;series&quot;: [{
+&quot;data&quot;: [[0, 0, 18.0], [0, 1, 2.0], [0, 2, 53.0], [1, 0, 3.0], [1, 1, 11.0], [1, 2, 71.0], [2, 0, 22.0], [2, 1, 17.0], [2, 2, 159.0]],
+&quot;borderWidth&quot;: 1,
+&quot;dataLabels&quot;: {
+&quot;color&quot;: &quot;#000000&quot;,
+&quot;enabled&quot;: true
+}
+}
+],
+&quot;yAxis&quot;: {
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
+&quot;title&quot;: {
+&quot;text&quot;: &quot;&quot;,
+&quot;style&quot;: {
+&quot;fontWeight&quot;: &quot;normal&quot;
+},
+&quot;enabled&quot;: true
+}
+},
+&quot;chart&quot;: {
+&quot;marginTop&quot;: 40,
+&quot;marginBottom&quot;: 80,
+&quot;type&quot;: &quot;heatmap&quot;,
+&quot;plotBorderWidth&quot;: 1
+},
+&quot;tooltip&quot;: {
+&quot;enabled&quot;: false
+},
+&quot;colorAxis&quot;: {
+&quot;minColor&quot;: &quot;#FFFFFF&quot;,
+&quot;maxColor&quot;: &quot;#6699ff&quot;,
+&quot;min&quot;: 0
+}
+}
+}
+]
+}, {
+&quot;result&quot;: [{
+&quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
+&quot;data&quot;: {
+&quot;legend&quot;: {
+&quot;layout&quot;: &quot;vertical&quot;,
+&quot;align&quot;: &quot;right&quot;,
+&quot;symbolHeight&quot;: 280,
+&quot;y&quot;: 25,
+&quot;verticalAlign&quot;: &quot;top&quot;,
+&quot;margin&quot;: 0
+},
+&quot;xAxis&quot;: {
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
+&quot;title&quot;: {
+&quot;text&quot;: &quot;&quot;,
+&quot;style&quot;: {
+&quot;fontWeight&quot;: &quot;normal&quot;
+},
+&quot;enabled&quot;: true
+}
+},
+&quot;title&quot;: {
+&quot;text&quot;: &quot;Confusion Matrix&quot;
+},
+&quot;series&quot;: [{
+&quot;data&quot;: [[0, 0, 33.0], [0, 1, 0.0], [0, 2, 55.0], [1, 0, 6.0], [1, 1, 0.0], [1, 2, 93.0], [2, 0, 25.0], [2, 1, 0.0], [2, 2, 144.0]],
+&quot;borderWidth&quot;: 1,
+&quot;dataLabels&quot;: {
+&quot;color&quot;: &quot;#000000&quot;,
+&quot;enabled&quot;: true
+}
+}
+],
+&quot;yAxis&quot;: {
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
+&quot;title&quot;: {
+&quot;text&quot;: &quot;&quot;,
+&quot;style&quot;: {
+&quot;fontWeight&quot;: &quot;normal&quot;
+},
+&quot;enabled&quot;: true
+}
+},
+&quot;chart&quot;: {
+&quot;marginTop&quot;: 40,
+&quot;marginBottom&quot;: 80,
+&quot;type&quot;: &quot;heatmap&quot;,
+&quot;plotBorderWidth&quot;: 1
+},
+&quot;tooltip&quot;: {
+&quot;enabled&quot;: false
+},
+&quot;colorAxis&quot;: {
+&quot;minColor&quot;: &quot;#FFFFFF&quot;,
+&quot;maxColor&quot;: &quot;#6699ff&quot;,
+&quot;min&quot;: 0
+}
+}
+}
+]
+}, {
+&quot;result&quot;: [{
+&quot;type&quot;: &quot;application/vnd.highcharts+json&quot;,
+&quot;data&quot;: {
+&quot;legend&quot;: {
+&quot;layout&quot;: &quot;vertical&quot;,
+&quot;align&quot;: &quot;right&quot;,
+&quot;symbolHeight&quot;: 280,
+&quot;y&quot;: 25,
+&quot;verticalAlign&quot;: &quot;top&quot;,
+&quot;margin&quot;: 0
+},
+&quot;xAxis&quot;: {
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
+&quot;title&quot;: {
+&quot;text&quot;: &quot;&quot;,
+&quot;style&quot;: {
+&quot;fontWeight&quot;: &quot;normal&quot;
+},
+&quot;enabled&quot;: true
+}
+},
+&quot;title&quot;: {
+&quot;text&quot;: &quot;Confusion Matrix&quot;
+},
+&quot;series&quot;: [{
+&quot;data&quot;: [[0, 0, 26.0], [0, 1, 3.0], [0, 2, 32.0], [1, 0, 6.0], [1, 1, 12.0], [1, 2, 66.0], [2, 0, 27.0], [2, 1, 16.0], [2, 2, 166.0]],
+&quot;borderWidth&quot;: 1,
+&quot;dataLabels&quot;: {
+&quot;color&quot;: &quot;#000000&quot;,
+&quot;enabled&quot;: true
+}
+}
+],
+&quot;yAxis&quot;: {
+&quot;categories&quot;: [&quot;AD&quot;, &quot;CN&quot;, &quot;Other&quot;],
+&quot;title&quot;: {
+&quot;text&quot;: &quot;&quot;,
+&quot;style&quot;: {
+&quot;fontWeight&quot;: &quot;normal&quot;
+},
+&quot;enabled&quot;: true
+}
+},
+&quot;chart&quot;: {
+&quot;marginTop&quot;: 40,
+&quot;marginBottom&quot;: 80,
+&quot;type&quot;: &quot;heatmap&quot;,
+&quot;plotBorderWidth&quot;: 1
+},
+&quot;tooltip&quot;: {
+&quot;enabled&quot;: false
+},
+&quot;colorAxis&quot;: {
+&quot;minColor&quot;: &quot;#FFFFFF&quot;,
+&quot;maxColor&quot;: &quot;#6699ff&quot;,
+&quot;min&quot;: 0
+}
+}
+}
+]
+}
+]
+
+	</help>
+</tool>
