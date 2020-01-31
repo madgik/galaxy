@@ -10,7 +10,8 @@ The following instructions are used to create a docker image of galaxy with a re
 
 1. EXAREME_IP has to be the IP of the exareme.
 2. EXAREME_PORT has to be the port of the exareme.
-3. In the cmd "htpasswd -bc /etc/apache2/htpasswd admin password", you can change the password. Username (admin) cannot be changed on runtime.
+3. In the cmd "htpasswd -bc /etc/apache2/htpasswd admin password", you can change the password. 
+<b>Username admin should NOT be changed! The workflows will not exist otherwise!</b>
 4. You can also change the galaxy image that is going to be deployed, by changing the tag of the image (hbpmip/galaxy:v1.3).
 
 Use the following command after changing the appropriate variables:
