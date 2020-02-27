@@ -116,8 +116,8 @@ def main():
     results = []
     for i in xrange(len(inputJson)):
         try:
-            result = {'result': [{'data': heatmap(inputJson[i]['result'][0]['data'], title,
-                    xtitle, ytitle),'type': 'application/vnd.highcharts+json'}]}
+            result = {'data': heatmap(inputJson[i]['result'][0]['data'], title,
+                    xtitle, ytitle),'type': 'application/vnd.highcharts+json'}
         except ValueError:
             print("Input file should be:")
             print('[{ "result" : [{')
@@ -127,9 +127,11 @@ def main():
             print('] }')
 
         results.append(result)
-
+    
+    finalResult = { 'result' : results}
+    
     outputFile = open(opts.get('-o'), 'w')
-    outputFile.write(json.dumps(results))
+    outputFile.write(json.dumps(finalResult))
     outputFile.close
 
 

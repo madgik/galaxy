@@ -147,7 +147,7 @@ def Rfunction_confusionmatrix(inputjson):
    "type": "application/vnd.dataresource+json"}
 
 
-    jsonResult = { "result": [ ResultOverall, ResultClassNames ] }
+    jsonResult = [ ResultOverall, ResultClassNames ]
     return jsonResult
 
 def main():
@@ -184,10 +184,13 @@ def main():
             print('  "type": "application/json"')
             print('   } , ... ')
             print('] }')
-        statistics.append(result)
+        statistics.append(result[0])
+        statistics.append(result[1])
+    
+    finalResult={ "result" : statistics }
     
     outputFile = open(opts.get("-o"), "w")
-    outputFile.write(json.dumps(statistics))
+    outputFile.write(json.dumps(finalResult))
     outputFile.close
 
 if __name__ == "__main__":
