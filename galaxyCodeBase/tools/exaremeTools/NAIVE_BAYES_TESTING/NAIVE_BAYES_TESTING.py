@@ -92,7 +92,7 @@ def main():
             ]
         response = json.loads(requests.post(url,data=json.dumps(data),headers=headers).text)
         if 'result' in response:
-            if 'error' in response['result'][0]['type']:
+            if 'error' in response['result'][0]['type'] or 'warning' in response['result'][0]['type']:
                 raise ValueError(json.dumps(response))
         responses.append(response)
         
