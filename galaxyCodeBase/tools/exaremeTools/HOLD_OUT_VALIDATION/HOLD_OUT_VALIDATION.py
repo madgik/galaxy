@@ -80,7 +80,7 @@ def main():
     
     data = json.loads(response.text)
     if 'result' in data:
-        if 'error' in data['result'][0]['type']:
+        if 'error' in data['result'][0]['type'] or 'warning' in data['result'][0]['type']:
             raise ValueError(json.dumps(data))
     
     data['result'][0]['numberOfSplits'] = '1'
